@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\754075ff-0525-4363-b82e-b02b53bd693a.png",
+      "PackagePath": "staticwebassets\\images\\754075ff-0525-4363-b82e-b02b53bd693a.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\avatar\\user.png",
+      "PackagePath": "staticwebassets\\images\\avatar\\user.png"
+    },
+    {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\favicon.png",
       "PackagePath": "staticwebassets\\images\\favicon.png"
     },
@@ -39,6 +47,90 @@
     {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\placeholders\\post-placeholder.jpg",
+      "PackagePath": "staticwebassets\\images\\placeholders\\post-placeholder.jpg"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\1d24c575-710b-4e15-a086-c1baf5e1f46b.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\1d24c575-710b-4e15-a086-c1baf5e1f46b.jpg"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\99fda927-e98f-4f2c-94b5-09d99159dd3a.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\99fda927-e98f-4f2c-94b5-09d99159dd3a.jpg"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\a9221cc4-34c2-4691-8905-6d7b17bd22e5.png",
+      "PackagePath": "staticwebassets\\images\\posts\\a9221cc4-34c2-4691-8905-6d7b17bd22e5.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\bc40ab58-0fb9-490f-893a-0efa8145a454.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\bc40ab58-0fb9-490f-893a-0efa8145a454.jpg"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\c11c624b-3038-43b9-8ff4-78e132c1c861.png",
+      "PackagePath": "staticwebassets\\images\\posts\\c11c624b-3038-43b9-8ff4-78e132c1c861.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\ddfcb04a-e52e-48f9-85fd-b9dba3b508cc.png",
+      "PackagePath": "staticwebassets\\images\\posts\\ddfcb04a-e52e-48f9-85fd-b9dba3b508cc.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\posts\\f86be4ee-8414-499f-b5a0-2d6f827717a6.png",
+      "PackagePath": "staticwebassets\\images\\posts\\f86be4ee-8414-499f-b5a0-2d6f827717a6.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\profilePictures\\48a173ee-ef51-429f-b741-89d97bf670e2.png",
+      "PackagePath": "staticwebassets\\images\\profilePictures\\48a173ee-ef51-429f-b741-89d97bf670e2.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\profilePictures\\7f8edaae-4c7b-4fb7-9660-270325b094fc.png",
+      "PackagePath": "staticwebassets\\images\\profilePictures\\7f8edaae-4c7b-4fb7-9660-270325b094fc.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\stories\\74c48e47-7c81-48a4-b9da-abfc3b71436e.png",
+      "PackagePath": "staticwebassets\\images\\stories\\74c48e47-7c81-48a4-b9da-abfc3b71436e.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\stories\\996d3588-bb23-49a5-8068-948eb41a5ab4.png",
+      "PackagePath": "staticwebassets\\images\\stories\\996d3588-bb23-49a5-8068-948eb41a5ab4.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\stories\\af5ddb58-1297-4d95-8e24-b5ae862c5311.png",
+      "PackagePath": "staticwebassets\\images\\stories\\af5ddb58-1297-4d95-8e24-b5ae862c5311.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\stories\\bc706a46-cdca-4de8-9399-da71b9205939.png",
+      "PackagePath": "staticwebassets\\images\\stories\\bc706a46-cdca-4de8-9399-da71b9205939.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\stories\\d6dd90ec-10ef-47b5-9fb7-5beea6184cd0.png",
+      "PackagePath": "staticwebassets\\images\\stories\\d6dd90ec-10ef-47b5-9fb7-5beea6184cd0.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\stories\\ea8cfd14-eef5-452c-8c56-634820de7c6c.png",
+      "PackagePath": "staticwebassets\\images\\stories\\ea8cfd14-eef5-452c-8c56-634820de7c6c.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\uploaded\\de775398-8e83-4958-8c45-edca8d0f2d2d.png",
+      "PackagePath": "staticwebassets\\images\\uploaded\\de775398-8e83-4958-8c45-edca8d0f2d2d.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\welcome\\welcome-01.png",
+      "PackagePath": "staticwebassets\\images\\welcome\\welcome-01.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\welcome\\welcome-02.png",
+      "PackagePath": "staticwebassets\\images\\welcome\\welcome-02.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\welcome\\welcome-03.png",
+      "PackagePath": "staticwebassets\\images\\welcome\\welcome-03.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\welcome\\welcome-04.png",
+      "PackagePath": "staticwebassets\\images\\welcome\\welcome-04.png"
     },
     {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\js\\script.js",

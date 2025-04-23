@@ -1,23 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Circle</title>
-    <link href="~/images/favicon.png" rel="icon" type="image/png" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+    <link href="~/images/favicon.png" rel="icon" type="image/png"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true"/>
 </head>
 <body>
 
 <div id="wrapper">
 
     @* Topbar *@
-    <partial name="Navigation/_TopBar" />
+    <partial name="Navigation/_TopBar"/>
 
     @* Side bar (left) *@
-    <partial name="Navigation/_SideBar" />
+    <partial name="Navigation/_SideBar"/>
 
 
     @RenderBody()
@@ -36,6 +36,6 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-@await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Scripts", false)
 </body>
 </html>
