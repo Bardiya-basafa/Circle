@@ -17,6 +17,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\images\\favicon.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\icons\\group-2.png",
+      "PackagePath": "staticwebassets\\images\\icons\\group-2.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\icons\\home.png",
+      "PackagePath": "staticwebassets\\images\\icons\\home.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\icons\\page.png",
+      "PackagePath": "staticwebassets\\images\\icons\\page.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\icons\\video.png",
+      "PackagePath": "staticwebassets\\images\\icons\\video.png"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
