@@ -9,139 +9,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa31f59f-f87a-438d-80ed-006b142d1930" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/754075ff-0525-4363-b82e-b02b53bd693a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/avatar/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/placeholders/post-placeholder.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/1d24c575-710b-4e15-a086-c1baf5e1f46b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/99fda927-e98f-4f2c-94b5-09d99159dd3a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/a9221cc4-34c2-4691-8905-6d7b17bd22e5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/bc40ab58-0fb9-490f-893a-0efa8145a454.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/c11c624b-3038-43b9-8ff4-78e132c1c861.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/ddfcb04a-e52e-48f9-85fd-b9dba3b508cc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/posts/f86be4ee-8414-499f-b5a0-2d6f827717a6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/profilePictures/48a173ee-ef51-429f-b741-89d97bf670e2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/profilePictures/7f8edaae-4c7b-4fb7-9660-270325b094fc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/stories/74c48e47-7c81-48a4-b9da-abfc3b71436e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/stories/996d3588-bb23-49a5-8068-948eb41a5ab4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/stories/af5ddb58-1297-4d95-8e24-b5ae862c5311.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/stories/bc706a46-cdca-4de8-9399-da71b9205939.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/stories/d6dd90ec-10ef-47b5-9fb7-5beea6184cd0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/stories/ea8cfd14-eef5-452c-8c56-634820de7c6c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/uploaded/de775398-8e83-4958-8c45-edca8d0f2d2d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/welcome/welcome-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/welcome/welcome-02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/welcome/welcome-03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/welcome/welcome-04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Helpers/DbInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStatus.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStatus.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.runtime.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/CircleApp.UI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/CircleApp.UI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/0ki6tk0jre-4094rpi4f9.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/18hog8jx81-jjsuc0puko.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/1vslslgzrc-u9q1upor1n.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/77ft6qoqlg-gye83jo8yx.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/aaa0661h3h-ltid2c489k.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/buwjmwiis1-6w9j14fygc.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/c2sg5ewpco-52a20dwd0l.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/c7t78kuo11-rxsg74s51o.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/d4rq52ts9v-lxzyflrzcn.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/d6t8lgjlxe-d6nrnj6jjx.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/fie7ftkjzy-xvp3kq03qx.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/fqbhmdrl5t-clg9t2kecy.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/h29gllqybf-d4r6k3f320.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/juvl5k4a2w-naq7nvi4fe.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/lkfdo18djm-atsesciqaw.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/q4lpilfccc-t1cqhe9u97.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/qbte88kqd9-ynyaa8k90p.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/qnjt56dg43-6f9r9drxcn.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/rx6d3nf2ft-worgj0nhwm.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/smo40ca398-pmrwgncoh8.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/stpex2q4wy-03hjc8e09r.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/tbgdrpph0q-qesaa3a1fm.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/x3f8jlppd6-zub09dkrxp.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/xm46t51ea8-ksj549zzab.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/yjt0pol439-83jwlth58m.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.pack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/js/simplebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/js/simplebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery/dist/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/lib/jquery/dist/jquery.slim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/scripts/shBrushJScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/scripts/shBrushJScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/scripts/shBrushXml.js" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/scripts/shBrushXml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/styles/shCore.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/styles/shCore.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/styles/shCoreMidnight.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/syntax-highlighter/styles/shCoreMidnight.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/ref/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/refint/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/DbContexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/DbContexts/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Migrations/20250423040513_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Migrations/20250423040513_Initial.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +88,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dffdaf205cf54e098aa7d66ba76b38621de920/19/e6aa02ee/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -181,20 +103,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.CircleApp.UI: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.CircleApp.UI: http.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.HTML",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CircleApp.UI: http">
     <configuration name="CircleApp.UI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" />
@@ -237,7 +160,10 @@
       <updated>1745341351975</updated>
       <workItem from="1745341353412" duration="3315000" />
       <workItem from="1745379684311" duration="3328000" />
-      <workItem from="1745383060345" duration="4160000" />
+      <workItem from="1745383060345" duration="5031000" />
+      <workItem from="1745388173178" duration="156000" />
+      <workItem from="1745426979795" duration="1608000" />
+      <workItem from="1745656932634" duration="6175000" />
     </task>
     <task id="LOCAL-00001" summary="initial database setups">
       <option name="closed" value="true" />
@@ -255,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745382993768</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="setting up entity framework">
+      <option name="closed" value="true" />
+      <created>1745387526209</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745387526210</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +212,11 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial database setups" />
     <MESSAGE value="files" />
-    <option name="LAST_COMMIT_MESSAGE" value="files" />
+    <MESSAGE value="setting up entity framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting up entity framework" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
