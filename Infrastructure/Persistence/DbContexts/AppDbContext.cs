@@ -3,7 +3,9 @@
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
+
 public class AppDbContext : DbContext {
+
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
@@ -12,7 +14,7 @@ public class AppDbContext : DbContext {
 
     public DbSet<User> Users { get; set; }
 
-   protected override void OnModelCreating(ModelBuilder modelBuilder)
+    override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Apply all configurations from assembly
         modelBuilder.Entity<User>()
@@ -20,4 +22,5 @@ public class AppDbContext : DbContext {
             .WithOne(p => p.User)
             .HasForeignKey(p => p.UserId);
     }
+
 }

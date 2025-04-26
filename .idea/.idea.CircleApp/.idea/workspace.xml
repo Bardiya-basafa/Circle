@@ -8,18 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa31f59f-f87a-438d-80ed-006b142d1930" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVM.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Helpers/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" afterDir="false" />
+    <list default="true" id="fa31f59f-f87a-438d-80ed-006b142d1930" name="Changes" comment="reaching to the creating post section">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStatus.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStatus.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
@@ -29,7 +30,6 @@
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
@@ -37,18 +37,25 @@
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/ref/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/refint/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/DbContexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/DbContexts/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Helpers/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Helpers/DbInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
@@ -56,13 +63,12 @@
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +169,7 @@
       <workItem from="1745383060345" duration="5031000" />
       <workItem from="1745388173178" duration="156000" />
       <workItem from="1745426979795" duration="1608000" />
-      <workItem from="1745656932634" duration="6175000" />
+      <workItem from="1745656932634" duration="7466000" />
     </task>
     <task id="LOCAL-00001" summary="initial database setups">
       <option name="closed" value="true" />
@@ -189,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745387526210</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="reaching to the creating post section">
+      <option name="closed" value="true" />
+      <created>1745664257437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745664257437</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +227,8 @@
     <MESSAGE value="initial database setups" />
     <MESSAGE value="files" />
     <MESSAGE value="setting up entity framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting up entity framework" />
+    <MESSAGE value="reaching to the creating post section" />
+    <option name="LAST_COMMIT_MESSAGE" value="reaching to the creating post section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -16,3 +16,7 @@ E:\Asp.net\CircleApp\Infrastructure\obj\Debug\net9.0\refint\Infrastructure.dll
 E:\Asp.net\CircleApp\Infrastructure\obj\Debug\net9.0\Infrastructure.pdb
 E:\Asp.net\CircleApp\Infrastructure\obj\Debug\net9.0\Infrastructure.genruntimeconfig.cache
 E:\Asp.net\CircleApp\Infrastructure\obj\Debug\net9.0\ref\Infrastructure.dll
+E:\Asp.net\CircleApp\Infrastructure\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Features.dll
+E:\Asp.net\CircleApp\Infrastructure\bin\Debug\net9.0\Microsoft.Net.Http.Headers.dll
+E:\Asp.net\CircleApp\Infrastructure\bin\Debug\net9.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\Asp.net\CircleApp\Infrastructure\bin\Debug\net9.0\Microsoft.Extensions.Features.dll

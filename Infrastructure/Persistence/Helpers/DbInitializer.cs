@@ -1,23 +1,24 @@
 ﻿namespace Infrastructure.Persistence.Helpers;
-using System;
-using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
-using DbContexts;
 
-public  static class DbInitializer {
+using DbContexts;
+using Domain.Entities;
+
+
+public static class DbInitializer {
+
     public static async Task SeedAsync(AppDbContext appDbContext)
     {
         if (!appDbContext.Users.Any() && !appDbContext.Posts.Any()){
-            var newUser = new User()
+            var newUser = new User
             {
                 FullName = "bardiya",
                 ProfilePictureUrl = "https://img-b.udemycdn.com/user/200_H/16004620_10db_5.jpg"
-
             };
+
             appDbContext.Users.Add(newUser);
             await appDbContext.SaveChangesAsync();
 
-            var newPost = new Post()
+            var newPost = new Post
             {
                 Content = "This is going to be our first post which is being loaded from the database and it has been created using our test user.",
                 ImageUrl = "",
@@ -26,7 +27,8 @@ public  static class DbInitializer {
                 DateUpdated = DateTime.UtcNow,
                 UserId = newUser.UserId
             };
-            var newPostWithImage = new Post()
+
+            var newPostWithImage = new Post
             {
                 Content = "This is going to be our first post which is being loaded from the database and it has been created using our test user. This post has an image",
                 ImageUrl = "https://unsplash.com/photos/foggy-mountain-summit-1Z2niiBPg5A",
@@ -35,10 +37,10 @@ public  static class DbInitializer {
                 DateUpdated = DateTime.UtcNow,
                 UserId = newUser.UserId
             };
-           await appDbContext.Posts.AddRangeAsync(newPost, newPostWithImage);
-           await appDbContext.SaveChangesAsync();
 
+            await appDbContext.Posts.AddRangeAsync(newPost, newPostWithImage);
+            await appDbContext.SaveChangesAsync();
         }
-        
     }
+
 }

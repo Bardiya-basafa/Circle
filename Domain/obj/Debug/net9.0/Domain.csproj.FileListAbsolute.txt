@@ -10,3 +10,10 @@ E:\Asp.net\CircleApp\Domain\obj\Debug\net9.0\Domain.dll
 E:\Asp.net\CircleApp\Domain\obj\Debug\net9.0\refint\Domain.dll
 E:\Asp.net\CircleApp\Domain\obj\Debug\net9.0\Domain.pdb
 E:\Asp.net\CircleApp\Domain\obj\Debug\net9.0\ref\Domain.dll
+E:\Asp.net\CircleApp\Domain\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Features.dll
+E:\Asp.net\CircleApp\Domain\bin\Debug\net9.0\Microsoft.Net.Http.Headers.dll
+E:\Asp.net\CircleApp\Domain\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\Asp.net\CircleApp\Domain\bin\Debug\net9.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\Asp.net\CircleApp\Domain\bin\Debug\net9.0\Microsoft.Extensions.Features.dll
+E:\Asp.net\CircleApp\Domain\obj\Debug\net9.0\Domain.csproj.AssemblyReference.cache
+E:\Asp.net\CircleApp\Domain\obj\Debug\net9.0\Domain.csproj.Up2Date
