@@ -12,17 +12,17 @@
             </button>
         </div>
 
-        <form asp-controller="Home" asp-action="CreateStatus" method="post">
+        <form asp-controller="Home" asp-action="CreateStatus" enctype="multipart/form-data" method="post">
             <div class="space-y-5 mt-3 p-2">
                 <textarea
                         class="w-full !text-black placeholder:!text-black !bg-white !border-transparent focus:!border-transparent focus:!ring-transparent !font-normal !text-xl"
                         name="content"
                         rows="2"
-                        placeholder="What do you have in mind?" asp-for="@Model.Conent"></textarea>
+                        placeholder="What do you have in mind?" asp-for="@Model.Content"></textarea>
             </div>
 
             <div class="flex items-center gap-2 text-sm py-2 px-4 font-medium flex-wrap">
-                <input id="imageUpload" type="file" class="hidden" name="uploadedContent"
+                <input id="imageUpload" type="file" class="hidden" name="image"
                        accept="image/png, image/jpeg" />
 
                 <div id="imagePreviewContainer" class="hidden">

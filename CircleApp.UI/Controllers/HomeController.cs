@@ -23,6 +23,7 @@ public class HomeController : Controller {
     {
         List<Post> allPosts = await _appDbContext.Posts
             .Include(n => n.User)
+            .Include(n => n.Likes)
             .OrderByDescending(n => n.DateCreated)
             .ToListAsync();
 
@@ -34,7 +35,7 @@ public class HomeController : Controller {
     {
         var newPost = new Post
         {
-            Content = post.Conent,
+            Content = post.Content,
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             ImageUrl = "",
@@ -42,11 +43,11 @@ public class HomeController : Controller {
             NrOfReports = 0
         };
 
-        if (post.Image != null && post.Image.Length > 0){
+        if (post.Image.Length > 0){
             var rootFoder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 
             if (post.Image.ContentType.Contains("image")){
-                var rootImageFolderPath = Path.Combine(rootFoder, "images");
+                var rootImageFolderPath = Path.Combine(rootFoder, "postimages");
                 Directory.CreateDirectory(rootImageFolderPath);
                 var fileName = Guid.NewGuid() + Path.GetExtension(post.Image.FileName);
                 var filePath = Path.Combine(rootImageFolderPath, fileName);
@@ -55,8 +56,37 @@ public class HomeController : Controller {
                     await post.Image.CopyToAsync(stream);
                 }
 
-                newPost.ImageUrl = "/images/" + fileName;
+                newPost.ImageUrl = "/postimages/" + fileName;
             }
+        }
+
+        await _appDbContext.Posts.AddAsync(newPost);
+        await _appDbContext.SaveChangesAsync();
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> LikePost(LikePostVm likePost)
+    {
+        int loggedInUserId = 1;
+
+        Like? liked = _appDbContext.Likes
+            .FirstOrDefault(l => l.UserId == loggedInUserId && l.PostId == likePost.PostId);
+
+        if (liked != null){
+            _appDbContext.Likes.Remove(liked);
+            await _appDbContext.SaveChangesAsync();
+        }
+        else{
+            Like like = new Like()
+            {
+                PostId = likePost.PostId,
+                UserId = loggedInUserId
+            };
+
+            _appDbContext.Likes.Add(like);
+            await _appDbContext.SaveChangesAsync();
         }
 
         return RedirectToAction("Index");

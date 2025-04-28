@@ -23,5 +23,6 @@ public class Post {
 
     // Navigation properties 
     public User User { get; set; }
+    public ICollection<Like> Likes { get; set; } = new HashSet<Like>();
 
 }

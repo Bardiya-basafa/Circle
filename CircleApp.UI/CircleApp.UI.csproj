@@ -33,4 +33,8 @@
         <_ContentIncludedByDefault Remove="wwwroot\images\logo.png"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\postimages\" />
+    </ItemGroup>
+
 </Project>

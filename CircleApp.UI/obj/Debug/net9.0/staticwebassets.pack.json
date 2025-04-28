@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\754075ff-0525-4363-b82e-b02b53bd693a.png",
-      "PackagePath": "staticwebassets\\images\\754075ff-0525-4363-b82e-b02b53bd693a.png"
-    },
-    {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\images\\avatar\\user.png",
       "PackagePath": "staticwebassets\\images\\avatar\\user.png"
     },
@@ -387,6 +383,10 @@
     {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\8904ec46-960d-4db6-bcb1-07612608c1fe.jpg",
+      "PackagePath": "staticwebassets\\postimages\\8904ec46-960d-4db6-bcb1-07612608c1fe.jpg"
     },
     {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\syntax-highlighter\\scripts\\shBrushJScript.js",
