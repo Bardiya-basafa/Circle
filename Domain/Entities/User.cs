@@ -13,7 +13,12 @@ public class User {
     public string? ProfilePictureUrl { get; set; }
 
     // navigation properties 
-    public ICollection<Post> Posts { get; set; } = new List<Post>();
-    public ICollection<Like> Likes { get; set; } = new List<Like>();
+    public ICollection<Post> Posts { get; set; } = new HashSet<Post>();
+
+    public ICollection<Like> Likes { get; set; } = new HashSet<Like>();
+
+    public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
+
+    public ICollection<Bookmark> Bookmarks { get; set; } = new HashSet<Bookmark>();
 
 }

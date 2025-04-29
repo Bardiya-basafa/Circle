@@ -1728,6 +1728,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postimages\7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CircleApp.UI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CircleApp.UI</BasePath>
+      <RelativePath>postimages/7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xtuir5nena</Fingerprint>
+      <Integrity>lYvnbNbuowZy6i5Lzb3SXaONWiv9mXAIU97lge6cjJA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postimages\7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postimages\8904ec46-960d-4db6-bcb1-07612608c1fe.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>CircleApp.UI</SourceId>
@@ -1745,6 +1763,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postimages\8904ec46-960d-4db6-bcb1-07612608c1fe.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postimages\996f068e-5ef0-422e-bbc1-42a72fc746bc.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CircleApp.UI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CircleApp.UI</BasePath>
+      <RelativePath>postimages/996f068e-5ef0-422e-bbc1-42a72fc746bc.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>dtydy0pn3s</Fingerprint>
+      <Integrity>gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postimages\996f068e-5ef0-422e-bbc1-42a72fc746bc.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\syntax-highlighter\scripts\shBrushJScript.js'))">
       <SourceType>Package</SourceType>

@@ -9,14 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa31f59f-f87a-438d-80ed-006b142d1930" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Like.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/LikePostVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Bookmark.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Comment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/CommentPostVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/DeleteCommentVM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStatus.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStatus.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
@@ -41,11 +50,10 @@
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.pack.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/images/754075ff-0525-4363-b82e-b02b53bd693a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Like.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Like.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Post.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ViewModels/Home/LikePostVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/LikePostVM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" afterDir="false" />
@@ -174,7 +182,9 @@
       <workItem from="1745426979795" duration="1608000" />
       <workItem from="1745656932634" duration="7695000" />
       <workItem from="1745828995178" duration="206000" />
-      <workItem from="1745829228104" duration="5381000" />
+      <workItem from="1745829228104" duration="5580000" />
+      <workItem from="1745934383754" duration="4547000" />
+      <workItem from="1745944870262" duration="1174000" />
     </task>
     <task id="LOCAL-00001" summary="initial database setups">
       <option name="closed" value="true" />
@@ -216,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745665495519</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="like section and adding post section">
+      <option name="closed" value="true" />
+      <created>1745834792707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745834792707</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,26 +260,8 @@
     <MESSAGE value="setting up entity framework" />
     <MESSAGE value="reaching to the creating post section" />
     <MESSAGE value="image uploader" />
-    <option name="LAST_COMMIT_MESSAGE" value="image uploader" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs</url>
-          <line>76</line>
-          <properties documentPath="E:\Asp.net\CircleApp\CircleApp.UI\Controllers\HomeController.cs" containingFunctionPresentation="Method 'LikePost'">
-            <startOffsets>
-              <option value="2301" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2319" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="like section and adding post section" />
+    <option name="LAST_COMMIT_MESSAGE" value="like section and adding post section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

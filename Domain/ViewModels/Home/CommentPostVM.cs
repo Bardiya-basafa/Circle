@@ -1,9 +1,9 @@
 ﻿namespace Domain.ViewModels.Home;
 
-public class LikePostVm {
+public class CommentPostVm {
 
     public int PostId { get; set; }
 
-    public int UserId { get; set; }
+    public string Content { get; set; }
 
 }

@@ -24,6 +24,8 @@ public class HomeController : Controller {
         List<Post> allPosts = await _appDbContext.Posts
             .Include(n => n.User)
             .Include(n => n.Likes)
+            .Include(n => n.Comments).ThenInclude(n => n.User)
+            .Include(n => n.Bookmarks).ThenInclude(n => n.User)
             .OrderByDescending(n => n.DateCreated)
             .ToListAsync();
 
@@ -69,9 +71,9 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> LikePost(LikePostVm likePost)
     {
-        int loggedInUserId = 1;
+        var loggedInUserId = 1;
 
-        Like? liked = _appDbContext.Likes
+        var liked = _appDbContext.Likes
             .FirstOrDefault(l => l.UserId == loggedInUserId && l.PostId == likePost.PostId);
 
         if (liked != null){
@@ -79,13 +81,47 @@ public class HomeController : Controller {
             await _appDbContext.SaveChangesAsync();
         }
         else{
-            Like like = new Like()
+            var like = new Like
             {
                 PostId = likePost.PostId,
                 UserId = loggedInUserId
             };
 
             _appDbContext.Likes.Add(like);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddComment(CommentPostVm commentPostVm)
+    {
+        var loggedInUserId = 1;
+
+        var comment = new Comment()
+        {
+            PostId = commentPostVm.PostId,
+            UserId = loggedInUserId,
+            Content = commentPostVm.Content,
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+        };
+
+        _appDbContext.Comments.Add(comment);
+        await _appDbContext.SaveChangesAsync();
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DeleteComment(DeleteCommentVm deleteCommentVm)
+    {
+        int loggedInUserId = 1;
+        var comment = _appDbContext.Comments.FirstOrDefault(c => c.Id == deleteCommentVm.CommentId);
+
+        if (comment != null){
+            _appDbContext.Comments.Remove(comment);
             await _appDbContext.SaveChangesAsync();
         }
 

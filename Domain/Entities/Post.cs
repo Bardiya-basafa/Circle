@@ -23,6 +23,11 @@ public class Post {
 
     // Navigation properties 
     public User User { get; set; }
+
     public ICollection<Like> Likes { get; set; } = new HashSet<Like>();
+
+    public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
+
+    public ICollection<Bookmark> Bookmarks { get; set; } = new HashSet<Bookmark>();
 
 }

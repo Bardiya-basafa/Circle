@@ -385,8 +385,16 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg",
+      "PackagePath": "staticwebassets\\postimages\\7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg"
+    },
+    {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\8904ec46-960d-4db6-bcb1-07612608c1fe.jpg",
       "PackagePath": "staticwebassets\\postimages\\8904ec46-960d-4db6-bcb1-07612608c1fe.jpg"
+    },
+    {
+      "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\996f068e-5ef0-422e-bbc1-42a72fc746bc.jpg",
+      "PackagePath": "staticwebassets\\postimages\\996f068e-5ef0-422e-bbc1-42a72fc746bc.jpg"
     },
     {
       "Id": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\syntax-highlighter\\scripts\\shBrushJScript.js",
