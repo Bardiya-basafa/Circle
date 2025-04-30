@@ -21,4 +21,6 @@ public class User {
 
     public ICollection<Bookmark> Bookmarks { get; set; } = new HashSet<Bookmark>();
 
+    public ICollection<Report> Reports { get; set; } = new HashSet<Report>();
+
 }

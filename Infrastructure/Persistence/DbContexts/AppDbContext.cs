@@ -18,6 +18,10 @@ public class AppDbContext : DbContext {
 
     public DbSet<Comment> Comments { get; set; }
 
+    public DbSet<Bookmark> Bookmarks { get; set; }
+
+    public DbSet<Report> Reports { get; set; }
+
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Apply all configurations from assembly
@@ -75,6 +79,23 @@ public class AppDbContext : DbContext {
             .WithMany(u => u.Bookmarks)
             .HasForeignKey(b => b.UserId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        // relations for reports
+        modelBuilder.Entity<Report>()
+            .HasKey(r => new { r.PostId, r.UserId });
+
+        modelBuilder.Entity<Report>()
+            .HasOne(r => r.Post)
+            .WithMany(p => p.Reports)
+            .HasForeignKey(r => r.PostId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<Report>()
+            .HasOne(r => r.User)
+            .WithMany(u => u.Reports)
+            .HasForeignKey(r => r.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+
 
         base.OnModelCreating(modelBuilder);
     }

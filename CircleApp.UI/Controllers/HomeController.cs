@@ -21,11 +21,14 @@ public class HomeController : Controller {
 
     public async Task<IActionResult> Index()
     {
+        int loggedInUesr = 1;
+
         List<Post> allPosts = await _appDbContext.Posts
+            .Where(n => !n.IsPrivate || n.UserId == loggedInUesr)
             .Include(n => n.User)
             .Include(n => n.Likes)
+            .Include(n => n.Bookmarks)
             .Include(n => n.Comments).ThenInclude(n => n.User)
-            .Include(n => n.Bookmarks).ThenInclude(n => n.User)
             .OrderByDescending(n => n.DateCreated)
             .ToListAsync();
 
@@ -73,8 +76,8 @@ public class HomeController : Controller {
     {
         var loggedInUserId = 1;
 
-        var liked = _appDbContext.Likes
-            .FirstOrDefault(l => l.UserId == loggedInUserId && l.PostId == likePost.PostId);
+        var liked = await _appDbContext.Likes
+            .FirstOrDefaultAsync(l => l.UserId == loggedInUserId && l.PostId == likePost.PostId);
 
         if (liked != null){
             _appDbContext.Likes.Remove(liked);
@@ -126,6 +129,81 @@ public class HomeController : Controller {
         }
 
         return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> BookmarkPost(BookmarkPostVm bookmarkPostVm)
+    {
+        int loggedInUserId = 1;
+
+        var bookmark = await _appDbContext.Bookmarks
+            .FirstOrDefaultAsync(b => b.UserId == loggedInUserId && b.PostId == bookmarkPostVm.PostId);
+
+        if (bookmark != null){
+            _appDbContext.Bookmarks.Remove(bookmark);
+            await _appDbContext.SaveChangesAsync();
+        }
+        else{
+            Bookmark newBookmark = new Bookmark()
+            {
+                PostId = bookmarkPostVm.PostId,
+                UserId = loggedInUserId,
+                DateCreated = DateTime.UtcNow,
+            };
+
+            _appDbContext.Bookmarks.Add(newBookmark);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> PostVisibility(PostVisibilityVm postVisibilityVm)
+    {
+        int loggedInUserId = 1;
+
+        var post = await _appDbContext.Posts
+            .FirstOrDefaultAsync(p => p.UserId == loggedInUserId && p.PostId == postVisibilityVm.PostId);
+
+        if (post != null){
+            post.IsPrivate = !post.IsPrivate;
+            _appDbContext.Posts.Update(post);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ReportPost(ReportPostVm reportPostVm)
+    {
+        int loggedInUserId = 2;
+        var post = await _appDbContext.Posts.FirstOrDefaultAsync(p => p.UserId == loggedInUserId && p.PostId == reportPostVm.PostId);
+
+        if (post != null){
+            return RedirectToAction("Index");
+        }
+
+        var reported = await _appDbContext.Reports
+            .FirstOrDefaultAsync(r => r.UserId == loggedInUserId && r.PostId == reportPostVm.PostId);
+
+
+        if (reported == null){
+            Report report = new Report()
+            {
+                PostId = reportPostVm.PostId,
+                UserId = loggedInUserId,
+                DateCreated = DateTime.UtcNow,
+            };
+
+            await _appDbContext.Reports.AddAsync(report);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        return RedirectToAction("Index");
+
+        ;
     }
 
 }

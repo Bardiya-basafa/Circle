@@ -12,6 +12,8 @@ public class Post {
 
     public string? ImageUrl { get; set; }
 
+    public bool IsPrivate { get; set; } = false;
+
     public int NrOfReports { get; set; }
 
     public DateTime DateCreated { get; set; }
@@ -29,5 +31,7 @@ public class Post {
     public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
 
     public ICollection<Bookmark> Bookmarks { get; set; } = new HashSet<Bookmark>();
+
+    public ICollection<Report> Reports { get; set; } = new HashSet<Report>();
 
 }

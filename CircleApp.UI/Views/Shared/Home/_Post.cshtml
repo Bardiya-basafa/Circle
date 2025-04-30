@@ -23,10 +23,15 @@
         return displayTime;
     }
 
+    public int LoggedInUser()
+    {
+        return 2;
+    }
+
 }
 
 @* posts section *@
-<div class="md:max-w-[580px] mx-auto flex-1 xl:space-y-6 space-y-3">
+<div class="md:max-w-[580px] mx-auto flex-1 xl:space-y-6 space-y-3 mb-8">
 
     @* search in post section  *@
     <div class="bg-white rounded-xl shadow-sm md:p-4 p-2 space-y-4 text-sm font-medium border1">
@@ -59,14 +64,17 @@
             Currently, there are no posts available. Would you like to create the first one?
         </div>
     }
+
     else{
         @foreach (var post in Model){
             @* Post *@
-            <div class="bg-white rounded-xl shadow-sm text-sm font-medium border1">
+            <div class="bg-white rounded-xl shadow-xl text-sm font-medium border1">
 
 
                 @* Post heading *@
                 <div class="flex gap-3 sm:p-4 p-2.5 text-sm font-medium">
+
+                    @* About Author *@
                     <a>
                         <img src="@(post.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
                              class="w-9 h-9 rounded-full"/>
@@ -80,39 +88,46 @@
                         </a>
                     </div>
 
+                    @* Post options  *@
                     <div class="-mr-1">
                         <button type="button" class="button-icon w-8 h-8">
                             <ion-icon class="text-xl" name="ellipsis-horizontal"></ion-icon>
                         </button>
                         <div class="w-[245px]"
                              uk-dropdown="pos: bottom-right; animation: uk-animation-scale-up uk-transform-origin-top-right; animate-out: true; mode: click">
-                            <form>
-                                <input type="hidden" name="postId"/>
-                                <button type="submit" class="hover:!bg-red-50 icon-link">
-                                    <ion-icon name="lock-closed-outline"></ion-icon>
-                                    Set as private
-                                </button>
-                            </form>
+                            @if (post.UserId == LoggedInUser()){
+                                <form asp-action="PostVisibility" asp-controller="Home">
+                                    <input type="hidden" name="postId" value="@post.PostId"/>
+                                    <button type="submit" class="hover:!bg-red-50 icon-link">
+                                        <ion-icon
+                                                name="@(post.IsPrivate ? "lock-open-outline" : "lock-closed-outline")"></ion-icon>
+                                        @(post.IsPrivate ? "Set as public" : "Set as private")
+                                    </button>
+                                </form>
 
-                            <hr>
-                            <form asp-controller="Home" asp-action="Delete">
-                                <input type="hidden" name="postId"/>
-                                <button type="submit" class="text-red-400 hover:!bg-red-50 icon-link">
-                                    <ion-icon name="trash-bin-outline"></ion-icon>
-                                    Delete Post
-                                </button>
-                            </form>
-                            <form asp-controller="Home" asp-action="Report">
-                                <input type="hidden" name="postId"/>
-                                <button type="submit" class="hover:!bg-red-50 icon-link">
-                                    <ion-icon class="text-xl shrink-0" name="flag-outline"></ion-icon>
-                                    Report
-                                </button>
-                            </form>
+                                <hr>
+
+                                <form asp-controller="Home" asp-action="Delete">
+                                    <input type="hidden" name="postId"/>
+                                    <button type="submit" class="text-red-400 hover:!bg-red-50 icon-link">
+                                        <ion-icon name="trash-bin-outline"></ion-icon>
+                                        Delete Post
+                                    </button>
+                                </form>
+                            }
+                            else{
+                                <form asp-controller="Home" asp-action="ReportPost">
+                                    <input type="hidden" name="postId" value="@post.PostId"/>
+                                    <button type="submit" class="hover:!bg-red-50 icon-link">
+                                        <ion-icon class="text-xl shrink-0" name="flag-outline"></ion-icon>
+                                        Report
+                                    </button>
+                                </form>
+                            }
                         </div>
                     </div>
-                </div>
 
+                </div>
 
                 @* post text contet  *@
                 <a>
@@ -133,8 +148,11 @@
                     </a>
                 }
 
+
                 @* Icons *@
                 <div class="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-semibold">
+
+                    @* Like icon *@
                     <div class="flex items-center gap-2.5">
                         <form asp-controller="Home" asp-action="LikePost">
                             <input type="hidden" value="@post.PostId" name="PostId"/>
@@ -147,25 +165,39 @@
                         <a href="#">@post.Likes.Count</a>
                     </div>
 
+                    @* Chat icon *@
                     <div class="flex items-center gap-3">
                         <a class="button-icon">
                             <ion-icon class="text-lg" name="chatbubble-ellipses-outline"></ion-icon>
                         </a>
-                        <a href="#">5</a>
+                        <a href="#">@post.Comments.Count</a>
                     </div>
 
+                    @* Bookmark icon  *@
                     <div class="ml-auto"></div>
-
-                    <div>
+                    <div class="flex items-center gap-2.5">
                         <a class="button-icon ml-auto">
-                            <ion-icon class="text-lg" name="bookmark-outline"></ion-icon>
+                            <form asp-action="BookmarkPost" asp-controller="Home">
+                                <input name="postId" value="@post.PostId" type="hidden"/>
+                                <button type="submit"
+                                        class="button-icon ml-auto @(post.Bookmarks.Any(b => b.UserId == 1) ? "text-orange-500 bt-orange-100" : "")">
+                                    <ion-icon class="text-lg"
+                                              name="@(post.Bookmarks.Any(b => b.UserId == 1) ? "bookmark" : "bookmark-outline")">
+                                    </ion-icon>
+                                </button>
+                            </form>
+                            @if (post.Bookmarks.Count > 0){
+                                <a>@post.Bookmarks.Count</a>
+                            }
                         </a>
                     </div>
+
                 </div>
 
                 @* Add comment section *@
                 <div>
                     @foreach (var comment in post.Comments.OrderByDescending(n => n.DateCreated).Take(3)){
+                        @* Comment content *@
                         <div class="flex items-start gap-3 relative mt-8">
                             <a>
                                 <img src="@(comment.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
@@ -181,16 +213,20 @@
                                 <p class="mt-0.5">
                                     @comment.Content
                                 </p>
-                                
+
+                                @* Delete comment icon *@
                                 <form asp-action="DeleteComment" asp-controller="Home">
                                     <input type="hidden" name="commentid" value="@comment.Id"/>
-                                    <button type="submit" class="text-red-500 text-xs ml-2" title="Remove the comment">
+                                    <button type="submit" class="text-red-500 text-xs ml-2"
+                                            title="Remove the comment">
                                         <ion-icon name="trash-outline"></ion-icon>
                                     </button>
                                 </form>
                             </div>
                         </div>
                     }
+
+                    @* Show all comment section *@
                     @if (post.Comments.Count >= 3){
                         <div class="p-1.5">
                             <a>
@@ -198,6 +234,8 @@
                             </a>
                         </div>
                     }
+
+                    @* Comment input *@
                     <form asp-controller="Home" asp-action="AddComment">
 
                         <div class="sm:px-4 sm:py-3 p-2.5 border-t border-gray-100 flex items-center gap-1">
@@ -220,6 +258,7 @@
             </div>
         }
     }
-
 </div>
->
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

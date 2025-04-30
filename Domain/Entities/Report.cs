@@ -1,19 +1,20 @@
 ﻿namespace Domain.Entities;
 
-public class Bookmark {
+public class Report {
 
+    //key
     public int Id { get; set; }
 
     public DateTime DateCreated { get; set; }
 
-    // foreign key
+    // foreign keys
     public int UserId { get; set; }
 
     public int PostId { get; set; }
 
     // navigation properties
-    public Post Post { get; set; }
-
     public User User { get; set; }
+
+    public Post Post { get; set; }
 
 }
