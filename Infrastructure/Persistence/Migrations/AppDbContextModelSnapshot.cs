@@ -76,6 +76,32 @@ namespace Infrastructure.Persistence.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Hashtag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateUpdated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Hashtags");
+                });
+
             modelBuilder.Entity("Domain.Entities.Like", b =>
                 {
                     b.Property<int>("PostId")
@@ -87,7 +113,12 @@ namespace Infrastructure.Persistence.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("StoryId")
+                        .HasColumnType("int");
+
                     b.HasKey("PostId", "UserId");
+
+                    b.HasIndex("StoryId");
 
                     b.HasIndex("UserId");
 
@@ -114,6 +145,9 @@ namespace Infrastructure.Persistence.Migrations
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsPrivate")
                         .HasColumnType("bit");
@@ -152,6 +186,36 @@ namespace Infrastructure.Persistence.Migrations
                     b.ToTable("Reports");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Story", b =>
+                {
+                    b.Property<int>("StoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StoryId"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPrivate")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("StoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Stories");
+                });
+
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -164,12 +228,30 @@ namespace Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ProfilePictureUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("PostHashtags", b =>
+                {
+                    b.Property<int>("HashtagId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("HashtagId", "PostId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("PostHashtags", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Bookmark", b =>
@@ -218,6 +300,11 @@ namespace Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.Story", "Story")
+                        .WithMany("Likes")
+                        .HasForeignKey("StoryId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
                     b.HasOne("Domain.Entities.User", "User")
                         .WithMany("Likes")
                         .HasForeignKey("UserId")
@@ -225,6 +312,8 @@ namespace Infrastructure.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Post");
+
+                    b.Navigation("Story");
 
                     b.Navigation("User");
                 });
@@ -259,6 +348,32 @@ namespace Infrastructure.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Story", b =>
+                {
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("Stories")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PostHashtags", b =>
+                {
+                    b.HasOne("Domain.Entities.Hashtag", null)
+                        .WithMany()
+                        .HasForeignKey("HashtagId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Post", null)
+                        .WithMany()
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Domain.Entities.Post", b =>
                 {
                     b.Navigation("Bookmarks");
@@ -268,6 +383,11 @@ namespace Infrastructure.Persistence.Migrations
                     b.Navigation("Likes");
 
                     b.Navigation("Reports");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Story", b =>
+                {
+                    b.Navigation("Likes");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -281,6 +401,8 @@ namespace Infrastructure.Persistence.Migrations
                     b.Navigation("Posts");
 
                     b.Navigation("Reports");
+
+                    b.Navigation("Stories");
                 });
 #pragma warning restore 612, 618
         }

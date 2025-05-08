@@ -22,6 +22,10 @@ public class AppDbContext : DbContext {
 
     public DbSet<Report> Reports { get; set; }
 
+    public DbSet<Story> Stories { get; set; }
+
+    public DbSet<Hashtag> Hashtags { get; set; }
+
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Apply all configurations from assembly
@@ -31,6 +35,11 @@ public class AppDbContext : DbContext {
             .HasMany(u => u.Posts)
             .WithOne(p => p.User)
             .HasForeignKey(p => p.UserId);
+
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.Stories)
+            .WithOne(s => s.User)
+            .HasForeignKey(s => s.UserId);
 
 
         // configuration for the likes table 
@@ -49,6 +58,11 @@ public class AppDbContext : DbContext {
             .HasForeignKey(l => l.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        modelBuilder.Entity<Like>()
+            .HasOne(l => l.Story)
+            .WithMany(s => s.Likes)
+            .HasForeignKey(l => l.StoryId)
+            .OnDelete(DeleteBehavior.NoAction);
 
         // configuration for the comments table 
         modelBuilder.Entity<Comment>()
@@ -95,6 +109,21 @@ public class AppDbContext : DbContext {
             .WithMany(u => u.Reports)
             .HasForeignKey(r => r.UserId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        // hashtag relations
+        modelBuilder.Entity<Post>()
+            .HasMany(p => p.Hashtags)
+            .WithMany(h => h.Posts)
+            .UsingEntity<Dictionary<string, object>>(
+            "PostHashtags",
+            j => j.HasOne<Hashtag>().WithMany()
+                .HasForeignKey("HashtagId")
+                .OnDelete(DeleteBehavior.NoAction),// No action when Hashtag is deleted
+            j => j.HasOne<Post>().WithMany()
+                .HasForeignKey("PostId")
+                .OnDelete(DeleteBehavior.NoAction),// No action when Post is deleted
+            j => j.ToTable("PostHashtags")
+            );
 
 
         base.OnModelCreating(modelBuilder);

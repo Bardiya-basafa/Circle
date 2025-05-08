@@ -215,7 +215,6 @@ E:\Asp.net\CircleApp\CircleApp.UI\bin\Debug\net9.0\Domain.dll
 E:\Asp.net\CircleApp\CircleApp.UI\bin\Debug\net9.0\Infrastructure.dll
 E:\Asp.net\CircleApp\CircleApp.UI\bin\Debug\net9.0\Domain.pdb
 E:\Asp.net\CircleApp\CircleApp.UI\bin\Debug\net9.0\Infrastructure.pdb
-E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\fqbhmdrl5t-dx1q9gh599.gz
 E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\lkfdo18djm-tenqy816u8.gz
 E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\xm46t51ea8-o0r6zhd2ni.gz
 E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\qnjt56dg43-zpgysshrpm.gz
@@ -240,3 +239,4 @@ E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\juvl5k4a2w-q8sx76k
 E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\0ki6tk0jre-rz3q26joud.gz
 E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\aaa0661h3h-lp5scc36to.gz
 E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\1vslslgzrc-v985tidyle.gz
+E:\Asp.net\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\fqbhmdrl5t-93le04jpe3.gz

@@ -31,9 +31,11 @@
         <_ContentIncludedByDefault Remove="wwwroot\images\icons\page.png"/>
         <_ContentIncludedByDefault Remove="wwwroot\images\icons\video.png"/>
         <_ContentIncludedByDefault Remove="wwwroot\images\logo.png"/>
+        <_ContentIncludedByDefault Remove="Pages\Shared\Components\Hashtag\Default.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="Views\Stories\" />
         <Folder Include="wwwroot\postimages\"/>
     </ItemGroup>
 

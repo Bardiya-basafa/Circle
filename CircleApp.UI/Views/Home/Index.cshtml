@@ -11,7 +11,7 @@
         <div class="max-w-[680px] mx-auto">
 
             @* stories *@
-            <partial name="Home/_Story"/>
+            @await Component.InvokeAsync("Stories")
             @* posts  *@
             <partial name="Home/_Post" model="Model"/>
 
@@ -22,6 +22,9 @@
                 <div class="box p-5 px-6">
                     <partial name="Sidebar/_SuggestedFriends"></partial>
                 </div>
+                <div class="box p-5 px-6 border1">
+                    @await Component.InvokeAsync("Hashtags")
+                </div>
             </div>
         </div>
 
@@ -29,5 +32,17 @@
 
 </main>
 
-<partial name="Modals/_CreateStory"></partial>
+<partial name="Modals/_CreateStory" model="new CreateStoryVm()"></partial>
 <partial name="Modals/_CreateStatus" model="new PostVM()"></partial>
+<partial name="Home/_DeletePostConfirmation"/>
+<script>
+    function openPostDeleteConfirmation(postId) {
+        console.log("bardiiya")
+        UIkit.dropdown('.post-options-dropdown').hide();
+        console.log(postId )
+        document.getElementById('deleteConfirmationPostId').value = postId;
+        UIkit.modal('#postDeleteDialog').show();
+    }
+
+
+</script>

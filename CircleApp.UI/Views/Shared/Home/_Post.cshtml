@@ -25,7 +25,12 @@
 
     public int LoggedInUser()
     {
-        return 2;
+        return 1;
+    }
+
+    public bool IsReportedByUser(Post post)
+    {
+        return !post.Reports.Any(r => r.UserId == LoggedInUser());
     }
 
 }
@@ -93,7 +98,7 @@
                         <button type="button" class="button-icon w-8 h-8">
                             <ion-icon class="text-xl" name="ellipsis-horizontal"></ion-icon>
                         </button>
-                        <div class="w-[245px]"
+                        <div class="w-[245px] post-options-dropdown"
                              uk-dropdown="pos: bottom-right; animation: uk-animation-scale-up uk-transform-origin-top-right; animate-out: true; mode: click">
                             @if (post.UserId == LoggedInUser()){
                                 <form asp-action="PostVisibility" asp-controller="Home">
@@ -107,22 +112,23 @@
 
                                 <hr>
 
-                                <form asp-controller="Home" asp-action="Delete">
-                                    <input type="hidden" name="postId"/>
-                                    <button type="submit" class="text-red-400 hover:!bg-red-50 icon-link">
-                                        <ion-icon name="trash-bin-outline"></ion-icon>
-                                        Delete Post
-                                    </button>
-                                </form>
+                                <button type="button" onclick="openPostDeleteConfirmation('@post.PostId')" class="text-red-400 hover:!bg-red-50 post-options-dropdown">
+                                    <ion-icon name="trash-bin-outline"></ion-icon>  Delete Post
+                                </button>
                             }
                             else{
-                                <form asp-controller="Home" asp-action="ReportPost">
-                                    <input type="hidden" name="postId" value="@post.PostId"/>
-                                    <button type="submit" class="hover:!bg-red-50 icon-link">
-                                        <ion-icon class="text-xl shrink-0" name="flag-outline"></ion-icon>
-                                        Report
-                                    </button>
-                                </form>
+                                if (IsReportedByUser(post)){
+                                    <form asp-controller="Home" asp-action="ReportPost">
+                                        <input type="hidden" name="postId" value="@post.PostId"/>
+                                        <button type="submit" class="hover:!bg-red-50 icon-link">
+                                            <ion-icon class="text-xl shrink-0" name="flag-outline"></ion-icon>
+                                            Report
+                                        </button>
+                                    </form>
+                                }
+                                else{
+                                    <p>there is no action</p>
+                                }
                             }
                         </div>
                     </div>
@@ -215,13 +221,13 @@
                                 </p>
 
                                 @* Delete comment icon *@
-                                <form asp-action="DeleteComment" asp-controller="Home">
-                                    <input type="hidden" name="commentid" value="@comment.Id"/>
-                                    <button type="submit" class="text-red-500 text-xs ml-2"
-                                            title="Remove the comment">
-                                        <ion-icon name="trash-outline"></ion-icon>
-                                    </button>
-                                </form>
+
+                                <button type="submit" class="text-red-500 text-xs ml-2"
+                                        onclick="openDeleteModal(@post.PostId)"
+                                        title="Remove the comment">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </button>
+
                             </div>
                         </div>
                     }

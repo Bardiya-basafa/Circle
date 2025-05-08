@@ -3,11 +3,15 @@ namespace CircleApp.UI.Controllers;
 using Domain.Entities;
 using Domain.ViewModels.Home;
 using Infrastructure.Persistence.DbContexts;
+using Infrastructure.Persistence.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
 public class HomeController : Controller {
+
+    public int loggedInUesr = 1;
+
 
     private readonly AppDbContext _appDbContext;
 
@@ -21,16 +25,18 @@ public class HomeController : Controller {
 
     public async Task<IActionResult> Index()
     {
-        int loggedInUesr = 1;
+        IndexPageObject indexPageObject = new IndexPageObject();
 
         List<Post> allPosts = await _appDbContext.Posts
-            .Where(n => !n.IsPrivate || n.UserId == loggedInUesr)
+            .Where(n => (!n.IsPrivate || n.UserId == loggedInUesr) && n.Reports.Count < 5 && !n.IsDeleted)
             .Include(n => n.User)
             .Include(n => n.Likes)
             .Include(n => n.Bookmarks)
             .Include(n => n.Comments).ThenInclude(n => n.User)
+            .Include(n => n.Reports)
             .OrderByDescending(n => n.DateCreated)
             .ToListAsync();
+
 
         return View(allPosts);
     }
@@ -67,6 +73,38 @@ public class HomeController : Controller {
 
         await _appDbContext.Posts.AddAsync(newPost);
         await _appDbContext.SaveChangesAsync();
+
+        // find the hashtags of the post content 
+        var hashtags = HashtagHelper.ExtractHashtags(post.Content);
+
+
+        if (hashtags != new List<string>()){
+            foreach (var hashtag in hashtags){
+                var hashtagDb = await _appDbContext.Hashtags.FirstOrDefaultAsync(n => n.Name == hashtag);
+
+                if (hashtagDb != null){
+                    hashtagDb.Posts.Add(newPost);
+                    hashtagDb.Count += 1;
+                    hashtagDb.DateUpdated = DateTime.UtcNow;
+                    _appDbContext.Update(hashtagDb);
+                    await _appDbContext.SaveChangesAsync();
+                }
+                else{
+                    var newHashtag = new Hashtag
+                    {
+                        Name = hashtag,
+                        DateUpdated = DateTime.UtcNow,
+                        DateCreated = DateTime.UtcNow,
+                        Count = 1,
+                    };
+
+                    newHashtag.Posts.Add(newPost);
+                    await _appDbContext.Hashtags.AddAsync(newHashtag);
+                    await _appDbContext.SaveChangesAsync();
+                }
+            }
+        }
+
 
         return RedirectToAction("Index");
     }
@@ -204,6 +242,37 @@ public class HomeController : Controller {
         return RedirectToAction("Index");
 
         ;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DeletePost(DeletePostVm deletePostVm)
+    {
+        var post = _appDbContext.Posts.FirstOrDefault(p => p.PostId == deletePostVm.PostId && loggedInUesr == p.UserId);
+
+        if (post != null){
+            post.IsDeleted = true;
+            _appDbContext.Posts.Update(post);
+            await _appDbContext.SaveChangesAsync();
+
+            // fix the hashtag implication 
+            var hashtagsOfPost = HashtagHelper.ExtractHashtags(post.Content);
+
+            if (hashtagsOfPost != new List<string>()){
+                foreach (var hash in hashtagsOfPost){
+                    var hashtagFromDb = await _appDbContext.Hashtags.FirstOrDefaultAsync(h => h.Name == hash);
+
+                    if (hashtagFromDb != null){
+                        hashtagFromDb.Count -= 1;
+                        hashtagFromDb.Posts.Remove(post);
+                        _appDbContext.Hashtags.Update(hashtagFromDb);
+                        await _appDbContext.SaveChangesAsync();
+                    }
+                }
+            }
+        }
+
+
+        return RedirectToAction("Index");
     }
 
 }

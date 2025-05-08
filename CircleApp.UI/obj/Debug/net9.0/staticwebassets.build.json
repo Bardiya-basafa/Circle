@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cP8ZyDDlmW5PkrSL/Vx2W8mFHSJlNC/EwmByh55SWCs=",
+  "Hash": "ccZkAN1JqRDY3MtXHHuyGKiMwt82jSNOIeIFUxqW0FU=",
   "Source": "CircleApp.UI",
   "BasePath": "_content/CircleApp.UI",
   "Mode": "Default",
@@ -626,12 +626,12 @@
       "OriginalItemSpec": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-dx1q9gh599.gz",
+      "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-93le04jpe3.gz",
       "SourceId": "CircleApp.UI",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/CircleApp.UI",
-      "RelativePath": "css/site#[.{fingerprint=dx1q9gh599}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=93le04jpe3}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -640,8 +640,8 @@
       "RelatedAsset": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "8d377vn7xf",
-      "Integrity": "NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk=",
+      "Fingerprint": "dqvwc1gu2i",
+      "Integrity": "pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\css\\site.css"
@@ -1543,8 +1543,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dx1q9gh599",
-      "Integrity": "QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg=",
+      "Fingerprint": "93le04jpe3",
+      "Integrity": "u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -3545,6 +3545,27 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
+      "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\07f7b231-731d-45ea-913d-08f063cd55eb.jpg",
+      "SourceId": "CircleApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\",
+      "BasePath": "_content/CircleApp.UI",
+      "RelativePath": "postimages/07f7b231-731d-45ea-913d-08f063cd55eb#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6bbtjrvg5e",
+      "Integrity": "gg1vai2uS14XVx5WkQZWqr4JX2DIBBk/wHBrqRSS60o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\postimages\\07f7b231-731d-45ea-913d-08f063cd55eb.jpg"
+    },
+    {
       "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg",
       "SourceId": "CircleApp.UI",
       "SourceType": "Discovered",
@@ -3606,6 +3627,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\postimages\\996f068e-5ef0-422e-bbc1-42a72fc746bc.jpg"
+    },
+    {
+      "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\story-images\\0539bd3e-b62d-4e49-95f3-637d95db3556.jpg",
+      "SourceId": "CircleApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\",
+      "BasePath": "_content/CircleApp.UI",
+      "RelativePath": "story-images/0539bd3e-b62d-4e49-95f3-637d95db3556#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dtydy0pn3s",
+      "Integrity": "gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\story-images\\0539bd3e-b62d-4e49-95f3-637d95db3556.jpg"
+    },
+    {
+      "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\story-images\\1aeedd2b-0128-4da4-afa0-32192daf9b41.jpg",
+      "SourceId": "CircleApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\",
+      "BasePath": "_content/CircleApp.UI",
+      "RelativePath": "story-images/1aeedd2b-0128-4da4-afa0-32192daf9b41#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dtydy0pn3s",
+      "Integrity": "gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\story-images\\1aeedd2b-0128-4da4-afa0-32192daf9b41.jpg"
     },
     {
       "Identity": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\syntax-highlighter\\scripts\\shBrushJScript.js",
@@ -3715,13 +3778,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.css",
-      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-dx1q9gh599.gz",
+      "Route": "css/site.93le04jpe3.css",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-93le04jpe3.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002570694087"
+          "Quality": "0.001858736059"
         }
       ],
       "ResponseHeaders": [
@@ -3731,19 +3794,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "388"
+          "Value": "537"
         },
         {
           "Name": "ETag",
-          "Value": "\"NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk=\""
+          "Value": "\"pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 04:42:07 GMT"
+          "Value": "Tue, 06 May 2025 16:59:30 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -3759,18 +3822,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg=\""
+          "Value": "W/\"u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "93le04jpe3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg="
+          "Value": "sha256-u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU="
         }
       ]
     },
     {
-      "Route": "css/site.css",
+      "Route": "css/site.93le04jpe3.css",
       "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3780,7 +3851,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "731"
+          "Value": "1156"
         },
         {
           "Name": "Content-Type",
@@ -3788,121 +3859,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg=\""
+          "Value": "\"u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 04:42:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-dx1q9gh599.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "388"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 04:42:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.dx1q9gh599.css",
-      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-dx1q9gh599.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002570694087"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "388"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 04:42:07 GMT"
+          "Value": "Tue, 06 May 2025 16:59:30 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dx1q9gh599"
+          "Value": "93le04jpe3"
         },
         {
           "Name": "label",
@@ -3910,13 +3881,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg="
+          "Value": "sha256-u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU="
         }
       ]
     },
     {
-      "Route": "css/site.dx1q9gh599.css",
-      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\css\\site.css",
+      "Route": "css/site.93le04jpe3.css.gz",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-93le04jpe3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3925,7 +3896,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "731"
+          "Value": "537"
         },
         {
           "Name": "Content-Type",
@@ -3933,56 +3904,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg=\""
+          "Value": "\"pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 04:42:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dx1q9gh599"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-QcUXALRUBFI4gXQZORCdVNXRUXl+FxrFKc75QMownMg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.dx1q9gh599.css.gz",
-      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-dx1q9gh599.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "388"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 04:42:07 GMT"
+          "Value": "Tue, 06 May 2025 16:59:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4000,7 +3926,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dx1q9gh599"
+          "Value": "93le04jpe3"
         },
         {
           "Name": "label",
@@ -4008,7 +3934,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NIDCL68qCd63VDH6Tah4ZH1UAv+JWeyF0GXQx28iCqk="
+          "Value": "sha256-pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-93le04jpe3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001858736059"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "537"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:59:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1156"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:59:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u53O+hR5KeaR4G+yMZpnXfKiWdtSlbY3HADwXQo7VFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\obj\\Debug\\net9.0\\compressed\\fqbhmdrl5t-93le04jpe3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "537"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:59:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pRhstbIbznIhVNgpC1EkDPrNzMRXDcu1H1Ob1KNjotc="
         }
       ]
     },
@@ -26059,6 +26122,88 @@
       ]
     },
     {
+      "Route": "postimages/07f7b231-731d-45ea-913d-08f063cd55eb.6bbtjrvg5e.jpg",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\07f7b231-731d-45ea-913d-08f063cd55eb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "212347"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gg1vai2uS14XVx5WkQZWqr4JX2DIBBk/wHBrqRSS60o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 19:31:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6bbtjrvg5e"
+        },
+        {
+          "Name": "label",
+          "Value": "postimages/07f7b231-731d-45ea-913d-08f063cd55eb.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gg1vai2uS14XVx5WkQZWqr4JX2DIBBk/wHBrqRSS60o="
+        }
+      ]
+    },
+    {
+      "Route": "postimages/07f7b231-731d-45ea-913d-08f063cd55eb.jpg",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\07f7b231-731d-45ea-913d-08f063cd55eb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "212347"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gg1vai2uS14XVx5WkQZWqr4JX2DIBBk/wHBrqRSS60o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 19:31:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gg1vai2uS14XVx5WkQZWqr4JX2DIBBk/wHBrqRSS60o="
+        }
+      ]
+    },
+    {
       "Route": "postimages/7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg",
       "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\postimages\\7948ce5f-4d3d-4d3a-8fe8-671f830185b7.jpg",
       "Selectors": [],
@@ -26291,6 +26436,170 @@
         {
           "Name": "Last-Modified",
           "Value": "Tue, 29 Apr 2025 16:46:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs="
+        }
+      ]
+    },
+    {
+      "Route": "story-images/0539bd3e-b62d-4e49-95f3-637d95db3556.dtydy0pn3s.jpg",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\story-images\\0539bd3e-b62d-4e49-95f3-637d95db3556.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3959313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 17:56:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dtydy0pn3s"
+        },
+        {
+          "Name": "label",
+          "Value": "story-images/0539bd3e-b62d-4e49-95f3-637d95db3556.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs="
+        }
+      ]
+    },
+    {
+      "Route": "story-images/0539bd3e-b62d-4e49-95f3-637d95db3556.jpg",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\story-images\\0539bd3e-b62d-4e49-95f3-637d95db3556.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3959313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 17:56:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs="
+        }
+      ]
+    },
+    {
+      "Route": "story-images/1aeedd2b-0128-4da4-afa0-32192daf9b41.dtydy0pn3s.jpg",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\story-images\\1aeedd2b-0128-4da4-afa0-32192daf9b41.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3959313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 14:13:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dtydy0pn3s"
+        },
+        {
+          "Name": "label",
+          "Value": "story-images/1aeedd2b-0128-4da4-afa0-32192daf9b41.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs="
+        }
+      ]
+    },
+    {
+      "Route": "story-images/1aeedd2b-0128-4da4-afa0-32192daf9b41.jpg",
+      "AssetFile": "E:\\Asp.net\\CircleApp\\CircleApp.UI\\wwwroot\\story-images\\1aeedd2b-0128-4da4-afa0-32192daf9b41.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3959313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gaOUReTo9i8gRqviGqnrd/N/96Fj4HJ/3d1VmRYISPs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 14:13:10 GMT"
         },
         {
           "Name": "Cache-Control",

@@ -16911,8 +16911,8 @@
 1045578763|||2|execute|D
 1061578820|||0|execute|G
 1061578820|||2|execute|D</Grants>
-      <IntrospectionTimestamp>2025-04-30.15:28:54.850</IntrospectionTimestamp>
-      <LastIntrospectionLocalTimestamp>2025-04-30.08:28:54</LastIntrospectionLocalTimestamp>
+      <IntrospectionTimestamp>2025-05-09.02:31:41</IntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-05-08.19:31:40</LastIntrospectionLocalTimestamp>
       <ObjectId>1</ObjectId>
       <PermissionsCheckSum>13688225601</PermissionsCheckSum>
     </schema>
@@ -17016,42 +17016,63 @@ int</ExtendedProperties>
       <ObjectId>1525580473</ObjectId>
       <LobDataSpaceId>1</LobDataSpaceId>
     </table>
-    <table id="5590" parent="5577" name="Likes">
+    <table id="5590" parent="5577" name="Hashtags">
+      <CreatedTimestamp>2025-05-09.01:52:12.060</CreatedTimestamp>
+      <DataRetentionPeriod>-1</DataRetentionPeriod>
+      <ModifiedTimestamp>2025-05-09.01:52:12.070</ModifiedTimestamp>
+      <ObjectId>114099447</ObjectId>
+      <LobDataSpaceId>1</LobDataSpaceId>
+    </table>
+    <table id="5591" parent="5577" name="Likes">
       <CreatedTimestamp>2025-04-28.16:17:47.227</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
-      <ModifiedTimestamp>2025-04-29.20:56:04.383</ModifiedTimestamp>
+      <ModifiedTimestamp>2025-05-05.20:24:07.517</ModifiedTimestamp>
       <ObjectId>1205579333</ObjectId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5591" parent="5577" name="Posts">
+    <table id="5592" parent="5577" name="PostHashtags">
+      <CreatedTimestamp>2025-05-09.01:52:12.067</CreatedTimestamp>
+      <DataRetentionPeriod>-1</DataRetentionPeriod>
+      <ModifiedTimestamp>2025-05-09.01:52:12.070</ModifiedTimestamp>
+      <ObjectId>146099561</ObjectId>
+      <LobDataSpaceId>0</LobDataSpaceId>
+    </table>
+    <table id="5593" parent="5577" name="Posts">
       <CreatedTimestamp>2025-04-23.11:12:11.577</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
-      <ModifiedTimestamp>2025-04-30.15:26:59.113</ModifiedTimestamp>
+      <ModifiedTimestamp>2025-05-09.01:52:12.070</ModifiedTimestamp>
       <ObjectId>1109578991</ObjectId>
       <LobDataSpaceId>1</LobDataSpaceId>
     </table>
-    <table id="5592" parent="5577" name="Reports">
+    <table id="5594" parent="5577" name="Reports">
       <CreatedTimestamp>2025-04-30.15:26:59.110</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2025-04-30.15:26:59.117</ModifiedTimestamp>
       <ObjectId>1973582069</ObjectId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5593" parent="5577" name="Users">
+    <table id="5595" parent="5577" name="Stories">
+      <CreatedTimestamp>2025-05-05.20:24:07.490</CreatedTimestamp>
+      <DataRetentionPeriod>-1</DataRetentionPeriod>
+      <ModifiedTimestamp>2025-05-05.20:24:07.520</ModifiedTimestamp>
+      <ObjectId>50099219</ObjectId>
+      <LobDataSpaceId>1</LobDataSpaceId>
+    </table>
+    <table id="5596" parent="5577" name="Users">
       <CreatedTimestamp>2025-04-23.12:31:05.580</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
-      <ModifiedTimestamp>2025-04-30.15:26:59.113</ModifiedTimestamp>
+      <ModifiedTimestamp>2025-05-05.20:24:07.493</ModifiedTimestamp>
       <ObjectId>1141579105</ObjectId>
       <LobDataSpaceId>1</LobDataSpaceId>
     </table>
-    <table id="5594" parent="5577" name="__EFMigrationsHistory">
+    <table id="5597" parent="5577" name="__EFMigrationsHistory">
       <CreatedTimestamp>2025-04-23.11:12:11.530</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2025-04-23.11:12:11.530</ModifiedTimestamp>
       <ObjectId>1077578877</ObjectId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5595" parent="5577" name="sysdiagrams">
+    <table id="5598" parent="5577" name="sysdiagrams">
       <CreatedTimestamp>2025-04-23.00:40:44.627</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ExtendedProperties>microsoft_database_tools_support
@@ -17061,106 +17082,106 @@ int</ExtendedProperties>
       <ObjectId>917578307</ObjectId>
       <LobDataSpaceId>1</LobDataSpaceId>
     </table>
-    <argument id="5596" parent="5580">
+    <argument id="5599" parent="5580">
       <ArgumentDirection>R</ArgumentDirection>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5597" parent="5581" name="@diagramname">
+    <argument id="5600" parent="5581" name="@diagramname">
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <argument id="5598" parent="5581" name="@owner_id">
+    <argument id="5601" parent="5581" name="@owner_id">
       <DefaultExpression>null</DefaultExpression>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5599" parent="5581" name="@version">
+    <argument id="5602" parent="5581" name="@version">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5600" parent="5581" name="@definition">
+    <argument id="5603" parent="5581" name="@definition">
       <Position>4</Position>
       <StoredType>varbinary(max)|0s</StoredType>
     </argument>
-    <argument id="5601" parent="5582" name="@diagramname">
+    <argument id="5604" parent="5582" name="@diagramname">
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <argument id="5602" parent="5582" name="@owner_id">
+    <argument id="5605" parent="5582" name="@owner_id">
       <DefaultExpression>null</DefaultExpression>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5603" parent="5582" name="@version">
+    <argument id="5606" parent="5582" name="@version">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5604" parent="5582" name="@definition">
+    <argument id="5607" parent="5582" name="@definition">
       <Position>4</Position>
       <StoredType>varbinary(max)|0s</StoredType>
     </argument>
-    <argument id="5605" parent="5583" name="@diagramname">
+    <argument id="5608" parent="5583" name="@diagramname">
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <argument id="5606" parent="5583" name="@owner_id">
+    <argument id="5609" parent="5583" name="@owner_id">
       <DefaultExpression>null</DefaultExpression>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5607" parent="5584" name="@diagramname">
+    <argument id="5610" parent="5584" name="@diagramname">
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <argument id="5608" parent="5584" name="@owner_id">
+    <argument id="5611" parent="5584" name="@owner_id">
       <DefaultExpression>null</DefaultExpression>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5609" parent="5585" name="@diagramname">
+    <argument id="5612" parent="5585" name="@diagramname">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <argument id="5610" parent="5585" name="@owner_id">
+    <argument id="5613" parent="5585" name="@owner_id">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5611" parent="5586" name="@diagramname">
+    <argument id="5614" parent="5586" name="@diagramname">
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <argument id="5612" parent="5586" name="@owner_id">
+    <argument id="5615" parent="5586" name="@owner_id">
       <DefaultExpression>null</DefaultExpression>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5613" parent="5586" name="@new_diagramname">
+    <argument id="5616" parent="5586" name="@new_diagramname">
       <Position>3</Position>
       <StoredType>sysname|0s</StoredType>
     </argument>
-    <column id="5614" parent="5588" name="UserId">
+    <column id="5617" parent="5588" name="UserId">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5615" parent="5588" name="PostId">
+    <column id="5618" parent="5588" name="PostId">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5616" parent="5588" name="Id">
+    <column id="5619" parent="5588" name="Id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5617" parent="5588" name="DateCreated">
+    <column id="5620" parent="5588" name="DateCreated">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <foreign-key id="5618" parent="5588" name="FK_Bookmarks_Users_UserId">
+    <foreign-key id="5621" parent="5588" name="FK_Bookmarks_Users_UserId">
       <ColNames>UserId</ColNames>
       <CreatedTimestamp>2025-04-30.10:14:59.910</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-30.10:14:59.910</ModifiedTimestamp>
@@ -17169,7 +17190,7 @@ int</ExtendedProperties>
       <RefTableId>1141579105</RefTableId>
       <RefTableName>Users</RefTableName>
     </foreign-key>
-    <foreign-key id="5619" parent="5588" name="FK_Bookmarks_Posts_PostId">
+    <foreign-key id="5622" parent="5588" name="FK_Bookmarks_Posts_PostId">
       <ColNames>PostId</ColNames>
       <CreatedTimestamp>2025-04-30.10:14:59.910</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-30.10:14:59.910</ModifiedTimestamp>
@@ -17178,7 +17199,7 @@ int</ExtendedProperties>
       <RefTableId>1109578991</RefTableId>
       <RefTableName>Posts</RefTableName>
     </foreign-key>
-    <index id="5620" parent="5588" name="PK_Bookmarks">
+    <index id="5623" parent="5588" name="PK_Bookmarks">
       <Clustering>1</Clustering>
       <ColNames>PostId
 UserId</ColNames>
@@ -17186,50 +17207,50 @@ UserId</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5621" parent="5588" name="IX_Bookmarks_UserId">
+    <index id="5624" parent="5588" name="IX_Bookmarks_UserId">
       <ColNames>UserId</ColNames>
       <Position>2</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5622" parent="5588" name="PK_Bookmarks">
+    <key id="5625" parent="5588" name="PK_Bookmarks">
       <CreatedTimestamp>2025-04-30.10:14:59.910</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-30.10:14:59.910</ModifiedTimestamp>
       <ObjectId>1909581841</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_Bookmarks</UnderlyingIndexName>
     </key>
-    <column id="5623" parent="5589" name="Id">
+    <column id="5626" parent="5589" name="Id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(8)</SequenceIdentity>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5624" parent="5589" name="Content">
+    <column id="5627" parent="5589" name="Content">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>nvarchar(max)|0s</StoredType>
     </column>
-    <column id="5625" parent="5589" name="DateCreated">
+    <column id="5628" parent="5589" name="DateCreated">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5626" parent="5589" name="DateUpdated">
+    <column id="5629" parent="5589" name="DateUpdated">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5627" parent="5589" name="UserId">
+    <column id="5630" parent="5589" name="UserId">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5628" parent="5589" name="PostId">
+    <column id="5631" parent="5589" name="PostId">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="5629" parent="5589" name="FK_Comments_Users_UserId">
+    <foreign-key id="5632" parent="5589" name="FK_Comments_Users_UserId">
       <ColNames>UserId</ColNames>
       <CreatedTimestamp>2025-04-29.20:56:04.377</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-29.20:56:04.377</ModifiedTimestamp>
@@ -17238,7 +17259,7 @@ UserId</ColNames>
       <RefTableId>1141579105</RefTableId>
       <RefTableName>Users</RefTableName>
     </foreign-key>
-    <foreign-key id="5630" parent="5589" name="FK_Comments_Posts_PostId">
+    <foreign-key id="5633" parent="5589" name="FK_Comments_Posts_PostId">
       <ColNames>PostId</ColNames>
       <CreatedTimestamp>2025-04-29.20:56:04.377</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-29.20:56:04.377</ModifiedTimestamp>
@@ -17247,46 +17268,85 @@ UserId</ColNames>
       <RefTableId>1109578991</RefTableId>
       <RefTableName>Posts</RefTableName>
     </foreign-key>
-    <index id="5631" parent="5589" name="PK_Comments">
+    <index id="5634" parent="5589" name="PK_Comments">
       <Clustering>1</Clustering>
       <ColNames>Id</ColNames>
       <Position>1</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5632" parent="5589" name="IX_Comments_PostId">
+    <index id="5635" parent="5589" name="IX_Comments_PostId">
       <ColNames>PostId</ColNames>
       <Position>2</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5633" parent="5589" name="IX_Comments_UserId">
+    <index id="5636" parent="5589" name="IX_Comments_UserId">
       <ColNames>UserId</ColNames>
       <Position>3</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5634" parent="5589" name="PK_Comments">
+    <key id="5637" parent="5589" name="PK_Comments">
       <CreatedTimestamp>2025-04-29.20:56:04.377</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-29.20:56:04.377</ModifiedTimestamp>
       <ObjectId>1541580530</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_Comments</UnderlyingIndexName>
     </key>
-    <column id="5635" parent="5590" name="UserId">
+    <column id="5638" parent="5590" name="Id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(2)</SequenceIdentity>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="5639" parent="5590" name="Name">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>nvarchar(max)|0s</StoredType>
+    </column>
+    <column id="5640" parent="5590" name="DateCreated">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>datetime2|0s</StoredType>
+    </column>
+    <column id="5641" parent="5590" name="DateUpdated">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>datetime2|0s</StoredType>
+    </column>
+    <index id="5642" parent="5590" name="PK_Hashtags">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+      <PartitionDataSpaceId>1</PartitionDataSpaceId>
+    </index>
+    <key id="5643" parent="5590" name="PK_Hashtags">
+      <CreatedTimestamp>2025-05-09.01:52:12.067</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-09.01:52:12.067</ModifiedTimestamp>
+      <ObjectId>130099504</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_Hashtags</UnderlyingIndexName>
+    </key>
+    <column id="5644" parent="5591" name="UserId">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5636" parent="5590" name="PostId">
+    <column id="5645" parent="5591" name="PostId">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5637" parent="5590" name="Id">
+    <column id="5646" parent="5591" name="Id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="5638" parent="5590" name="FK_Likes_Users_UserId">
+    <column id="5647" parent="5591" name="StoryId">
+      <Position>4</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <foreign-key id="5648" parent="5591" name="FK_Likes_Users_UserId">
       <ColNames>UserId</ColNames>
       <CreatedTimestamp>2025-04-28.16:17:47.233</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-28.16:17:47.233</ModifiedTimestamp>
@@ -17295,7 +17355,7 @@ UserId</ColNames>
       <RefTableId>1141579105</RefTableId>
       <RefTableName>Users</RefTableName>
     </foreign-key>
-    <foreign-key id="5639" parent="5590" name="FK_Likes_Posts_PostId">
+    <foreign-key id="5649" parent="5591" name="FK_Likes_Posts_PostId">
       <ColNames>PostId</ColNames>
       <CreatedTimestamp>2025-04-29.20:56:04.383</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-29.20:56:04.383</ModifiedTimestamp>
@@ -17304,7 +17364,16 @@ UserId</ColNames>
       <RefTableId>1109578991</RefTableId>
       <RefTableName>Posts</RefTableName>
     </foreign-key>
-    <index id="5640" parent="5590" name="PK_Likes">
+    <foreign-key id="5650" parent="5591" name="FK_Likes_Stories_StoryId">
+      <ColNames>StoryId</ColNames>
+      <CreatedTimestamp>2025-05-05.20:24:07.517</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-05.20:24:07.517</ModifiedTimestamp>
+      <ObjectId>98099390</ObjectId>
+      <RefColNames>StoryId</RefColNames>
+      <RefTableId>50099219</RefTableId>
+      <RefTableName>Stories</RefTableName>
+    </foreign-key>
+    <index id="5651" parent="5591" name="PK_Likes">
       <Clustering>1</Clustering>
       <ColNames>PostId
 UserId</ColNames>
@@ -17312,77 +17381,144 @@ UserId</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5641" parent="5590" name="IX_Likes_UserId">
+    <index id="5652" parent="5591" name="IX_Likes_UserId">
       <ColNames>UserId</ColNames>
       <Position>2</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5642" parent="5590" name="PK_Likes">
+    <index id="5653" parent="5591" name="IX_Likes_StoryId">
+      <ColNames>StoryId</ColNames>
+      <Position>3</Position>
+      <PartitionDataSpaceId>1</PartitionDataSpaceId>
+    </index>
+    <key id="5654" parent="5591" name="PK_Likes">
       <CreatedTimestamp>2025-04-28.16:17:47.230</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-28.16:17:47.230</ModifiedTimestamp>
       <ObjectId>1221579390</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_Likes</UnderlyingIndexName>
     </key>
-    <column id="5643" parent="5591" name="PostId">
+    <column id="5655" parent="5592" name="HashtagId">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>1(9)</SequenceIdentity>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5644" parent="5591" name="Content">
+    <column id="5656" parent="5592" name="PostId">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <foreign-key id="5657" parent="5592" name="FK_PostHashtags_Hashtags_HashtagId">
+      <ColNames>HashtagId</ColNames>
+      <CreatedTimestamp>2025-05-09.01:52:12.070</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-09.01:52:12.070</ModifiedTimestamp>
+      <ObjectId>178099675</ObjectId>
+      <RefColNames>Id</RefColNames>
+      <RefTableId>114099447</RefTableId>
+      <RefTableName>Hashtags</RefTableName>
+    </foreign-key>
+    <foreign-key id="5658" parent="5592" name="FK_PostHashtags_Posts_PostId">
+      <ColNames>PostId</ColNames>
+      <CreatedTimestamp>2025-05-09.01:52:12.070</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-09.01:52:12.070</ModifiedTimestamp>
+      <ObjectId>194099732</ObjectId>
+      <RefColNames>PostId</RefColNames>
+      <RefTableId>1109578991</RefTableId>
+      <RefTableName>Posts</RefTableName>
+    </foreign-key>
+    <index id="5659" parent="5592" name="PK_PostHashtags">
+      <Clustering>1</Clustering>
+      <ColNames>HashtagId
+PostId</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+      <PartitionDataSpaceId>1</PartitionDataSpaceId>
+    </index>
+    <index id="5660" parent="5592" name="IX_PostHashtags_PostId">
+      <ColNames>PostId</ColNames>
+      <Position>2</Position>
+      <PartitionDataSpaceId>1</PartitionDataSpaceId>
+    </index>
+    <key id="5661" parent="5592" name="PK_PostHashtags">
+      <CreatedTimestamp>2025-05-09.01:52:12.067</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-09.01:52:12.067</ModifiedTimestamp>
+      <ObjectId>162099618</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_PostHashtags</UnderlyingIndexName>
+    </key>
+    <column id="5662" parent="5593" name="PostId">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(10)</SequenceIdentity>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="5663" parent="5593" name="Content">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>nvarchar(max)|0s</StoredType>
     </column>
-    <column id="5645" parent="5591" name="ImageUrl">
+    <column id="5664" parent="5593" name="ImageUrl">
       <Position>3</Position>
       <StoredType>nvarchar(max)|0s</StoredType>
     </column>
-    <column id="5646" parent="5591" name="NrOfReports">
+    <column id="5665" parent="5593" name="NrOfReports">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5647" parent="5591" name="DateCreated">
+    <column id="5666" parent="5593" name="DateCreated">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5648" parent="5591" name="DateUpdated">
+    <column id="5667" parent="5593" name="DateUpdated">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5649" parent="5591" name="UserId">
+    <column id="5668" parent="5593" name="UserId">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>int|0s</StoredType>
       <DefaultConstraintId>1173579219</DefaultConstraintId>
       <DefaultConstraintName>DF__Posts__UserId__45F365D3</DefaultConstraintName>
     </column>
-    <column id="5650" parent="5591" name="IsPrivate">
+    <column id="5669" parent="5593" name="IsPrivate">
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StoredType>bit|0s</StoredType>
       <DefaultConstraintId>1957582012</DefaultConstraintId>
       <DefaultConstraintName>DF__Posts__IsPrivate__74AE54BC</DefaultConstraintName>
     </column>
-    <default id="5651" parent="5591" name="DF__Posts__UserId__45F365D3">
+    <column id="5670" parent="5593" name="IsDeleted">
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+      <StoredType>bit|0s</StoredType>
+      <DefaultConstraintId>34099162</DefaultConstraintId>
+      <DefaultConstraintName>DF__Posts__IsDeleted__02084FDA</DefaultConstraintName>
+    </column>
+    <default id="5671" parent="5593" name="DF__Posts__UserId__45F365D3">
       <ColNames>UserId</ColNames>
       <DefaultExpression>0</DefaultExpression>
       <ModifiedTimestamp>2025-04-23.12:48:11.213</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>1173579219</ObjectId>
     </default>
-    <default id="5652" parent="5591" name="DF__Posts__IsPrivate__74AE54BC">
+    <default id="5672" parent="5593" name="DF__Posts__IsPrivate__74AE54BC">
       <ColNames>IsPrivate</ColNames>
       <DefaultExpression>CONVERT([bit],0)</DefaultExpression>
       <ModifiedTimestamp>2025-04-30.11:03:15.793</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>1957582012</ObjectId>
     </default>
-    <foreign-key id="5653" parent="5591" name="FK_Posts_Users_UserId">
+    <default id="5673" parent="5593" name="DF__Posts__IsDeleted__02084FDA">
+      <ColNames>IsDeleted</ColNames>
+      <DefaultExpression>CONVERT([bit],0)</DefaultExpression>
+      <ModifiedTimestamp>2025-05-05.20:06:53.663</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>34099162</ObjectId>
+    </default>
+    <foreign-key id="5674" parent="5593" name="FK_Posts_Users_UserId">
       <ColNames>UserId</ColNames>
       <CreatedTimestamp>2025-04-23.12:48:11.220</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-23.12:48:11.220</ModifiedTimestamp>
@@ -17392,46 +17528,46 @@ UserId</ColNames>
       <RefTableId>1141579105</RefTableId>
       <RefTableName>Users</RefTableName>
     </foreign-key>
-    <index id="5654" parent="5591" name="PK_Posts">
+    <index id="5675" parent="5593" name="PK_Posts">
       <Clustering>1</Clustering>
       <ColNames>PostId</ColNames>
       <Position>1</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5655" parent="5591" name="IX_Posts_UserId">
+    <index id="5676" parent="5593" name="IX_Posts_UserId">
       <ColNames>UserId</ColNames>
       <Position>2</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5656" parent="5591" name="PK_Posts">
+    <key id="5677" parent="5593" name="PK_Posts">
       <CreatedTimestamp>2025-04-23.11:12:11.577</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-23.11:12:11.577</ModifiedTimestamp>
       <ObjectId>1125579048</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_Posts</UnderlyingIndexName>
     </key>
-    <column id="5657" parent="5592" name="UserId">
+    <column id="5678" parent="5594" name="UserId">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5658" parent="5592" name="PostId">
+    <column id="5679" parent="5594" name="PostId">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5659" parent="5592" name="Id">
+    <column id="5680" parent="5594" name="Id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5660" parent="5592" name="DateCreated">
+    <column id="5681" parent="5594" name="DateCreated">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <foreign-key id="5661" parent="5592" name="FK_Reports_Users_UserId">
+    <foreign-key id="5682" parent="5594" name="FK_Reports_Users_UserId">
       <ColNames>UserId</ColNames>
       <CreatedTimestamp>2025-04-30.15:26:59.113</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-30.15:26:59.113</ModifiedTimestamp>
@@ -17440,7 +17576,7 @@ UserId</ColNames>
       <RefTableId>1141579105</RefTableId>
       <RefTableName>Users</RefTableName>
     </foreign-key>
-    <foreign-key id="5662" parent="5592" name="FK_Reports_Posts_PostId">
+    <foreign-key id="5683" parent="5594" name="FK_Reports_Posts_PostId">
       <ColNames>PostId</ColNames>
       <CreatedTimestamp>2025-04-30.15:26:59.113</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-30.15:26:59.113</ModifiedTimestamp>
@@ -17449,7 +17585,7 @@ UserId</ColNames>
       <RefTableId>1109578991</RefTableId>
       <RefTableName>Posts</RefTableName>
     </foreign-key>
-    <index id="5663" parent="5592" name="PK_Reports">
+    <index id="5684" parent="5594" name="PK_Reports">
       <Clustering>1</Clustering>
       <ColNames>PostId
 UserId</ColNames>
@@ -17457,96 +17593,169 @@ UserId</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5664" parent="5592" name="IX_Reports_UserId">
+    <index id="5685" parent="5594" name="IX_Reports_UserId">
       <ColNames>UserId</ColNames>
       <Position>2</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5665" parent="5592" name="PK_Reports">
+    <key id="5686" parent="5594" name="PK_Reports">
       <CreatedTimestamp>2025-04-30.15:26:59.113</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-30.15:26:59.113</ModifiedTimestamp>
       <ObjectId>1989582126</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_Reports</UnderlyingIndexName>
     </key>
-    <column id="5666" parent="5593" name="UserId">
+    <column id="5687" parent="5595" name="StoryId">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>1(2)</SequenceIdentity>
+      <SequenceIdentity>1(3)</SequenceIdentity>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5667" parent="5593" name="FullName">
+    <column id="5688" parent="5595" name="ImageUrl">
+      <Position>2</Position>
+      <StoredType>nvarchar(max)|0s</StoredType>
+    </column>
+    <column id="5689" parent="5595" name="IsPrivate">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>bit|0s</StoredType>
+    </column>
+    <column id="5690" parent="5595" name="DateCreated">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>datetime2|0s</StoredType>
+    </column>
+    <column id="5691" parent="5595" name="IsDeleted">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>bit|0s</StoredType>
+    </column>
+    <column id="5692" parent="5595" name="UserId">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <foreign-key id="5693" parent="5595" name="FK_Stories_Users_UserId">
+      <ColNames>UserId</ColNames>
+      <CreatedTimestamp>2025-05-05.20:24:07.493</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-05.20:24:07.493</ModifiedTimestamp>
+      <ObjectId>82099333</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>UserId</RefColNames>
+      <RefTableId>1141579105</RefTableId>
+      <RefTableName>Users</RefTableName>
+    </foreign-key>
+    <index id="5694" parent="5595" name="PK_Stories">
+      <Clustering>1</Clustering>
+      <ColNames>StoryId</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+      <PartitionDataSpaceId>1</PartitionDataSpaceId>
+    </index>
+    <index id="5695" parent="5595" name="IX_Stories_UserId">
+      <ColNames>UserId</ColNames>
+      <Position>2</Position>
+      <PartitionDataSpaceId>1</PartitionDataSpaceId>
+    </index>
+    <key id="5696" parent="5595" name="PK_Stories">
+      <CreatedTimestamp>2025-05-05.20:24:07.490</CreatedTimestamp>
+      <ModifiedTimestamp>2025-05-05.20:24:07.490</ModifiedTimestamp>
+      <ObjectId>66099276</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_Stories</UnderlyingIndexName>
+    </key>
+    <column id="5697" parent="5596" name="UserId">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(3)</SequenceIdentity>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="5698" parent="5596" name="FullName">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>nvarchar(max)|0s</StoredType>
     </column>
-    <column id="5668" parent="5593" name="ProfilePictureUrl">
+    <column id="5699" parent="5596" name="ProfilePictureUrl">
       <Position>3</Position>
       <StoredType>nvarchar(max)|0s</StoredType>
     </column>
-    <index id="5669" parent="5593" name="PK_Users">
+    <column id="5700" parent="5596" name="IsDeleted">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>bit|0s</StoredType>
+      <DefaultConstraintId>18099105</DefaultConstraintId>
+      <DefaultConstraintName>DF__Users__IsDeleted__01142BA1</DefaultConstraintName>
+    </column>
+    <default id="5701" parent="5596" name="DF__Users__IsDeleted__01142BA1">
+      <ColNames>IsDeleted</ColNames>
+      <DefaultExpression>CONVERT([bit],0)</DefaultExpression>
+      <ModifiedTimestamp>2025-05-05.20:06:53.650</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>18099105</ObjectId>
+    </default>
+    <index id="5702" parent="5596" name="PK_Users">
       <Clustering>1</Clustering>
       <ColNames>UserId</ColNames>
       <Position>1</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5670" parent="5593" name="PK_Users">
+    <key id="5703" parent="5596" name="PK_Users">
       <CreatedTimestamp>2025-04-23.12:31:05.580</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-23.12:31:05.580</ModifiedTimestamp>
       <ObjectId>1157579162</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_Users</UnderlyingIndexName>
     </key>
-    <column id="5671" parent="5594" name="MigrationId">
+    <column id="5704" parent="5597" name="MigrationId">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>nvarchar(150 char)|0s</StoredType>
     </column>
-    <column id="5672" parent="5594" name="ProductVersion">
+    <column id="5705" parent="5597" name="ProductVersion">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>nvarchar(32 char)|0s</StoredType>
     </column>
-    <index id="5673" parent="5594" name="PK___EFMigrationsHistory">
+    <index id="5706" parent="5597" name="PK___EFMigrationsHistory">
       <Clustering>1</Clustering>
       <ColNames>MigrationId</ColNames>
       <Position>1</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5674" parent="5594" name="PK___EFMigrationsHistory">
+    <key id="5707" parent="5597" name="PK___EFMigrationsHistory">
       <CreatedTimestamp>2025-04-23.11:12:11.530</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-23.11:12:11.530</ModifiedTimestamp>
       <ObjectId>1093578934</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK___EFMigrationsHistory</UnderlyingIndexName>
     </key>
-    <column id="5675" parent="5595" name="name">
+    <column id="5708" parent="5598" name="name">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>sysname|0s</StoredType>
     </column>
-    <column id="5676" parent="5595" name="principal_id">
+    <column id="5709" parent="5598" name="principal_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5677" parent="5595" name="diagram_id">
+    <column id="5710" parent="5598" name="diagram_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5678" parent="5595" name="version">
+    <column id="5711" parent="5598" name="version">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5679" parent="5595" name="definition">
+    <column id="5712" parent="5598" name="definition">
       <Position>5</Position>
       <StoredType>varbinary(max)|0s</StoredType>
     </column>
-    <index id="5680" parent="5595" name="PK__sysdiagr__C2B05B61CC2C5C84">
+    <index id="5713" parent="5598" name="PK__sysdiagr__C2B05B61CC2C5C84">
       <Clustering>1</Clustering>
       <ColNames>diagram_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17554,14 +17763,14 @@ UserId</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5681" parent="5595" name="UK_principal_name">
+    <index id="5714" parent="5598" name="UK_principal_name">
       <ColNames>principal_id
 name</ColNames>
       <Position>2</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5682" parent="5595" name="PK__sysdiagr__C2B05B61CC2C5C84">
+    <key id="5715" parent="5598" name="PK__sysdiagr__C2B05B61CC2C5C84">
       <CreatedTimestamp>2025-04-23.00:40:44.627</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-23.00:40:44.627</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17569,7 +17778,7 @@ name</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__sysdiagr__C2B05B61CC2C5C84</UnderlyingIndexName>
     </key>
-    <key id="5683" parent="5595" name="UK_principal_name">
+    <key id="5716" parent="5598" name="UK_principal_name">
       <CreatedTimestamp>2025-04-23.00:40:44.630</CreatedTimestamp>
       <ModifiedTimestamp>2025-04-23.00:40:44.630</ModifiedTimestamp>
       <ObjectId>949578421</ObjectId>

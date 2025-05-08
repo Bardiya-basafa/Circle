@@ -20,6 +20,8 @@ public class Post {
 
     public DateTime DateUpdated { get; set; }
 
+    public bool IsDeleted { get; set; } = false;
+
     // Foregin Key 
     public int UserId { get; set; }
 
@@ -33,5 +35,7 @@ public class Post {
     public ICollection<Bookmark> Bookmarks { get; set; } = new HashSet<Bookmark>();
 
     public ICollection<Report> Reports { get; set; } = new HashSet<Report>();
+
+    public ICollection<Hashtag> Hashtags { get; set; } = new HashSet<Hashtag>();
 
 }

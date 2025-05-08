@@ -12,8 +12,12 @@ public class User {
 
     public string? ProfilePictureUrl { get; set; }
 
+    public bool IsDeleted { get; set; } = false;
+
     // navigation properties 
     public ICollection<Post> Posts { get; set; } = new HashSet<Post>();
+
+    public ICollection<Story> Stories { get; set; } = new HashSet<Story>();
 
     public ICollection<Like> Likes { get; set; } = new HashSet<Like>();
 

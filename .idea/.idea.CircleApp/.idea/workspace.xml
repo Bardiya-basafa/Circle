@@ -9,31 +9,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa31f59f-f87a-438d-80ed-006b142d1930" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Report.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/BookmarkPostVM.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/PostVisibiltyVM.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/ReportPostVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/StoriesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/ViewComponents/HashtagsViewComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/ViewComponents/StoriesViewComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Components/Hashtags/Default.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Components/Stories/Default.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_DeletePostConfirmation.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Hashtag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/IndexPageObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Story.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Home/DeletePostVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Stroy/CreateStoryVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Helpers/HashtagHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Story.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Modals/_CreateStory.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/fqbhmdrl5t-dx1q9gh599.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Bookmark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Bookmark.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Like.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Like.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Post.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" afterDir="false" />
@@ -86,7 +114,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a0d026c476084c11a41424c4513349b545918/4d/791fa07b/PartialTagHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/24/6de3512d/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/4d/54a7c9b1/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/9c/958383fa/AsyncTaskMethodBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d83f823935e343bfaf4ef4c6263b8a12291438/63/03cf72a8/InternalDbSet`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dffdaf205cf54e098aa7d66ba76b38621de920/19/e6aa02ee/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -167,7 +199,11 @@
       <workItem from="1745829228104" duration="5580000" />
       <workItem from="1745934383754" duration="4547000" />
       <workItem from="1745944870262" duration="1345000" />
-      <workItem from="1745982263768" duration="8043000" />
+      <workItem from="1745982263768" duration="8356000" />
+      <workItem from="1746444530168" duration="7520000" />
+      <workItem from="1746517250661" duration="2564000" />
+      <workItem from="1746540506065" duration="10526000" />
+      <workItem from="1746725979519" duration="6886000" />
     </task>
     <task id="LOCAL-00001" summary="initial database setups">
       <option name="closed" value="true" />
@@ -225,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745946162621</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="until fixing reports">
+      <option name="closed" value="true" />
+      <created>1746003179838</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746003179838</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,36 +297,24 @@
     <MESSAGE value="image uploader" />
     <MESSAGE value="like section and adding post section" />
     <MESSAGE value="preceding to the bookmark section" />
-    <option name="LAST_COMMIT_MESSAGE" value="preceding to the bookmark section" />
+    <MESSAGE value="until fixing reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="until fixing reports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs</url>
-          <line>183</line>
-          <properties documentPath="E:\Asp.net\CircleApp\CircleApp.UI\Controllers\HomeController.cs" containingFunctionPresentation="Method 'ReportPost'">
+          <line>251</line>
+          <properties documentPath="E:\Asp.net\CircleApp\CircleApp.UI\Controllers\HomeController.cs" containingFunctionPresentation="Method 'DeletePost'">
             <startOffsets>
-              <option value="5523" />
+              <option value="7794" />
             </startOffsets>
             <endOffsets>
-              <option value="5540" />
+              <option value="7811" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CircleApp.UI/Controllers/HomeController.cs</url>
-          <line>185</line>
-          <properties documentPath="E:\Asp.net\CircleApp\CircleApp.UI\Controllers\HomeController.cs" containingFunctionPresentation="Method 'ReportPost'">
-            <startOffsets>
-              <option value="5596" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5597" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
