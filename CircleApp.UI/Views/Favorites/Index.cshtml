@@ -1,0 +1,27 @@
+﻿@model List<Post>
+@{
+        ViewBag.Posts = Model;
+}
+<main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
+
+        <div class="lg:flex 2xl:gap-16 gap-12 max-w-[1065px] mx-auto" id="js-oversized">
+
+                @* post and stories  *@
+                <div class="max-w-[680px] mx-auto">
+
+                        @* stories *@
+                        @await Component.InvokeAsync("Stories")
+                        @* posts  *@
+                        <partial name="Favorites/_Post" model="Model"/>
+                </div>
+                @* sidebar suggested friends  *@
+                <div class="flex-1">
+                        <div class="lg:space-y-4 lg:pb-8 max-lg:grid sm:grid-cols-2 max-lg:gap-6">
+
+                                <div class="box p-5 px-6 border1">
+                                        @await Component.InvokeAsync("Hashtags")
+                                </div>
+                        </div>
+                </div>
+        </div>
+</main>

@@ -1,0 +1,50 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+form > button.icon-link, button.delete-btn {
+    padding: 8px 10px;
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the content */
+    text-decoration: none; /* Removes underline from the link */
+    cursor: pointer;
+    border: none; /* Removes default button border */
+    background: none; /* Removes default button background */
+    width: 100%; /* Makes sure the button takes up the full width of the parent */
+    /* Add any additional button styling here */
+}
+
+form > button.icon-link > ion-icon {
+    margin-right: 8px; /* Adds space between the icon and text */
+}
+
+.story-card {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.story-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.view-story-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.story-card:hover .view-story-btn {
+    opacity: 1;
+}

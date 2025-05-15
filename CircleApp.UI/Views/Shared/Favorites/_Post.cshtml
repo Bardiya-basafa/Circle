@@ -1,0 +1,269 @@
+﻿@model List<Post>
+
+@functions{
+
+    public string DisplayTime(DateTime dateTime)
+    {
+        var timeSincePostCreated = DateTime.UtcNow.Subtract(dateTime);
+        var displayTime = "";
+
+        if (timeSincePostCreated.TotalDays >= 1){
+            displayTime = $"{timeSincePostCreated.Days} days ago";
+        }
+        else if (timeSincePostCreated.Hours >= 1){
+            displayTime = $"{timeSincePostCreated.Hours} hours ago";
+        }
+        else if (timeSincePostCreated.Minutes >= 1){
+            displayTime = $"{timeSincePostCreated.Minutes} minutes ago";
+        }
+        else if (timeSincePostCreated.Seconds >= 1){
+            displayTime = "just now";
+        }
+
+        return displayTime;
+    }
+
+    public int LoggedInUser() => 1;
+
+    public bool IsReportedByUser(Post post)
+    {
+        return !post.Reports.Any(r => r.UserId == LoggedInUser());
+    }
+
+}
+
+@* posts section *@
+<div class="md:max-w-[580px] mx-auto flex-1 xl:space-y-6 space-y-3 mb-8">
+
+    @* search in post section  *@
+    <div class="bg-white rounded-xl shadow-sm md:p-4 p-2 space-y-4 text-sm font-medium border1">
+        <div class="flex items-center md:gap-3 gap-1">
+            <div class="flex-1 bg-slate-100 hover:bg-opacity-80 transition-all rounded-lg cursor-pointer"
+                 uk-toggle="target: #create-status">
+                <div class="py-2.5 text-center">What do you have in mind?</div>
+            </div>
+            <div
+                    class="cursor-pointer hover:bg-opacity-80 p-1 px-1.5 rounded-xl transition-all bg-pink-100/60 hover:bg-pink-100"
+                    uk-toggle="target: #create-status">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-pink-600 fill-pink-200/70"
+                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M15 8h.01"/>
+                    <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"/>
+                    <path d="M3.5 15.5l4.5 -4.5c.928 -.893 2.072 -.893 3 0l5 5"/>
+                    <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l2.5 2.5"/>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+
+    @* loading the post of users *@
+    @if (Model.Count == 0){
+        <div class="bg-white rounded-xl shadow-sm md:p-4 p-2 space-y-4 text-sm font-medium border1"
+             style="width: 580px;">
+            Currently, there are no posts available. Would you like to create the first one?
+        </div>
+    }
+
+    else{
+        @foreach (var post in Model){
+            @* Post *@
+            <div class="bg-white rounded-xl shadow-xl text-sm font-medium border1">
+
+
+                @* Post heading *@
+                <div class="flex gap-3 sm:p-4 p-2.5 text-sm font-medium">
+
+                    @* About Author *@
+                    <a>
+                        <img src="@(post.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
+                             class="w-9 h-9 rounded-full"/>
+                    </a>
+                    <div class="flex-1">
+                        <a>
+                            <h4 class="text-black">@post.User.FullName</h4>
+                            <div
+                                    class="text-xs text-gray-500/80"
+                                    title="@post.DateCreated.ToString("yyyy-M-d dddd HH:mm")">@DisplayTime(post.DateCreated)</div>
+                        </a>
+                    </div>
+
+                    @* Post options  *@
+                    <div class="-mr-1">
+                        <button type="button" class="button-icon w-8 h-8">
+                            <ion-icon class="text-xl" name="ellipsis-horizontal"></ion-icon>
+                        </button>
+                        <div class="w-[245px] post-options-dropdown"
+                             uk-dropdown="pos: bottom-right; animation: uk-animation-scale-up uk-transform-origin-top-right; animate-out: true; mode: click">
+                            @if (post.UserId == LoggedInUser()){
+                                <form asp-action="PostVisibility" asp-controller="Favorites">
+                                    <input type="hidden" name="postId" value="@post.PostId"/>
+                                    <button type="submit" class="hover:!bg-red-50 icon-link">
+                                        <ion-icon
+                                                name="@(post.IsPrivate ? "lock-open-outline" : "lock-closed-outline")"></ion-icon>
+                                        @(post.IsPrivate ? "Set as public" : "Set as private")
+                                    </button>
+                                </form>
+
+                                <hr>
+
+                                <button type="button" onclick="openPostDeleteConfirmation('@post.PostId')"
+                                        class="text-red-400 hover:!bg-red-50 post-options-dropdown">
+                                    <ion-icon name="trash-bin-outline"></ion-icon>
+                                    Delete Post
+                                </button>
+                            }
+                            else{
+                                if (IsReportedByUser(post)){
+                                    <form asp-controller="Favorites" asp-action="ReportPost">
+                                        <input type="hidden" name="postId" value="@post.PostId"/>
+                                        <button type="submit" class="hover:!bg-red-50 icon-link">
+                                            <ion-icon class="text-xl shrink-0" name="flag-outline"></ion-icon>
+                                            Report
+                                        </button>
+                                    </form>
+                                }
+                                else{
+                                    <p>there is no action</p>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+                @* post text contet  *@
+                <a asp-controller="Home" asp-action="Details" asp-route-postId="@post.PostId">
+                    <div class="sm:px-4 p-2.5 pt-0 w-full">
+                        <p class="font-normal">
+                            @post.Content
+                        </p>
+                    </div>
+                </a>
+
+                @* post image *@
+                @if (!string.IsNullOrEmpty(post.ImageUrl)){
+                    <a asp-controller="Home" asp-action="Details" asp-route-postId="@post.PostId">
+                        <div class="relative w-full lg:h-96 h-full sm:px-4">
+                            <img src="@(post.ImageUrl)"
+                                 class="sm:rounded-lg w-full h-full object-cover" alt="img"/>
+                        </div>
+                    </a>
+                }
+
+
+                @* Icons *@
+                <div class="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-semibold">
+
+                    @* Like icon *@
+                    <div class="flex items-center gap-2.5">
+                        <form asp-controller="Favorites" asp-action="LikePost">
+                            <input type="hidden" value="@post.PostId" name="PostId"/>
+                            <button type="submit"
+                                    class="button-icon @(post.Likes.Any(n => n.UserId == 1) ? "text-red-500 bg-red-100" : "") ">
+                                <ion-icon class="text-lg"
+                                          name="@(post.Likes.Any(n => n.UserId == 1) ? "heart" : "heart-outline")"></ion-icon>
+                            </button>
+                        </form>
+                        <a href="#">@post.Likes.Count</a>
+                    </div>
+
+                    @* Chat icon *@
+                    <div class="flex items-center gap-3">
+                        <a class="button-icon">
+                            <ion-icon class="text-lg" name="chatbubble-ellipses-outline"></ion-icon>
+                        </a>
+                        <a href="#">@post.Comments.Count</a>
+                    </div>
+
+                    @* Bookmark icon  *@
+                    <div class="ml-auto"></div>
+                    <div class="flex items-center gap-2.5">
+                        <a class="button-icon ml-auto">
+                            <form asp-controller="Favorites" asp-action="BookmarkPost">
+                                <input name="postId" value="@post.PostId" type="hidden"/>
+                                <button type="submit"
+                                        class="button-icon ml-auto @(post.Bookmarks.Any(b => b.UserId == 1) ? "text-orange-500 bt-orange-100" : "")">
+                                    <ion-icon class="text-lg"
+                                              name="@(post.Bookmarks.Any(b => b.UserId == 1) ? "bookmark" : "bookmark-outline")">
+                                    </ion-icon>
+                                </button>
+                            </form>
+                            @if (post.Bookmarks.Count > 0){
+                                <a>@post.Bookmarks.Count</a>
+                            }
+                        </a>
+                    </div>
+
+                </div>
+
+                @* Add comment section *@
+                <div>
+                    @foreach (var comment in post.Comments.OrderByDescending(n => n.DateCreated).Take(3)){
+                        @* Comment content *@
+                        <div class="flex items-start gap-3 relative mt-8">
+                            <a>
+                                <img src="@(comment.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
+                                     class="w-6 h-6 mt-1 rounded-full"/>
+                            </a>
+                            <div class="flex-1">
+                                <div class="flex justify-content-between">
+                                    <a class="text-black font-medium inline-block flex-grow">
+                                        @comment.User.FullName
+                                    </a>
+                                    <small>@DisplayTime(comment.DateCreated)</small>
+                                </div>
+                                <p class="mt-0.5">
+                                    @comment.Content
+                                </p>
+
+                                @* Delete comment icon *@
+
+                                <button type="submit" class="text-red-500 text-xs ml-2"
+                                        onclick="openDeleteModal(@post.PostId)"
+                                        title="Remove the comment">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </button>
+
+                            </div>
+                        </div>
+                    }
+
+                    @* Show all comment section *@
+                    @if (post.Comments.Count >= 3){
+                        <div class="p-1.5">
+                            <a asp-controller="Home" asp-action="Details" asp-route-postId="@post.PostId">
+                                show all comments
+                            </a>
+                        </div>
+                    }
+
+                    @* Comment input *@
+                    <form asp-controller="Favorites" asp-action="AddComment">
+
+                        <div class="sm:px-4 sm:py-3 p-2.5 border-t border-gray-100 flex items-center gap-1">
+                            <img src="~/images/avatar/user.png" class="w-6 h-6 rounded-full"/>
+                            <div class="flex-1 relative overflow-hidden h-10">
+                                <input type="hidden" value="@post.PostId" name="PostId"/>
+                                <textarea placeholder="Add Comment...." rows="1"
+                                          class="w-full resize-none !bg-transparent px-4 py-2 focus:!border-transparent focus:!ring-transparent"
+                                          name="Content"></textarea>
+                            </div>
+                            <button class="text-sm rounded-full py-1.5 px-3.5 bg-secondery" type="submit">Comment
+                            </button>
+
+                        </div>
+                    </form>
+
+                </div>
+
+
+            </div>
+        }
+    }
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

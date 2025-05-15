@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Domain\Domain.csproj"/>
+        <ProjectReference Include="..\Infrastructure\Infrastructure.csproj"/>
+        <ProjectReference Include="..\Services\Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="wwwroot\images\favicon.png"/>
+        <_ContentIncludedByDefault Remove="wwwroot\images\icons\group-2.png"/>
+        <_ContentIncludedByDefault Remove="wwwroot\images\icons\home.png"/>
+        <_ContentIncludedByDefault Remove="wwwroot\images\icons\page.png"/>
+        <_ContentIncludedByDefault Remove="wwwroot\images\icons\video.png"/>
+        <_ContentIncludedByDefault Remove="wwwroot\images\logo.png"/>
+        <_ContentIncludedByDefault Remove="Pages\Shared\Components\Hashtag\Default.cshtml"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="wwwroot\postimages\"/>
+        <Folder Include="wwwroot\profile-pictures\" />
+    </ItemGroup>
+
+</Project>

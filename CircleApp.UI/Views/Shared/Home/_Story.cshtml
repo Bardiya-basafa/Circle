@@ -1,0 +1,128 @@
+﻿@model List<Story>
+@* stories *@
+<style>
+    .story-card {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .story-thumbnail {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .view-story-btn {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .story-card:hover .view-story-btn {
+        opacity: 1;
+    }
+</style>
+<div class="mb-8">
+    <h3 class="font-extrabold text-2xl  text-black hidden">Stories</h3>
+
+    <div class="relative" tabindex="-1" uk-slider="auto play: true;finite: true" uk-lightbox="">
+        <div class="py-5 uk-slider-container">
+            <ul class="uk-slider-items w-[calc(100%+14px)]"
+                uk-scrollspy="target: > li; cls: uk-animation-scale-up; delay: 20;repeat:true">
+
+                <li class="md:pr-3" uk-scrollspy-class="uk-animation-fade">
+                    <div
+                            class="md:w-16 md:h-16 w-12 h-12 rounded-full relative border-2 border-dashed grid place-items-center bg-slate-200 border-slate-300 shrink-0"
+                            uk-toggle="target: #create-story">
+                        <ion-icon name="camera" class="text-2xl"></ion-icon>
+                    </div>
+                </li>
+                @if (Model.Count == 0){
+                    <li class="md:pr-3 pr-2 hover:scale-[1.15] hover:-rotate-2 duration-300">
+                        <div
+                                class="md:w-16 md:h-16 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden">
+                            <img src="~/images/avatar/user.png"/>
+                        </div>
+
+                    </li>
+                    <li class="md:pr-3 pr-2 hover:scale-[1.15] hover:-rotate-2 duration-300">
+                        <a href="~/images/avatar/user.png">
+                            <div
+                                    class="md:w-16 md:h-16 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden">
+                                <img src="~/images/avatar/user.png"/>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="md:pr-3 pr-2 hover:scale-[1.15] hover:-rotate-2 duration-300">
+                        <a href="~/images/avatar/user.png">
+                            <div
+                                    class="md:w-16 md:h-16 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden">
+                                <img src="~/images/avatar/user.png"/>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="md:pr-3 pr-2">
+                        <div class="md:w-16 md:h-16 w-12 h-12 bg-slate-200/60 rounded-full animate-pulse"></div>
+                    </li>
+                }
+                else{
+                    @foreach (var story in Model.Take(3)){
+                        <li class="md:pr-3 pr-2 hover:scale-[1.15] hover:-rotate-2 duration-300">
+                            <div data-story-id="@story.StoryId"
+                                 class="md:w-16 md:h-16 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden story">
+                                <img src="@story.ImageUrl" uk-toggle="target: #see-story-@story.StoryId"/>
+                            </div>
+                        </li>
+                        <div class="hidden lg:p-20" id="see-story-@story.StoryId" uk-modal="">
+                            <div
+                                    class="uk-modal-dialog tt relative overflow-hidden mx-auto bg-white p-7 shadow-xl rounded-lg md:w-[520px] w-full">
+
+                                <div class="text-center py-3 border-b -m-7 mb-0 dark:border-slate-700">
+                                    <h2 class="text-sm font-medium">Story</h2>
+                                    <img src="@story.ImageUrl"/>
+                                </div>
+
+                                <div class="space-y-5 mt-7">
+
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-start gap-2">
+                                            <ion-icon name="time-outline"
+                                                      class="text-3xl text-teal-600 rounded-full bg-blue-50"></ion-icon>
+                                            <p class="text-sm text-gray-500 font-medium">Yout Status will be available
+                                                <br/> for <span
+                                                        class="text-gray-800"> Hours</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                    if (Model.Count > 3){
+                        <li class="md:pr-3 pr-2 hover:scale-[1.15] hover:-rotate-2 duration-300">
+                            <div
+                                    class="md:w-16 md:h-16 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden">
+                                Show more
+                            </div>
+
+                        </li>
+                    }
+                }
+
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+
+</script>
