@@ -22,7 +22,7 @@ builder.Services.AddScoped<IFavoritesService, FavoritesService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 // configure the identities 
-builder.Services.AddIdentity<User , IdentityRole<int>>()
+builder.Services.AddIdentity<User, IdentityRole<int>>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
