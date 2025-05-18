@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Identity;
 
 public static class DbInitializer {
 
-    public static async Task SeedUserAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+    public static async Task SeedUserAsync(UserManager<User> userManager, RoleManager<IdentityRole<int>> roleManager)
     {
         // roles 
         if (!roleManager.Roles.Any()){
             foreach (var roleName in AppRoles.AllRoles){
                 if (!await roleManager.RoleExistsAsync(roleName)){
-                    await roleManager.CreateAsync(new IdentityRole(roleName));
+                    await roleManager.CreateAsync(new IdentityRole<int>(roleName));
                 }
             }
         }
@@ -22,7 +22,7 @@ public static class DbInitializer {
         // users with roles 
         // normal user 
         if (!userManager.Users.Any(u => !string.IsNullOrEmpty(u.Email))){
-            var password = "password1234$";
+            var password = "password1234$A";
 
             var newUser = new User()
             {
@@ -51,7 +51,7 @@ public static class DbInitializer {
             var resultAdmin = await userManager.CreateAsync(newUserAdmin, password);
 
             if (result.Succeeded){
-                await userManager.AddToRoleAsync(newUserAdmin, AppRoles.User);
+                await userManager.AddToRoleAsync(newUserAdmin, AppRoles.Admin);
             }
         }
     }

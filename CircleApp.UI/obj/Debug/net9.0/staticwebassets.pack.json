@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "E:\\AspNetCore-Projects\\CircleApp\\CircleApp.UI\\wwwroot\\css\\style-auth.css",
+      "PackagePath": "staticwebassets\\css\\style-auth.css"
+    },
+    {
       "Id": "E:\\AspNetCore-Projects\\CircleApp\\CircleApp.UI\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },

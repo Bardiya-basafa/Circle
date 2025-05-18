@@ -57,6 +57,4 @@ document.getElementById('createProductUrl').addEventListener('change', function 
 
 
 
-
-
     

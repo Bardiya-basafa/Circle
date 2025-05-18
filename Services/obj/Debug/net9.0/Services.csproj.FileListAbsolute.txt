@@ -33,3 +33,4 @@ E:\AspNetCore-Projects\CircleApp\Services\obj\Debug\net9.0\Services.dll
 E:\AspNetCore-Projects\CircleApp\Services\obj\Debug\net9.0\refint\Services.dll
 E:\AspNetCore-Projects\CircleApp\Services\obj\Debug\net9.0\Services.pdb
 E:\AspNetCore-Projects\CircleApp\Services\obj\Debug\net9.0\ref\Services.dll
+E:\AspNetCore-Projects\CircleApp\Services\obj\Debug\net9.0\Services.sourcelink.json

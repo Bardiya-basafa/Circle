@@ -33,3 +33,4 @@ E:\AspNetCore-Projects\CircleApp\Infrastructure\obj\Debug\net9.0\refint\Infrastr
 E:\AspNetCore-Projects\CircleApp\Infrastructure\obj\Debug\net9.0\Infrastructure.pdb
 E:\AspNetCore-Projects\CircleApp\Infrastructure\obj\Debug\net9.0\Infrastructure.genruntimeconfig.cache
 E:\AspNetCore-Projects\CircleApp\Infrastructure\obj\Debug\net9.0\ref\Infrastructure.dll
+E:\AspNetCore-Projects\CircleApp\Infrastructure\obj\Debug\net9.0\Infrastructure.sourcelink.json

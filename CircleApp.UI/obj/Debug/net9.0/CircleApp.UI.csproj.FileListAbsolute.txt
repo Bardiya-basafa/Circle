@@ -404,10 +404,8 @@ E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.Razo
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.RazorAssemblyInfo.cs
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\scopedcss\bundle\CircleApp.UI.styles.css
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\fqbhmdrl5t-93le04jpe3.gz
-E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\lkfdo18djm-tenqy816u8.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\xm46t51ea8-o0r6zhd2ni.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\ap8bw81w9r-61n19gt1b8.gz
-E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\qnjt56dg43-zpgysshrpm.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\d4rq52ts9v-9bwtl50mn2.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\va9djezfwo-xtxxf3hu2r.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\nuvbo6j1bw-n9dwubpwf7.gz
@@ -490,3 +488,7 @@ E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\refint\CircleApp.
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.pdb
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.genruntimeconfig.cache
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\ref\CircleApp.UI.dll
+E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.sourcelink.json
+E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\e73qroltco-nod8fj3t7r.gz
+E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\lkfdo18djm-7hfupsdnyl.gz
+E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\qnjt56dg43-k8usaz5apq.gz
