@@ -1,20 +1,21 @@
 ﻿namespace CircleApp.UI.Controllers;
 
 using Domain.ViewModels.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
 
-
+[Authorize]
 public class SettingsController : Controller {
 
     private readonly IUserService _userService;
-
-    public int LoggedUserId { get; set; } = 1;
 
     public SettingsController(IUserService userService)
     {
         _userService = userService;
     }
+
+    public int LoggedUserId { get; set; } = 1;
 
     public async Task<IActionResult> Index()
     {
@@ -26,9 +27,8 @@ public class SettingsController : Controller {
     [HttpPost]
     public async Task<IActionResult> UpdateUserProfilePicture(UpdateUserPictureVm updateUserPictureVm)
     {
-        if (updateUserPictureVm.ProfilePictureImage ==null){
-            return RedirectToAction("Index");
-        }
+        if (updateUserPictureVm.ProfilePictureImage == null) return RedirectToAction("Index");
+
         if (updateUserPictureVm.ProfilePictureImage.Length > 0){
             var rootFoder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 
@@ -42,7 +42,7 @@ public class SettingsController : Controller {
                     await updateUserPictureVm.ProfilePictureImage.CopyToAsync(stream);
                 }
 
-                string newPath = "/profile-pictures/" + fileName;
+                var newPath = "/profile-pictures/" + fileName;
                 await _userService.UpdateUserProfilePicture(LoggedUserId, newPath);
             }
         }
@@ -51,15 +51,9 @@ public class SettingsController : Controller {
     }
 
     [HttpPost]
-    public async Task<IActionResult> UpdateUserData(UpdateProfileVm updateProfileVm)
-    {
-        return RedirectToAction("Index");
-    }
+    public async Task<IActionResult> UpdateUserData(UpdateProfileVm updateProfileVm) => RedirectToAction("Index");
 
     [HttpPost]
-    public async Task<IActionResult> UpdateUserPassword(UpdatePasswordVm updatePasswordVm)
-    {
-        return RedirectToAction("Index");
-    }
+    public async Task<IActionResult> UpdateUserPassword(UpdatePasswordVm updatePasswordVm) => RedirectToAction("Index");
 
 }

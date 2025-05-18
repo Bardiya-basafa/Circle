@@ -3,6 +3,7 @@ using Infrastructure.Persistence.DbContexts;
 using Infrastructure.Persistence.Helpers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Services.Interfaces;
 using Services.Services;
 
@@ -22,9 +23,18 @@ builder.Services.AddScoped<IFavoritesService, FavoritesService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 // configure the identities 
-builder.Services.AddIdentity<User, IdentityRole<int>>()
+builder.Services.AddIdentity<User, IdentityRole<int>>(options => {
+        options.Password.RequiredLength = 8;
+        options.Password.RequiredUniqueChars = 1;
+    })
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options => {
+    options.LoginPath = "/Authentication/Login";
+    options.AccessDeniedPath = "/Authentication/AccessDenied";
+}
+);
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
@@ -36,8 +46,8 @@ using (var scope = app.Services.CreateAsyncScope()){
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await dbContext.Database.MigrateAsync();
     await DbInitializer.SeedAsync(dbContext);
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
+    UserManager<User>? userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    RoleManager<IdentityRole<int>>? roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
     await DbInitializer.SeedUserAsync(userManager, roleManager);
 }
 

@@ -3,10 +3,11 @@
 using Domain.Entities;
 using Domain.ViewModels.Stroy;
 using Infrastructure.Persistence.DbContexts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-
+[Authorize]
 public class StoriesController : Controller {
 
     private readonly AppDbContext _appDbContext;

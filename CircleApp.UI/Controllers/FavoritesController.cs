@@ -1,17 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-
-namespace CircleApp.UI.Controllers;
+﻿namespace CircleApp.UI.Controllers;
 
 using Domain.Entities;
 using Domain.ViewModels.Home;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
-using Services.Services;
 
-
+[Authorize]
 public class FavoritesController : Controller {
-
-    public int LoggedInUserId { get; set; } = 1;
 
     private readonly IFavoritesService _favoritesService;
 
@@ -22,6 +18,8 @@ public class FavoritesController : Controller {
         _favoritesService = favoritesService;
         _postService = postService;
     }
+
+    public int LoggedInUserId { get; set; } = 1;
 
     public async Task<IActionResult> Index()
     {

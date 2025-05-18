@@ -489,6 +489,5 @@ E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.pdb
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.genruntimeconfig.cache
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\ref\CircleApp.UI.dll
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.sourcelink.json
-E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\e73qroltco-nod8fj3t7r.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\lkfdo18djm-7hfupsdnyl.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\qnjt56dg43-k8usaz5apq.gz

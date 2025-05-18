@@ -1,19 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿namespace CircleApp.UI.Controllers;
 
-
-namespace CircleApp.UI.Controllers;
-
+using System.Security.Claims;
 using Domain.Entities;
 using Domain.ViewModels.Authentication;
 using Infrastructure.Persistence.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 
 public class AuthenticationController : Controller {
 
-    private readonly UserManager<User> _userManager;
-
     private readonly SignInManager<User> _signInManager;
+
+    private readonly UserManager<User> _userManager;
 
     public AuthenticationController(UserManager<User> userManager, SignInManager<User> signInManager)
     {
@@ -22,44 +22,96 @@ public class AuthenticationController : Controller {
     }
 
     // GET
-    public IActionResult Index()
+    public async Task<IActionResult> Login()
     {
         return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(AuthenticationVm loginUser)
+    public async Task<IActionResult> Login(LoginVm loginVm)
     {
-        return RedirectToAction("Index", "Home");
+        if (!ModelState.IsValid){
+            return View(loginVm);
+        }
+
+        var user = await _userManager.FindByEmailAsync(loginVm.Email);
+
+        if (user == null){
+            ModelState.AddModelError(string.Empty, "Invalid username or password.");
+
+            return View(loginVm);
+        }
+
+        var userClaims = await _userManager.GetClaimsAsync(user);
+
+        if (userClaims.Any(c => c.Type == "FullName")){
+            await _userManager.AddClaimAsync(user, new Claim("FullName", user.FullName));
+        }
+
+        var result = await _signInManager.PasswordSignInAsync(loginVm.Email, loginVm.Password, false, false);
+
+        if (result.Succeeded){
+            return RedirectToAction("Index", "Home");
+        }
+
+        ModelState.AddModelError(string.Empty, "Invalid login attempt");
+
+        return View(loginVm);
+    }
+
+    public async Task<IActionResult> Register()
+    {
+        return View();
     }
 
     [HttpPost]
-    public async Task Register(AuthenticationVm registerUser)
+    public async Task<IActionResult> Register(RegisterVm registerVm)
     {
-        try{
-            var newUser = new User()
+        if (!ModelState.IsValid){
+            return View(registerVm);
+        }
 
-            {
-                Email = registerUser.Email,
-                FullName = $"{registerUser.FirstName} {registerUser.LastName}",
-                UserName = registerUser.Email
-            };
+        var newUser = new User()
+        {
+            FullName = $"{registerVm.FirstName} {registerVm.LastName}",
+            Email = registerVm.Email,
+            UserName = registerVm.Email
+        };
 
-            var result = await _userManager.CreateAsync(newUser, registerUser.Password);
+        var User = await _userManager.FindByEmailAsync(registerVm.Email);
 
-            if (result.Succeeded){
-                await _userManager.AddToRoleAsync(newUser, AppRoles.User);
+        if (User != null){
+            ModelState.AddModelError("Email", $"{User.Email} already exists");
 
-                await _signInManager.SignInAsync(newUser, isPersistent: false);
+            return View(registerVm);
+        }
 
-                RedirectToAction("Index", "Home");
+        var result = await _userManager.CreateAsync(newUser, registerVm.Password);
+
+        if (result.Succeeded){
+            await _userManager.AddToRoleAsync(newUser, AppRoles.User);
+            await _userManager.AddClaimAsync(newUser, new Claim("FullName", $"{registerVm.FirstName} {registerVm.LastName}"));
+
+            await _signInManager.SignInAsync(newUser, isPersistent: false);
+
+            return RedirectToAction("Index", "Home");
+        }
+        else{
+            foreach (var error in result.Errors){
+                ModelState.AddModelError(string.Empty, error.Description);
             }
         }
-        catch (Exception e){
-            Console.WriteLine(e);
 
-            throw;
-        }
+
+        return View();
+    }
+
+    [Authorize]
+    public async Task<IActionResult> Logout()
+    {
+        await _signInManager.SignOutAsync();
+
+        return RedirectToAction("Login");
     }
 
 }

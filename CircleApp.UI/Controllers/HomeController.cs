@@ -3,19 +3,18 @@ namespace CircleApp.UI.Controllers;
 using Domain.Entities;
 using Domain.ViewModels.Home;
 using Infrastructure.Persistence.DbContexts;
-using Infrastructure.Persistence.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Services.Interfaces;
 
-
+[Authorize]
 public class HomeController : Controller {
 
     private readonly AppDbContext _appDbContext;
 
-    private readonly IPostService _postService;
-
     private readonly ILogger<HomeController> _logger;
+
+    private readonly IPostService _postService;
 
     public int LoggedInUserId = 1;
 
@@ -28,7 +27,7 @@ public class HomeController : Controller {
 
     public async Task<IActionResult> Index()
     {
-        var posts = await _postService.GetAllPosts(LoggedInUserId)!;
+        List<Post>? posts = await _postService.GetAllPosts(LoggedInUserId)!;
 
         return View(posts);
     }

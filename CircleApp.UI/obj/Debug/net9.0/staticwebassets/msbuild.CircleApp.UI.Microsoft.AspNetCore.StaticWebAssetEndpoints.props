@@ -12,18 +12,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u53O\u002BhR5KeaR4G\u002ByMZpnXfKiWdtSlbY3HADwXQo7VFU="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1156"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u53O\u002BhR5KeaR4G\u002ByMZpnXfKiWdtSlbY3HADwXQo7VFU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 May 2025 16:59:30 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CircleApp.UI/css/style-auth.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style-auth.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RwJeD5NsvRN9SfOx5LRRMOOaM7wmzx4ghiI5E4c1Cyw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3933"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022RwJeD5NsvRN9SfOx5LRRMOOaM7wmzx4ghiI5E4c1Cyw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 18 May 2025 06:40:55 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CircleApp.UI/css/style-auth.nod8fj3t7r.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style-auth.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nod8fj3t7r"},{"Name":"integrity","Value":"sha256-RwJeD5NsvRN9SfOx5LRRMOOaM7wmzx4ghiI5E4c1Cyw="},{"Name":"label","Value":"_content/CircleApp.UI/css/style-auth.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3933"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022RwJeD5NsvRN9SfOx5LRRMOOaM7wmzx4ghiI5E4c1Cyw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 18 May 2025 06:40:55 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CircleApp.UI/css/style.7hfupsdnyl.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
