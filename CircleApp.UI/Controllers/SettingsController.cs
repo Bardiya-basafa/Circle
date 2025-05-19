@@ -1,17 +1,23 @@
 ﻿namespace CircleApp.UI.Controllers;
 
+using Domain.Entities;
 using Domain.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
+
 
 [Authorize]
 public class SettingsController : Controller {
 
     private readonly IUserService _userService;
 
-    public SettingsController(IUserService userService)
+    private readonly UserManager<User> _userManager;
+
+    public SettingsController(IUserService userService, UserManager<User> userManager)
     {
+        _userManager = userManager;
         _userService = userService;
     }
 
@@ -19,7 +25,7 @@ public class SettingsController : Controller {
 
     public async Task<IActionResult> Index()
     {
-        var loggedInUser = await _userService.GetUserDataAsync(LoggedUserId);
+        var loggedInUser = await _userManager.GetUserAsync(User);
 
         return View(loggedInUser);
     }
@@ -49,11 +55,5 @@ public class SettingsController : Controller {
 
         return RedirectToAction("Index");
     }
-
-    [HttpPost]
-    public async Task<IActionResult> UpdateUserData(UpdateProfileVm updateProfileVm) => RedirectToAction("Index");
-
-    [HttpPost]
-    public async Task<IActionResult> UpdateUserPassword(UpdatePasswordVm updatePasswordVm) => RedirectToAction("Index");
 
 }

@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Identity;
 
 public class User : IdentityUser<int> {
 
-
     public string FullName { get; set; }
+
+    public string Bio { get; set; }
 
     public string? ProfilePictureUrl { get; set; }
 

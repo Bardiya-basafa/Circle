@@ -3,6 +3,7 @@
 using System.Security.Claims;
 using Domain.Entities;
 using Domain.ViewModels.Authentication;
+using Domain.ViewModels.User;
 using Infrastructure.Persistence.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -92,6 +93,7 @@ public class AuthenticationController : Controller {
             await _userManager.AddToRoleAsync(newUser, AppRoles.User);
             await _userManager.AddClaimAsync(newUser, new Claim("FullName", $"{registerVm.FirstName} {registerVm.LastName}"));
 
+
             await _signInManager.SignInAsync(newUser, isPersistent: false);
 
             return RedirectToAction("Index", "Home");
@@ -105,6 +107,93 @@ public class AuthenticationController : Controller {
 
         return View();
     }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> UpdateUserPassword(UpdatePasswordVm updatePasswordVm)
+    {
+        if (!ModelState.IsValid){
+            TempData["PasswordError"] = "Invalid attempt to update password.";
+            TempData["ActiveTab"] = "Password";
+
+            return RedirectToAction("Index", "Settings");
+        }
+
+        if (updatePasswordVm.NewPassword != updatePasswordVm.ConfirmPassword){
+            TempData["PasswordCompare"] = "Passwords do not match.";
+            TempData["ActiveTab"] = "Password";
+
+            return RedirectToAction("Index", "Settings");
+        }
+
+        var loggedInUser = await _userManager.GetUserAsync(User);
+        var isCusrrentPasswordValid = await _userManager.CheckPasswordAsync(loggedInUser, updatePasswordVm.CurrentPassword);
+
+        if (!isCusrrentPasswordValid){
+            TempData["IsPasswordValid"] = "Current password is invalid.";
+            TempData["ActiveTab"] = "Password";
+
+            return RedirectToAction("Index", "Settings");
+        }
+
+        var result = await _userManager.ChangePasswordAsync(loggedInUser, updatePasswordVm.CurrentPassword, updatePasswordVm.NewPassword);
+
+        if (result.Succeeded){
+            TempData["UpdatedPassword"] = "Password updated successfully.";
+            TempData["ActiveTab"] = "Password";
+            await _signInManager.RefreshSignInAsync(loggedInUser);
+        }
+        else{
+            string errorMessages = string.Join("<br/>", result.Errors.Select(e => e.Description));
+            TempData["NewPasswordErrors"] = errorMessages;
+            TempData["ActiveTab"] = "Password";
+        }
+
+        return RedirectToAction("Index", "Settings");
+    }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> UpdateUserData(UpdateProfileVm updateProfileVm)
+    {
+        if (!ModelState.IsValid){
+            TempData["ProfileError"] = "Invalid attempt to update profile.";
+            TempData["ActiveTab"] = "Profile";
+
+            return RedirectToAction("Index", "Settings");
+        }
+
+        var user = await _userManager.GetUserAsync(User);
+
+        if (user == null){
+            return RedirectToAction("Login");
+        }
+
+        user.FullName = updateProfileVm.FullName;
+
+        if (updateProfileVm.Bio != null){
+            user.Bio = updateProfileVm.Bio;
+            TempData["Bio"] = user.Bio;
+        }
+
+
+        var result = await _userManager.UpdateAsync(user);
+
+        if (!result.Succeeded){
+            string errorMessages = string.Join("<br/>", result.Errors.Select(e => e.Description));
+            TempData["UpdateProfileErrors"] = errorMessages;
+            TempData["ActiveTab"] = "Profile";
+
+            return RedirectToAction("Index", "Settings");
+        }
+        else{
+            TempData["UpdatedProfile"] = "Profile successfully.";
+            TempData["ActiveTab"] = "Profile";
+        }
+
+        return RedirectToAction("Index", "Settings");
+    }
+
 
     [Authorize]
     public async Task<IActionResult> Logout()

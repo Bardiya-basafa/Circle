@@ -4,6 +4,11 @@ html {
     min-height: 100%;
 }
 
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
 body {
     margin-bottom: 60px;
 }

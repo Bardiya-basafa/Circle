@@ -1,5 +1,9 @@
-﻿@model User;
-
+﻿@using Microsoft.AspNetCore.Identity
+@model User;
+@{
+    var fullName = User.Claims.FirstOrDefault(c => c.Type == "FullName")?.Value;
+    var username = User.Identity.Name;
+}
 <main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
 
     <div class="max-w-3xl mx-auto">
@@ -30,8 +34,8 @@
                         </label>
                     </div>
                     <div>
-                        <h3 class="text-base font-semibold text-black">@Model.FullName</h3>
-                        <p class="text-sm text-blue-600 mt-1 font-normal">@@ervistrupja </p>
+                        <h3 class="text-base font-semibold text-black">@fullName</h3>
+                        <p class="text-sm text-blue-600 mt-1 font-normal">@username</p>
                     </div>
                     <button type="submit" id="saveButton"
                             class="hidden button bg-blue-500 text-white px-4 py-1 rounded ml-auto">Save
@@ -56,9 +60,21 @@
             </div>
 
             <div id="setting_tab" class="uk-switcher py-12 px-20 overflow-hidden text-black text-sm">
-                <form asp-controller="Settings" asp-action="UpdateUserData">
+                @* updating user data  *@
+                <form asp-controller="Authentication" asp-action="UpdateUserData">
                     <div>
-                        <div class="space-y-6">
+                        <div class="space-y-6 m-10">
+                            @if (TempData["UpdateProfileErrors"] != null){
+                                <div class="text-red-500 m-4">
+                                    @Html.Raw(TempData["UpdateProfileErrors"].ToString())
+                                </div>
+                            }
+                            @if (TempData["ProfileError"] != null){
+                                <div class="text-red-500 m-4">@TempData["ProfileError"]</div>
+                            }
+                            @if (TempData["UpdatedProfile"] != null){
+                                <div class="text-green-500 m-4">@TempData["UpdatedProfile"]</div>
+                            }
                             <div class="flex items-center gap-10">
                                 <label class="w-32 text-right">Full name</label>
                                 <div class="flex-1">
@@ -66,42 +82,48 @@
                                            value="@Model.FullName" class="w-full"/>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-10">
-                                <label class="w-32 text-right">Username</label>
-                                <div class="flex-1">
-                                    <input type="text" name="username" placeholder="Enter your username"
-                                           value="@@ervistrupja" class="w-full"/>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-10">
-                                <label class="w-32 text-right">Email</label>
-                                <div class="flex-1">
-                                    <input type="email" name="emailAddress" placeholder="Enter your email address"
-                                           value=""
-                                           class="w-full"/>
-                                </div>
-                            </div>
+
+
                             <div class="flex items-center gap-10">
                                 <label class="w-32 text-right">Bio</label>
                                 <div class="flex-1">
-                                <textarea class="w-full" name="bio" rows="5"
-                                          placeholder="Enter your bio"></textarea>
+                                    <textarea class="w-full" name="bio" rows="5"
+                                              placeholder="Enter your bio">@Model.Bio</textarea>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4 mt-16 pl-[10.5rem]">
-                                <button class="button px-6 bg-secondary">Cancel</button>
+                                <button class="button px-6 bg-secondary border-4">Cancel</button>
                                 <button type="submit" class="button px-10 bg-primary text-white">Save</button>
                             </div>
                         </div>
                     </div>
                 </form>
-                <form asp-controller="Settings" asp-action="UpdateUserPassword">
+
+                @* updating user password *@
+                <form asp-controller="Authentication" asp-action="UpdateUserPassword">
                     <div>
-                        <div class="space-y-6">
+                        <div class="space-y-6 m-10">
+                            @if (TempData["PasswordError"] != null){
+                                <div class="text-red-500 m-4">@TempData["PasswordError"]</div>
+                            }
+                            @if (TempData["PasswordCompare"] != null){
+                                <div class="text-red-500 m-4">@TempData["PasswordCompare"]</div>
+                            }
+                            @if (TempData["IsPasswordValid"] != null){
+                                <div class="text-red-500 m-4">@TempData["IsPasswordValid"]</div>
+                            }
+                            @if (TempData["UpdatedPassword"] != null){
+                                <div class="text-green-500 m-4">@TempData["UpdatedPassword"]</div>
+                            }
+                            @if (TempData["NewPasswordErrors"] != null){
+                                <div class="text-red-500 m-4">
+                                    @Html.Raw(TempData["NewPasswordErrors"].ToString())
+                                </div>
+                            }
                             <div class="flex items-center gap-10">
                                 <label class="w-32 text-right">Current password</label>
                                 <div class="flex-1">
-                                    <input type="password" name="currentPassword"
+                                    <input required type="password" name="currentPassword"
                                            placeholder="Enter your current password"
                                            class="w-full"/>
                                 </div>
@@ -109,7 +131,8 @@
                             <div class="flex items-center gap-10">
                                 <label class="w-32 text-right">New password</label>
                                 <div class="flex-1">
-                                    <input type="password" name="newPassword" placeholder="Enter your new password"
+                                    <input required type="password" name="newPassword"
+                                           placeholder="Enter your new password"
                                            value=""
                                            class="w-full"/>
                                 </div>
@@ -117,13 +140,13 @@
                             <div class="flex items-center gap-10">
                                 <label class="w-32 text-right">Confirm password</label>
                                 <div class="flex-1">
-                                    <input type="password" name="confirmPassword"
+                                    <input required type="password" name="confirmPassword"
                                            placeholder="Confirm your new password"
                                            value="" class="w-full"/>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4 mt-16 pl-[10.5rem]">
-                                <button class="button px-6 bg-secondary">Cancel</button>
+                                <button class="button px-6 bg-secondary border-4">Cancel</button>
                                 <button type="submit" class="button px-10 bg-primary text-white">Save</button>
                             </div>
                         </div>
@@ -151,4 +174,15 @@
             saveButton.classList.add('hidden')
         }
     })
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const switcher = UIkit.switcher(document.querySelector('[uk-switcher]'));
+
+        if ('@TempData["ActiveTab"]' === 'Password') {
+            switcher.show(1);
+        } else {
+            switcher.show(0);
+        }
+    })
+
 </script>
