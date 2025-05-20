@@ -1,5 +1,7 @@
 ﻿namespace CircleApp.UI.Controllers;
 
+using System.Security.Claims;
+using Base;
 using Domain.Entities;
 using Domain.ViewModels.Stroy;
 using Infrastructure.Persistence.DbContexts;
@@ -7,12 +9,16 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+
 [Authorize]
-public class StoriesController : Controller {
+public class StoriesController : BaseController {
 
     private readonly AppDbContext _appDbContext;
 
     private readonly ILogger _logger;
+
+    public int LoggedInUserId { get; set; }
+
 
     public StoriesController(AppDbContext appDbContext, ILogger<StoriesController> logger)
     {
@@ -20,10 +26,10 @@ public class StoriesController : Controller {
         _logger = logger;
     }
 
-    public int LoggedInUserId { get; set; } = 1;
 
     public async Task<IActionResult> Index()
     {
+        LoggedInUserId = GetUserId();
         List<Story> allStories = await _appDbContext.Stories
             .Where(s => !s.IsDeleted && (s.UserId == LoggedInUserId || !s.IsPrivate) && s.DateCreated >= DateTime.UtcNow.AddHours(-24))
             .Include(s => s.User)
@@ -37,6 +43,7 @@ public class StoriesController : Controller {
     [HttpPost]
     public async Task<IActionResult> CreateStory(CreateStoryVm story)
     {
+        LoggedInUserId = GetUserId();
         if (story.Image == null) return RedirectToAction("Index", "Home");
 
         if (story.Image.Length > 0){

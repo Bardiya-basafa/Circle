@@ -1,5 +1,7 @@
 namespace CircleApp.UI.Controllers;
 
+using System.Security.Claims;
+using Base;
 using Domain.Entities;
 using Domain.ViewModels.Home;
 using Infrastructure.Persistence.DbContexts;
@@ -7,8 +9,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
 
+
 [Authorize]
-public class HomeController : Controller {
+public class HomeController : BaseController {
 
     private readonly AppDbContext _appDbContext;
 
@@ -16,7 +19,7 @@ public class HomeController : Controller {
 
     private readonly IPostService _postService;
 
-    public int LoggedInUserId = 1;
+    public int LoggedInUserId { get; set; }
 
     public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext, IPostService postService)
     {
@@ -27,6 +30,7 @@ public class HomeController : Controller {
 
     public async Task<IActionResult> Index()
     {
+        LoggedInUserId = GetUserId();
         List<Post>? posts = await _postService.GetAllPosts(LoggedInUserId)!;
 
         return View(posts);
@@ -42,7 +46,8 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> CreateStatus(PostVM post)
     {
-        await _postService.CreatePost(post);
+        LoggedInUserId = GetUserId();
+        await _postService.CreatePost(post, LoggedInUserId);
 
 
         return RedirectToAction("Index");
@@ -51,6 +56,7 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> LikePost(LikePostVm likePost)
     {
+        LoggedInUserId = GetUserId();
         await _postService.LikePost(LoggedInUserId, likePost.PostId);
 
         return RedirectToAction("Index");
@@ -59,6 +65,8 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> AddComment(CommentPostVm commentPostVm)
     {
+        LoggedInUserId = GetUserId();
+
         var comment = new Comment
         {
             PostId = commentPostVm.PostId,
@@ -76,6 +84,7 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> DeleteComment(DeleteCommentVm deleteCommentVm)
     {
+        LoggedInUserId = GetUserId();
         await _postService.DeleteComment(LoggedInUserId, deleteCommentVm.CommentId);
 
         return RedirectToAction("Index");
@@ -84,6 +93,7 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> BookmarkPost(BookmarkPostVm bookmarkPostVm)
     {
+        LoggedInUserId = GetUserId();
         await _postService.BookmarkPost(LoggedInUserId, bookmarkPostVm.PostId);
 
         return RedirectToAction("Index");
@@ -92,6 +102,7 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> PostVisibility(PostVisibilityVm postVisibilityVm)
     {
+        LoggedInUserId = GetUserId();
         await _postService.TogglePostVisibility(LoggedInUserId, postVisibilityVm.PostId);
 
         return RedirectToAction("Index");
@@ -100,6 +111,7 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> ReportPost(ReportPostVm reportPostVm)
     {
+        LoggedInUserId = GetUserId();
         await _postService.ReportPost(LoggedInUserId, reportPostVm.PostId);
 
         return RedirectToAction("Index");
@@ -108,6 +120,7 @@ public class HomeController : Controller {
     [HttpPost]
     public async Task<IActionResult> DeletePost(DeletePostVm deletePostVm)
     {
+        LoggedInUserId = GetUserId();
         await _postService.DeletePost(LoggedInUserId, deletePostVm.PostId);
 
         return RedirectToAction("Index");

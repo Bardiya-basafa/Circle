@@ -10,7 +10,7 @@ public interface IPostService {
 
     Task<Post> GetPostByIdAsync(int postId);
 
-    Task CreatePost(PostVM post);
+    Task CreatePost(PostVM post,int loggedUserId);
 
     Task LikePost(int loggedUserId, int postId);
 

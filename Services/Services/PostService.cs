@@ -45,7 +45,7 @@ public class PostService : IPostService {
         return postDb!;
     }
 
-    public async Task CreatePost(PostVM post)
+    public async Task CreatePost(PostVM post, int loggedUserId)
     {
         var newPost = new Post
         {
@@ -53,11 +53,11 @@ public class PostService : IPostService {
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             ImageUrl = "",
-            UserId = 1,
+            UserId = loggedUserId,
             NrOfReports = 0
         };
 
-        if (post.Image.Length > 0){
+        if (post.Image != null && post.Image.Length > 0){
             var rootFoder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 
             if (post.Image.ContentType.Contains("image")){

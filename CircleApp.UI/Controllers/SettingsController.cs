@@ -1,5 +1,6 @@
 ﻿namespace CircleApp.UI.Controllers;
 
+using Base;
 using Domain.Entities;
 using Domain.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +10,7 @@ using Services.Interfaces;
 
 
 [Authorize]
-public class SettingsController : Controller {
+public class SettingsController : BaseController {
 
     private readonly IUserService _userService;
 
@@ -21,7 +22,7 @@ public class SettingsController : Controller {
         _userService = userService;
     }
 
-    public int LoggedUserId { get; set; } = 1;
+    public int LoggedUserId { get; set; }
 
     public async Task<IActionResult> Index()
     {
@@ -33,6 +34,8 @@ public class SettingsController : Controller {
     [HttpPost]
     public async Task<IActionResult> UpdateUserProfilePicture(UpdateUserPictureVm updateUserPictureVm)
     {
+        LoggedUserId = GetUserId();
+
         if (updateUserPictureVm.ProfilePictureImage == null) return RedirectToAction("Index");
 
         if (updateUserPictureVm.ProfilePictureImage.Length > 0){
