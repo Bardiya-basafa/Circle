@@ -5,6 +5,7 @@ using Domain.Entities;
 using Domain.ViewModels.Authentication;
 using Domain.ViewModels.User;
 using Infrastructure.Persistence.Constants;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -194,6 +195,52 @@ public class AuthenticationController : Controller {
         return RedirectToAction("Index", "Settings");
     }
 
+    public IActionResult ExternalLogin(string provider)
+    {
+        var redirectUrl = Url.Action("ExternalLoginCallback", "Authentication");
+        var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+
+        return new ChallengeResult(provider, properties);
+    }
+
+    public async Task<IActionResult> ExternalLoginCallback()
+    {
+        var userInfo = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
+
+        if (userInfo == null){
+            return Redirect($"Authentication/Login");
+        }
+
+        var userEmail = userInfo.Principal.FindFirstValue(ClaimTypes.Email);
+        var user = await _userManager.FindByEmailAsync(userEmail);
+
+        if (user == null){
+            var newUser = new User()
+            {
+                Email = userEmail,
+                UserName = userEmail,
+                FullName = userInfo.Principal.FindFirstValue(ClaimTypes.Name) ?? "Full Name",
+                EmailConfirmed = true
+            };
+
+            var result = await _userManager.CreateAsync(newUser);
+
+            if (result.Succeeded){
+                await _userManager.AddToRoleAsync(newUser, AppRoles.User);
+                await _userManager.AddClaimAsync(newUser, new Claim("FullName", newUser.FullName));
+                await _signInManager.SignInAsync(newUser, isPersistent: false);
+
+                return RedirectToAction("Index", "Home");
+            }
+            else{
+                return Redirect($"Authentication/Login");
+            }
+        }
+
+        await _signInManager.SignInAsync(user, isPersistent: false);
+
+        return RedirectToAction("Index", "Home");
+    }
 
     [Authorize]
     public async Task<IActionResult> Logout()

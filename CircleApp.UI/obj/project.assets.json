@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "AspNet.Security.OAuth.GitHub/9.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/AspNet.Security.OAuth.GitHub.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/AspNet.Security.OAuth.GitHub.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -59,6 +75,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/9.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.AspNetCore.Cryptography.Internal/9.0.4": {
         "type": "package",
@@ -1837,6 +1869,21 @@
     }
   },
   "libraries": {
+    "AspNet.Security.OAuth.GitHub/9.3.0": {
+      "sha512": "/SMORs+1LVIb4z0boj1JcURuAq2biwTBP8sJSAd+tgikgLT0LQu2lqjUW6Oz4yvtZ/EIdpbfzVzp93cknf/h2A==",
+      "type": "package",
+      "path": "aspnet.security.oauth.github/9.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "aspnet.security.oauth.github.9.3.0.nupkg.sha512",
+        "aspnet.security.oauth.github.nuspec",
+        "lib/net9.0/AspNet.Security.OAuth.GitHub.dll",
+        "lib/net9.0/AspNet.Security.OAuth.GitHub.xml"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -1891,6 +1938,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/9.0.5": {
+      "sha512": "K6b2OX3eY4RAwySFxfOTlBNvPw8OYRWTYKV7XFGaYhKQaaq3ooxsg0tzHsH/UxwK7SDTpnXiHYVcbMBFFlYmxw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/9.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net9.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net9.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.9.0.5.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/9.0.4": {
@@ -5158,8 +5220,10 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "AspNet.Security.OAuth.GitHub >= 9.3.0",
       "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 9.0.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
@@ -5229,6 +5293,14 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "AspNet.Security.OAuth.GitHub": {
+            "target": "Package",
+            "version": "[9.3.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[9.0.5, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.4, )"
@@ -5280,13 +5352,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

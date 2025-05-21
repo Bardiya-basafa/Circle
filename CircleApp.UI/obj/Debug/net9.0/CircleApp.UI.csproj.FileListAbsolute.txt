@@ -491,3 +491,5 @@ E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\CircleApp.UI.sour
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\lkfdo18djm-7hfupsdnyl.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\qnjt56dg43-k8usaz5apq.gz
 E:\AspNetCore-Projects\CircleApp\CircleApp.UI\obj\Debug\net9.0\compressed\fqbhmdrl5t-bvb2ju9pgv.gz
+E:\AspNetCore-Projects\CircleApp\CircleApp.UI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.Google.dll
+E:\AspNetCore-Projects\CircleApp\CircleApp.UI\bin\Debug\net9.0\AspNet.Security.OAuth.GitHub.dll

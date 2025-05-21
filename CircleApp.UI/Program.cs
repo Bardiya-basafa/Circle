@@ -1,6 +1,7 @@
 using Domain.Entities;
 using Infrastructure.Persistence.DbContexts;
 using Infrastructure.Persistence.Helpers;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -36,7 +37,30 @@ builder.Services.ConfigureApplicationCookie(options => {
 }
 );
 
-builder.Services.AddAuthentication();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddGoogle(
+    options => {
+        options.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? "";
+        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? "";
+        options.CallbackPath = "/signin-google";
+    });
+
+// first app
+//      "ClientSecret": "dac24998d5a3c17943ad6a5650a3e51612293a79"
+
+// second app
+// "ClientSecret": "eed63351ee523f16936f802f3e94b0915cb6331f"
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddGitHub(
+    options => {
+        options.ClientId = builder.Configuration["Authentication:GitHub:ClientId"] ?? "";
+        options.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"] ?? "";
+        options.Scope.Add("user:email");
+        options.CallbackPath = "/signin-github";
+    });
+
+
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
