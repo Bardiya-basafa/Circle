@@ -14,7 +14,8 @@
             @* stories *@
             @await Component.InvokeAsync("Stories")
             @* posts  *@
-            <partial name="Home/_Post" model="Model"/>
+            <partial name="Home/_Post" view-data='new ViewDataDictionary(ViewData){{"ShowDetails",true}}'
+                     model="Model"/>
 
         </div>
         @* sidebar suggested friends  *@

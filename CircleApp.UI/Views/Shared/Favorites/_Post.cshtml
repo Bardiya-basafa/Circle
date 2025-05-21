@@ -82,7 +82,7 @@
 
                     @* About Author *@
                     <a>
-                        <img src="@(post.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
+                        <img src="@(post.User.ProfilePictureUrl ?? "/images/avatar/user.png")"
                              class="w-9 h-9 rounded-full"/>
                     </a>
                     <div class="flex-1">
@@ -209,7 +209,7 @@
                         @* Comment content *@
                         <div class="flex items-start gap-3 relative mt-8">
                             <a>
-                                <img src="@(comment.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
+                                <img src="@(comment.User.ProfilePictureUrl ?? "/images/avatar/user.png")"
                                      class="w-6 h-6 mt-1 rounded-full"/>
                             </a>
                             <div class="flex-1">

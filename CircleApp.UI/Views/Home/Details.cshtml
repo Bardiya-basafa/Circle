@@ -44,12 +44,12 @@
                         <div class="flex gap-3 sm:p-4 p-2.5 text-sm font-medium">
 
                                 @* About Author *@
-                                <a>
+                                <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId">
                                         <img src="@(Model.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
                                              class="w-9 h-9 rounded-full"/>
                                 </a>
                                 <div class="flex-1">
-                                        <a>
+                                        <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId">
                                                 <h4 class="text-black">@Model.User.FullName</h4>
                                                 <div
                                                                 class="text-xs text-gray-500/80"
@@ -178,13 +178,16 @@
                                 @foreach (var comment in Model.Comments.OrderByDescending(n => n.DateCreated)){
                                         @* Comment content *@
                                         <div class="flex items-start gap-3 relative mt-8">
-                                                <a>
+                                                <a asp-controller="Users" asp-action="Details"
+                                                   asp-route-userId="@comment.UserId">
                                                         <img src="@(comment.User.ProfilePictureUrl ?? "~/images/avatar/user.png")"
                                                              class="w-6 h-6 mt-1 rounded-full"/>
                                                 </a>
                                                 <div class="flex-1">
                                                         <div class="flex justify-content-between">
-                                                                <a class="text-black font-medium inline-block flex-grow">
+                                                                <a class="text-black font-medium inline-block flex-grow"
+                                                                   asp-controller="Users" asp-action="Details"
+                                                                   asp-route-userId="@comment.UserId">
                                                                         @comment.User.FullName
                                                                 </a>
                                                                 <small>@DisplayTime(comment.DateCreated)</small>

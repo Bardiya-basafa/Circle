@@ -10,9 +10,12 @@ public class UserService : IUserService {
 
     private readonly AppDbContext _context;
 
-    public UserService(AppDbContext context)
+    private readonly IPostService _postService;
+
+    public UserService(AppDbContext context, IPostService postService)
     {
         _context = context;
+        _postService = postService;
     }
 
     public async Task<User?> GetUserDataAsync(int loggedInUserId)
@@ -32,6 +35,25 @@ public class UserService : IUserService {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
+    }
+
+    public async Task<List<Post>> GetUserPostsByIdAsync(int userId)
+    {
+        var allPosts = await _context.Posts
+            .Where(n => (n.UserId == userId && (!n.IsPrivate || n.UserId == userId) && n.Reports.Count < 5 && !n.IsDeleted))
+            .Include(n => n.User)
+            .Include(n => n.Likes)
+            .Include(n => n.Bookmarks)
+            // .Include(n => n.Comments).ThenInclude(n => n.User)
+            .Include(n => n.Reports)
+            .OrderByDescending(n => n.DateCreated)
+            .ToListAsync();
+
+        if (allPosts == null){
+            return new List<Post>();
+        }
+
+        return allPosts;
     }
 
 }
