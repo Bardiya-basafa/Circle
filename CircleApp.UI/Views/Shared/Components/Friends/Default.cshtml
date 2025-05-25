@@ -1,0 +1,39 @@
+﻿@model List<SuggestedFriendsVm>?
+<div class="flex items-baseline justify-between text-black">
+        <h3 class="font-bold text-base"> People you may know </h3>
+</div>
+
+<div class="side-list">
+        
+
+        @if (Model == null || Model == new List<SuggestedFriendsVm>()){
+                <div class="side-list-item">
+                        There is no user to suggest!
+                </div>
+        }
+        else{
+                @foreach (var suggestedFriend in Model){
+                        <div class="side-list-item">
+                                <a asp-controller="Users" asp-action="Details"
+                                   asp-route-userId="@suggestedFriend.UserId">
+                                        <img src="@(suggestedFriend.ProfilePtctureUrl ?? "/images/avatar/user.png")"
+                                             class="side-list-image rounded-full"/>
+                                </a>
+                                <div class="flex-1">
+                                        <a asp-controller="Users" asp-action="Details"
+                                           asp-route-userId="@suggestedFriend.UserId">
+                                                <h4 class="side-list-title">
+                                                        @suggestedFriend.FullName
+                                                </h4>
+                                        </a>
+                                        <div class="side-list-info">@suggestedFriend.ShowFollowers</div>
+                                </div>
+                                <a asp-controller="Friends" asp-action="SendFriendRequest"
+                                   asp-route-receiverId="@suggestedFriend.UserId"
+                                   class="button bg-primary-soft text-primary">Follow
+                                </a>
+                        </div>
+                }
+        }
+</div>
+

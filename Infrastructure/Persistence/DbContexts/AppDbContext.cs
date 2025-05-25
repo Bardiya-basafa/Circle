@@ -28,6 +28,10 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int> {
 
     public DbSet<Hashtag> Hashtags { get; set; }
 
+    public DbSet<FriendShip> FriendShips { get; set; }
+
+    public DbSet<FriendRequest> FriendRequests { get; set; }
+
 
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -139,6 +143,31 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int> {
         modelBuilder.Entity<IdentityRoleClaim<int>>().ToTable("RoleClaims");
         modelBuilder.Entity<IdentityUserToken<int>>().ToTable("UserTokens");
 
+        // configuration friend requests  
+        modelBuilder.Entity<FriendRequest>()
+            .HasOne(fr => fr.Sender)
+            .WithMany()
+            .HasForeignKey(fr => fr.SenderId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<FriendRequest>()
+            .HasOne(fr => fr.Receiver)
+            .WithMany()
+            .HasForeignKey(fr => fr.ReceiverId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        // configurations for friend ships 
+        modelBuilder.Entity<FriendShip>()
+            .HasOne(fr => fr.Sender)
+            .WithMany()
+            .HasForeignKey(fr => fr.SenderId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<FriendShip>()
+            .HasOne(fr => fr.Receiver)
+            .WithMany()
+            .HasForeignKey(fr => fr.ReceiverId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 
 }

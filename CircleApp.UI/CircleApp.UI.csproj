@@ -37,6 +37,7 @@
         <_ContentIncludedByDefault Remove="wwwroot\images\icons\video.png"/>
         <_ContentIncludedByDefault Remove="wwwroot\images\logo.png"/>
         <_ContentIncludedByDefault Remove="Pages\Shared\Components\Hashtag\Default.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\Shared\SideBar\_SuggestedFriends.cshtml" />
     </ItemGroup>
 
     <ItemGroup>

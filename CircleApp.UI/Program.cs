@@ -22,6 +22,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IFavoritesService, FavoritesService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IFriendsService, FriendsService>();
 
 // configure the identities 
 builder.Services.AddIdentity<User, IdentityRole<int>>(options => {

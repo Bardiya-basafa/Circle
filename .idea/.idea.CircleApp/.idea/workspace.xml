@@ -9,21 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa31f59f-f87a-438d-80ed-006b142d1930" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/UsersController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Users/Details.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Users/UserDetailsVm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Controllers/FriendsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/ViewComponents/FriendsViewComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Friends/FriendRequests.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Friends/Friends.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Components/Friends/Default.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DTO/FriendResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DTO/SentRequestResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DTO/SuggestedUserResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/FriendRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/FriendShip.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ViewModels/Friends/SuggestedFriendsVm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Helpers/Constansts/FriendShipStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Interfaces/IFriendsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Services/FriendsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/dataSources/5c3648ef-1996-4680-94a3-dee5876d5a36.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CircleApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Favorites/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Favorites/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/CircleApp.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Components/Stories/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Components/Stories/Default.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Favorites/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Favorites/_Post.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Home/_Post.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/Navigation/_SideBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/SideBar/_SuggestedFriends.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/Users/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/Users/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/Views/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/CircleApp.UI.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
@@ -35,16 +50,22 @@
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/CircleApp.UI.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/compressed/fqbhmdrl5t-bvb2ju9pgv.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/ref/CircleApp.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/refint/CircleApp.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/obj/Debug/net9.0/staticwebassets/msbuild.CircleApp.UI.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.UI/wwwroot/css/site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/CircleApp.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/ViewModels/User/UpdatePasswordVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ViewModels/UserSetting/UpdatePasswordVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/ViewModels/User/UpdateProfileVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ViewModels/UserSetting/UpdateProfileVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/ViewModels/User/UpdateUserPictureVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ViewModels/UserSetting/UpdateUserPictureVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/IndexPageObject.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs" afterDir="false" />
@@ -55,6 +76,8 @@
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/ref/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net9.0/refint/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/DbContexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/DbContexts/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
@@ -62,13 +85,12 @@
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Interfaces/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Interfaces/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services/UserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/bin/Debug/net9.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Services/bin/Debug/net9.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/bin/Debug/net9.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Services/bin/Debug/net9.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/bin/Debug/net9.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Services/bin/Debug/net9.0/Infrastructure.dll" afterDir="false" />
@@ -78,6 +100,7 @@
       <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Services/obj/Debug/net9.0/Services.sourcelink.json" afterDir="false" />
@@ -116,6 +139,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18d5d296e0c947658006b6cdcadf05f310338/d4/3fa7d251/OptionsFactory`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24b0443788294a0996f85115e7c6155112910/19/d2e981ce/TagHelperExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a0d026c476084c11a41424c4513349b545918/4d/791fa07b/PartialTagHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/0f/b6c0d7db/Type.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/24/6de3512d/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/4d/54a7c9b1/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/9c/958383fa/AsyncTaskMethodBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
@@ -241,7 +265,10 @@
       <workItem from="1747810465307" duration="5497000" />
       <workItem from="1747817066401" duration="1393000" />
       <workItem from="1747818484735" duration="676000" />
-      <workItem from="1747829866864" duration="4983000" />
+      <workItem from="1747829866864" duration="5104000" />
+      <workItem from="1747851671612" duration="641000" />
+      <workItem from="1748158574944" duration="12750000" />
+      <workItem from="1748177499587" duration="2318000" />
     </task>
     <task id="LOCAL-00001" summary="initial database setups">
       <option name="closed" value="true" />
@@ -387,7 +414,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747590780804</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="making details section">
+      <option name="closed" value="true" />
+      <created>1747834963208</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1747834963208</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +487,8 @@
     <MESSAGE value="setting up registration" />
     <MESSAGE value="making authentication and authorization services" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="making details section" />
+    <option name="LAST_COMMIT_MESSAGE" value="making details section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -609,9 +645,108 @@
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CircleApp.UI/Views/Users/Details.cshtml</url>
-          <line>20</line>
-          <option name="timeStamp" value="37" />
+          <url>file://$PROJECT_DIR$/Services/Services/FriendsService.cs</url>
+          <line>29</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\Services\Services\FriendsService.cs" containingFunctionPresentation="Method 'SendFriendRequest'">
+            <startOffsets>
+              <option value="714" />
+            </startOffsets>
+            <endOffsets>
+              <option value="751" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/Services/FriendsService.cs</url>
+          <line>30</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\Services\Services\FriendsService.cs" containingFunctionPresentation="Method 'SendFriendRequest'">
+            <startOffsets>
+              <option value="760" />
+            </startOffsets>
+            <endOffsets>
+              <option value="794" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CircleApp.UI/ViewComponents/FriendsViewComponent.cs</url>
+          <line>27</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\CircleApp.UI\ViewComponents\FriendsViewComponent.cs" containingFunctionPresentation="Method 'InvokeAsync'">
+            <startOffsets>
+              <option value="743" />
+            </startOffsets>
+            <endOffsets>
+              <option value="835" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CircleApp.UI/ViewComponents/FriendsViewComponent.cs</url>
+          <line>29</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\CircleApp.UI\ViewComponents\FriendsViewComponent.cs" containingFunctionPresentation="Method 'InvokeAsync'">
+            <startOffsets>
+              <option value="845" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1215" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/Services/FriendsService.cs</url>
+          <line>69</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\Services\Services\FriendsService.cs" containingFunctionPresentation="Method 'GetSuggestedFriends'">
+            <startOffsets>
+              <option value="2037" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2263" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CircleApp.UI/Controllers/FriendsController.cs</url>
+          <line>51</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\CircleApp.UI\Controllers\FriendsController.cs" containingFunctionPresentation="Method 'SendFriendRequest'">
+            <startOffsets>
+              <option value="1313" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1377" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CircleApp.UI/Controllers/FriendsController.cs</url>
+          <line>53</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\CircleApp.UI\Controllers\FriendsController.cs" containingFunctionPresentation="Method 'SendFriendRequest'">
+            <startOffsets>
+              <option value="1387" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1428" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/Services/FriendsService.cs</url>
+          <line>94</line>
+          <properties documentPath="E:\AspNetCore-Projects\CircleApp\Services\Services\FriendsService.cs" containingFunctionPresentation="Method 'SendFriendshipRequest'">
+            <startOffsets>
+              <option value="3107" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3219" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
