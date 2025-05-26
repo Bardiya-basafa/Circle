@@ -22,11 +22,12 @@ public class HashtagsViewComponent : ViewComponent {
         var oneWeekAgoNow = DateTime.UtcNow.AddDays(-7);
 
         List<Hashtag>? top3Hashtags = await _appDbContext.Hashtags
-            .Where(h => h.DateCreated >= oneWeekAgoNow && h.Posts.Any(p => postIds.Contains(p.PostId)) && h.Count > 0)
-            .OrderByDescending(n => n.Count)
+            .Where(h => h.Posts.Any(p => postIds.Contains(p.PostId)) && h.Count > 0)
             .Distinct()
-            .Take(3)
+            .Take(5)
             .ToListAsync();
+
+        top3Hashtags = top3Hashtags.OrderByDescending(n => n.Count).ThenByDescending(n => n.DateCreated).ToList();
 
 
         return View(top3Hashtags);

@@ -2,6 +2,8 @@
 
 public class SentRequestResponse {
 
+    public int RequestId { get; set; }
+
     public int SentRequestUserId { get; set; }
 
     public string FullName { get; set; }
@@ -9,5 +11,7 @@ public class SentRequestResponse {
     public string? ProfilePictureUrl { get; set; }
 
     public DateTime CreatedDate { get; set; }
+
+    public string Status { get; set; }
 
 }

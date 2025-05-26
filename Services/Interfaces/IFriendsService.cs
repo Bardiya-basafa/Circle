@@ -8,7 +8,7 @@ public interface IFriendsService {
 
     Task SendFriendRequest(int senderId, int receiverId);
 
-    Task UpdateFriendRequestStatus(int requestId, string newStatus);
+    Task UpdateFriendshipRequestStatus(int loggedInUserId, int senderId, string newStatus);
 
     Task RemoveFriendship(int friendshipId);
 
@@ -16,10 +16,14 @@ public interface IFriendsService {
 
     Task SendFriendshipRequest(int senderId, int receiverId);
 
-    Task<List<SentRequestResponse>?> GetSentRequests(int userId);
+    Task<List<SentRequestResponse>?> GetSentFriendshipRequests(int userId);
 
-    Task<List<FriendResponse>?> GetFriends(int userId);
+    Task<List<FriendResponse>?> GetFriendships(int userId);
 
-    Task CancelFriendRequest(int loggedInUserId, int receiverId);
+    Task CancelFriendshipRequest(int loggedInUserId, int receiverId);
+
+    Task<List<ReceivedRequestsResponse>?> GetReceivedFriendshipRequests(int userId);
+
+    Task OkButton(int friendshipRequestId);
 
 }

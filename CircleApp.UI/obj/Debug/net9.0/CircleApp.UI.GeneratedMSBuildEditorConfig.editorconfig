@@ -40,12 +40,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Friends/FriendRequests.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xGcmllbmRSZXF1ZXN0cy5jc2h0bWw=
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Friends/GetFriendships.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xHZXRGcmllbmRzaGlwcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Friends/Friends.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xGcmllbmRzLmNzaHRtbA==
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Friends/GetReceivedFriendshipRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xHZXRSZWNlaXZlZEZyaWVuZHNoaXBSZXF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Friends/GetSentFriendshipRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xHZXRTZW50RnJpZW5kc2hpcFJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Home/Details.cshtml]

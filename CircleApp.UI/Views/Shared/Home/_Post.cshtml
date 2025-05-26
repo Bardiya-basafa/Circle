@@ -28,14 +28,14 @@
         return displayTime;
     }
 
-    public int LoggedInUser()
+    public int LoggedInUserId()
     {
         return int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
     }
 
     public bool IsReportedByUser(Post post)
     {
-        return !post.Reports.Any(r => r.UserId == LoggedInUser());
+        return !post.Reports.Any(r => r.UserId == LoggedInUserId());
     }
 
 }
@@ -78,7 +78,7 @@
     else{
         @foreach (var post in Model){
             @* Post *@
-            <div class="bg-white rounded-xl shadow-xl text-sm font-medium border1">
+            <div id="post-@post.PostId" class="bg-white rounded-xl shadow-xl text-sm font-medium border1">
 
 
                 @* Post heading *@
@@ -105,7 +105,7 @@
                         </button>
                         <div class="w-[245px] post-options-dropdown"
                              uk-dropdown="pos: bottom-right; animation: uk-animation-scale-up uk-transform-origin-top-right; animate-out: true; mode: click">
-                            @if (post.UserId == LoggedInUser()){
+                            @if (post.UserId == LoggedInUserId()){
                                 <form asp-action="PostVisibility" asp-controller="Home">
                                     <input type="hidden" name="postId" value="@post.PostId"/>
                                     <button type="submit" class="hover:!bg-red-50 icon-link">
@@ -168,11 +168,12 @@
                     @* Like icon *@
                     <div class="flex items-center gap-2.5">
                         <form asp-controller="Home" asp-action="LikePost">
+                            @Html.AntiForgeryToken()
                             <input type="hidden" value="@post.PostId" name="PostId"/>
                             <button type="submit"
-                                    class="button-icon @(post.Likes.Any(n => n.UserId == 1) ? "text-red-500 bg-red-100" : "") ">
+                                    class="button-icon like-button @(post.Likes.Any(n => n.UserId == 1) ? "text-red-500 bg-red-100" : "") ">
                                 <ion-icon class="text-lg"
-                                          name="@(post.Likes.Any(n => n.UserId == 1) ? "heart" : "heart-outline")"></ion-icon>
+                                          name="@(post.Likes.Any(n => n.UserId == LoggedInUserId()) ? "heart" : "heart-outline")"></ion-icon>
                             </button>
                         </form>
                         <a href="#">@post.Likes.Count</a>
@@ -195,7 +196,7 @@
                                 <button type="submit"
                                         class="button-icon ml-auto @(post.Bookmarks.Any(b => b.UserId == 1) ? "text-orange-500 bt-orange-100" : "")">
                                     <ion-icon class="text-lg"
-                                              name="@(post.Bookmarks.Any(b => b.UserId == 1) ? "bookmark" : "bookmark-outline")">
+                                              name="@(post.Bookmarks.Any(b => b.UserId == LoggedInUserId()) ? "bookmark" : "bookmark-outline")">
                                     </ion-icon>
                                 </button>
                             </form>

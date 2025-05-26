@@ -53,13 +53,15 @@ public class HomeController : BaseController {
         return RedirectToAction("Index");
     }
 
+    [ValidateAntiForgeryToken]
     [HttpPost]
     public async Task<IActionResult> LikePost(LikePostVm likePost)
     {
         LoggedInUserId = GetUserId();
         await _postService.LikePost(LoggedInUserId, likePost.PostId);
+        var posts = await _postService.GetAllPosts(LoggedInUserId)!;
 
-        return RedirectToAction("Index");
+        return PartialView("Home/_Post", posts);
     }
 
     [HttpPost]

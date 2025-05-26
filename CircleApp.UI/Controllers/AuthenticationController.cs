@@ -77,7 +77,8 @@ public class AuthenticationController : Controller {
         {
             FullName = $"{registerVm.FirstName} {registerVm.LastName}",
             Email = registerVm.Email,
-            UserName = registerVm.Email
+            UserName = registerVm.Email,
+            Bio = ""
         };
 
         var User = await _userManager.FindByEmailAsync(registerVm.Email);

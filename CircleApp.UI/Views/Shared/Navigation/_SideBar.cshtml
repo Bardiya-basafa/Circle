@@ -19,13 +19,19 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="Friends" asp-action="FriendRequests">
+                        <a asp-controller="Friends" asp-action="GetSentFriendshipRequests">
                             <img src="~/images/icons/group-2.png" class="w-6"/>
                             <span> Sent Requests </span>
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="Friends" asp-action="Friends" >
+                        <a asp-controller="Friends" asp-action="GetReceivedFriendshipRequests">
+                            <img src="~/images/icons/group-2.png" class="w-6"/>
+                            <span> Received Requests </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Friends" asp-action="GetFriendships">
                             <img src="~/images/icons/group-2.png" class="w-6"/>
                             <span> Friends </span>
                         </a>

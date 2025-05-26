@@ -1,4 +1,23 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('posts-container').addEventListener('click', function (event) {
+        if (event.target.closest('.like-button')) {
+            event.preventDefault();
 
-// Write your JavaScript code.
+            let button = event.target.closest('.like-button');
+            let form = button.closest('form');
+            let postId = form.querySelector('input[name="postId"]').value();
+            let postContainer = form.getElementById('post-' + postId);
+
+            fetch(form.action, {
+                method: 'POST',
+                headers: {},
+                body: new FormData(form)
+            })
+                .then(res => res.text())
+                .then(html => postContainer.innerHTML = html)
+                .catch
+                (err => console.log(err));
+
+        }
+    })
+})

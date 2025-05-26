@@ -17395,7 +17395,7 @@ UserId</ColNames>
     <column id="5658" parent="5591" name="Id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>1</SequenceIdentity>
+      <SequenceIdentity>1(2)</SequenceIdentity>
       <StoredType>int|0s</StoredType>
     </column>
     <column id="5659" parent="5591" name="DateCreated">

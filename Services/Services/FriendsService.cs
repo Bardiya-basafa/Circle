@@ -31,35 +31,49 @@ public class FriendsService : IFriendsService {
         await _context.SaveChangesAsync();
     }
 
-    public async Task UpdateFriendRequestStatus(int requesId, string newStatus)
+
+    public async Task UpdateFriendshipRequestStatus(int loggedInUserId, int senderId, string newStatus)
     {
-        var request = await _context.FriendRequests.FirstOrDefaultAsync(x => x.Id == requesId);
+        var request = await _context.FriendRequests
+            .Where(friendRequest => friendRequest.ReceiverId == loggedInUserId && friendRequest.SenderId == senderId)
+            .FirstOrDefaultAsync();
 
         if (request != null){
             request.Status = newStatus;
             _context.Update(request);
-            await _context.SaveChangesAsync();
 
             if (newStatus == FriendShipStatus.Accepted){
-                var newFriendShip = new FriendShip()
-                {
-                    SenderId = request.SenderId,
-                    ReceiverId = request.ReceiverId,
-                    DateCreated = DateTime.Now,
-                    DateAccepted = DateTime.Now
-                };
+                if (newStatus == FriendShipStatus.Accepted){
+                    var newFriendShip = new FriendShip()
+                    {
+                        SenderId = request.SenderId,
+                        ReceiverId = request.ReceiverId,
+                        DateCreated = DateTime.Now,
+                        DateAccepted = DateTime.Now
+                    };
 
-                _context.FriendShips.Add(newFriendShip);
-                await _context.SaveChangesAsync();
+                    _context.FriendShips.Add(newFriendShip);
+                    await _context.SaveChangesAsync();
+                }
             }
+
+            await _context.SaveChangesAsync();
         }
     }
 
     public async Task RemoveFriendship(int friendshipId)
     {
-        var friendship = await _context.FriendShips.FirstOrDefaultAsync(x => x.Id == friendshipId);
+        var friendship = await _context.FriendShips.FirstOrDefaultAsync(friendship => friendship.Id == friendshipId);
 
         if (friendship != null){
+            var senderId = friendship.SenderId;
+            var receiverId = friendship.ReceiverId;
+
+            var request = await _context.FriendRequests
+                .Where(friendRequest => friendRequest.SenderId == senderId && friendRequest.ReceiverId == receiverId)
+                .FirstOrDefaultAsync();
+
+            _context.FriendRequests.Remove(request);
             _context.FriendShips.Remove(friendship);
             await _context.SaveChangesAsync();
         }
@@ -73,7 +87,7 @@ public class FriendsService : IFriendsService {
             .ToListAsync();
 
         var pendingRequestIds = await _context.FriendRequests
-            .Where(n => (n.SenderId == userId || n.ReceiverId == userId) && n.Status == FriendShipStatus.Pending)
+            .Where(n => (n.SenderId == userId || n.ReceiverId == userId))   
             .Select(n => n.SenderId == userId ? n.ReceiverId : n.SenderId)
             .ToListAsync();
 
@@ -99,7 +113,7 @@ public class FriendsService : IFriendsService {
             {
                 ReceiverId = receiverId,
                 SenderId = senderId,
-                DateCreated = DateTime.Now,
+                DateCreated = DateTime.UtcNow,
                 Status = FriendShipStatus.Pending,
             };
 
@@ -108,29 +122,39 @@ public class FriendsService : IFriendsService {
         }
     }
 
-    public async Task<List<SentRequestResponse>?> GetSentRequests(int userId)
+    public async Task<List<SentRequestResponse>?> GetSentFriendshipRequests(int userId)
     {
-        var pendingRequests = await _context.FriendRequests
-            .Where(friendRequest => friendRequest.SenderId == userId && friendRequest.Status == FriendShipStatus.Pending)
+        var requests = await _context.FriendRequests
+            .Where(friendRequest => friendRequest.SenderId == userId)
             .Select(friendRequest => new SentRequestResponse()
             {
+                RequestId = friendRequest.Id,
                 FullName = friendRequest.Receiver.FullName,
                 ProfilePictureUrl = friendRequest.Receiver.ProfilePictureUrl,
                 CreatedDate = friendRequest.DateCreated,
                 SentRequestUserId = friendRequest.ReceiverId,
+                Status = friendRequest.Status,
             })
             .OrderByDescending(f => f.CreatedDate)
             .ToListAsync();
 
-        return pendingRequests;
+        var accepted = requests.Where(r => r.Status == FriendShipStatus.Accepted).ToList();
+        var rejected = requests.Where(r => r.Status == FriendShipStatus.Rejected).ToList();
+        var cancelled = requests.Where(r => r.Status == FriendShipStatus.Cancelled).ToList();
+        var pending = requests.Where(r => r.Status == FriendShipStatus.Pending).ToList();
+        var sortedRequests = accepted.Concat(rejected).Concat(cancelled).Concat(pending).ToList();
+
+
+        return sortedRequests;
     }
 
-    public async Task<List<FriendResponse>?> GetFriends(int userId)
+    public async Task<List<FriendResponse>?> GetFriendships(int userId)
     {
         var friends = await _context.FriendShips
             .Where(friendship => friendship.SenderId == userId || friendship.ReceiverId == userId)
             .Select(friendship => new FriendResponse()
             {
+                FriendshipId = friendship.Id,
                 FriendId = friendship.SenderId == userId ? friendship.ReceiverId : friendship.SenderId,
                 ProfilePictureUrl = friendship.SenderId == userId ? friendship.Receiver.ProfilePictureUrl : friendship.Sender.ProfilePictureUrl,
                 FullName = friendship.SenderId == userId ? friendship.Receiver.FullName : friendship.Sender.FullName,
@@ -142,7 +166,7 @@ public class FriendsService : IFriendsService {
         return friends;
     }
 
-    public async Task CancelFriendRequest(int loggedInUserId, int receiverId)
+    public async Task CancelFriendshipRequest(int loggedInUserId, int receiverId)
     {
         var friendshipRequest = await _context.FriendRequests
             .Where(friendRequest => friendRequest.SenderId == loggedInUserId && friendRequest.ReceiverId == receiverId)
@@ -151,6 +175,32 @@ public class FriendsService : IFriendsService {
         if (friendshipRequest != null){
             _context.FriendRequests.Remove(friendshipRequest);
             _context.SaveChanges();
+        }
+    }
+
+    public async Task<List<ReceivedRequestsResponse>?> GetReceivedFriendshipRequests(int userId)
+    {
+        var receivedRequests = await _context.FriendRequests
+            .Where(friendRequest => friendRequest.ReceiverId == userId && friendRequest.Status == FriendShipStatus.Pending)
+            .Select(request => new ReceivedRequestsResponse()
+            {
+                FullName = request.Sender.FullName,
+                ProfilePictureUrl = request.Sender.ProfilePictureUrl,
+                UserId = request.SenderId,
+                DateSent = request.DateCreated,
+            }).OrderByDescending(f => f.DateSent)
+            .ToListAsync();
+
+        return receivedRequests;
+    }
+
+    public async Task OkButton(int friendshipRequestId)
+    {
+        var request = await _context.FriendRequests.FirstOrDefaultAsync(f => f.Id == friendshipRequestId);
+
+        if (request != null){
+            _context.FriendRequests.Remove(request);
+            await _context.SaveChangesAsync();
         }
     }
 
