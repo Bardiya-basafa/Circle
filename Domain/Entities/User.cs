@@ -27,4 +27,9 @@ public class User : IdentityUser<int> {
 
     public ICollection<Report> Reports { get; set; } = new HashSet<Report>();
 
+    public static ReadOnlySpan<byte> FindFirstValue(string httpSchemasXmlsoapOrgWsIdentityClaimsNameidentifier)
+    {
+        throw new NotImplementedException();
+    }
+
 }

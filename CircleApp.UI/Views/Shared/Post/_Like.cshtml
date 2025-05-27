@@ -1,0 +1,20 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Post
+
+@{
+        var loggedInUserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+}
+
+<div class="flex items-center gap-2.5">
+        <form asp-controller="Home" asp-action="LikePost">
+                @Html.AntiForgeryToken()
+                <input type="hidden" value="@Model.PostId" name="PostId"/>
+                <button
+                                class="button-icon like-button @(Model.Likes.Any(n => n.UserId == loggedInUserId) ? "text-red-500 bg-red-100" : "") ">
+                        <ion-icon class="text-lg"
+                                  name="@(Model.Likes.Any(n => n.UserId == loggedInUserId) ? "heart" : "heart-outline")"></ion-icon>
+                </button>
+        </form>
+        <a href="#"> @Model.Likes.Count </a>
+</div>

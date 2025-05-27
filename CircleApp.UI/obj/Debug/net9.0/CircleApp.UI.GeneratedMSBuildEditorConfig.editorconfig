@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3Rvcmllc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Details/_FriendDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERldGFpbHNcX0ZyaWVuZERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Favorites/_Post.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZhdm9yaXRlc1xfUG9zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,6 +110,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Navigation/_TopBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5hdmlnYXRpb25cX1RvcEJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_AboutAuthor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX0Fib3V0QXV0aG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_AddComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX0FkZENvbW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_BookmarkIcon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX0Jvb2ttYXJrSWNvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_ChatIcon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX0NoYXRJY29uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_CommentsContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX0NvbW1lbnRzQ29udGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_Like.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX0xpa2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_PostImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX1Bvc3RJbWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_PostOptions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX1Bvc3RPcHRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/Post/_PostTextContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RcX1Bvc3RUZXh0Q29udGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/AspNetCore-Projects/CircleApp/CircleApp.UI/Views/Shared/_Layout.cshtml]

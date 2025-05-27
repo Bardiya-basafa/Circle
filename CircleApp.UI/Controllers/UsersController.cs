@@ -16,12 +16,15 @@ public class UsersController : BaseController {
 
     private readonly IUserService _userService;
 
+    private readonly IFriendsService _friendsService;
+
     private readonly UserManager<User> _userManager;
 
-    public UsersController(IUserService userService, UserManager<User> userManager)
+    public UsersController(IUserService userService, UserManager<User> userManager, IFriendsService friendsService)
     {
         _userService = userService;
         _userManager = userManager;
+        _friendsService = friendsService;
     }
 
     [HttpGet]
@@ -30,17 +33,20 @@ public class UsersController : BaseController {
     public async Task<IActionResult> Details(int userId)
     {
         var posts = await _userService.GetUserPostsByIdAsync(userId);
+        var friends = await _friendsService.GetFriendships(userId);
         var user = await _userManager.FindByIdAsync(userId.ToString());
 
         if (user == null){
             RedirectToAction("Index", "Home");
         }
 
+
         var details = new UserDetailsVm()
         {
             ProfilePictureUrl = user.ProfilePictureUrl,
             FullName = user.FullName,
-            Posts = posts
+            Posts = posts,
+            Friends = friends
         };
 
         return View(details);

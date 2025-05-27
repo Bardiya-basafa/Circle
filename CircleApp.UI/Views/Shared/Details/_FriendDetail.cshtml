@@ -1,0 +1,15 @@
+﻿@model FriendResponse
+
+<div>
+        <div class="relative w-full aspect-square rounded-lg overflow-hidden">
+                <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.FriendId"> <img
+                                        src=@(Model.ProfilePictureUrl == null ? "/images/avatar/user.png" : Model.ProfilePictureUrl)
+                                        class="object-cover w-full h-full inset-0"/></a>
+        </div>
+        <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.FriendId">
+                <div class="mt-2 line-clamp-1">@Model.FullName</div>
+        </a>
+</div>
+        
+
+

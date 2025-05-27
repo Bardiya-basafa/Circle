@@ -1,0 +1,26 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Post
+
+@{
+        var loggedInUserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+}
+
+<div class="ml-auto">
+        <div class="flex items-center gap-2.5">
+                <a class="button-icon ml-auto">
+                        <form asp-action="BookmarkPost" asp-controller="Home">
+                                <input name="PostId" value="@Model.PostId" type="hidden"/>
+                                <button
+                                                class="button-icon ml-auto bookmark-button @(Model.Bookmarks.Any(b => b.UserId == 1) ? "text-orange-500 bt-orange-100" : "")">
+                                        <ion-icon class="text-lg"
+                                                  name="@(Model.Bookmarks.Any(b => b.UserId == loggedInUserId) ? "bookmark" : "bookmark-outline")">
+                                        </ion-icon>
+                                </button>
+                        </form>
+                        @if (Model.Bookmarks.Count > 0){
+                                <a>@Model.Bookmarks.Count</a>
+                        }
+                </a>
+        </div>
+</div>

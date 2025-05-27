@@ -1,0 +1,10 @@
+﻿@model Post
+
+@if (!string.IsNullOrEmpty(Model.ImageUrl)){
+        <a asp-controller="Home" asp-action="Details" asp-route-postId="@Model.PostId">
+                <div class="relative w-full lg:h-96 h-full sm:px-4">
+                        <img src="@(Model.ImageUrl)"
+                             class="sm:rounded-lg w-full h-full object-cover" alt="img"/>
+                </div>
+        </a>
+}

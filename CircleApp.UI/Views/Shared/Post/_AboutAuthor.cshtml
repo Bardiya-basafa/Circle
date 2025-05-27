@@ -1,0 +1,17 @@
+﻿@model Post
+@using CircleApp.UI.Views.Shared
+@using Infrastructure.Persistence.Helpers
+<a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId">
+        <img src="@(Model.User.ProfilePictureUrl ?? "/images/avatar/user.png")"
+             class="w-9 h-9 rounded-full"/>
+
+</a>
+<div class="flex-1">
+        <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId">
+                <h4 class="text-black">@Model.User.FullName</h4>
+                <div
+                                class="text-xs text-gray-500/80"
+                                title="@Model.DateCreated.ToString("yyyy-M-d dddd HH:mm")">@ViewHelper.DisplayTime(Model.DateCreated)
+                </div>
+        </a>
+</div>

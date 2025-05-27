@@ -1,0 +1,34 @@
+﻿@model List<Comment>
+
+@* Comments  *@
+@foreach (var comment in Model.OrderByDescending(n => n.DateCreated).Take(3)){
+        @* Comment content *@
+
+        <div class="flex items-start gap-3 relative mt-8">
+                <a asp-controller="Users" asp-action="Details" asp-route-userId="@comment.UserId">
+                        <img src="@(comment.User.ProfilePictureUrl ?? "/images/avatar/user.png")"
+                             class="w-6 h-6 mt-1 rounded-full"/>
+                </a>
+                <div class="flex-1">
+                        <div class="flex justify-content-between">
+                                <a class="text-black font-medium inline-block flex-grow" asp-controller="Users"
+                                   asp-action="Details" asp-route-userId="@comment.UserId">
+                                        @comment.User.FullName
+                                </a>
+                                <small>@ViewHelper.DisplayTime(comment.DateCreated)</small>
+                        </div>
+                        <p class="mt-0.5">
+                                @comment.Content
+                        </p>
+
+                        @* Delete comment icon *@
+
+                        <button type="submit" class="text-red-500 text-xs ml-2"
+                                onclick="openDeleteModal(@comment.PostId)"
+                                title="Remove the comment">
+                                <ion-icon name="trash-outline"></ion-icon>
+                        </button>
+
+                </div>
+        </div>
+}

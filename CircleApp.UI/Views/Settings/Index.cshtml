@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model User;
+@model Domain.Entities.User;
 @{
     var fullName = User.Claims.FirstOrDefault(c => c.Type == "FullName")?.Value;
     var username = User.Identity.Name;
@@ -16,7 +16,7 @@
                       asp-action="UpdateUserProfilePicture" enctype="multipart/form-data">
                     <div class="relative w-12 h-12 shrink-0">
                         <label class="cursor-pointer">
-                            <img id="imagePreview" src="@(Model.ProfilePictureUrl ?? "~/images/avatar/user.png")"
+                            <img id="imagePreview" src="@(Model.ProfilePictureUrl ?? "/images/avatar/user.png")"
                                  class="object-cover w-full h-full rounded-full" alt="Profile Picture Placeholder"/>
                             <input type="file" id="imageUpload" name="ProfilePictureImage" class="hidden"
                                    accept="image/png, image/jpeg"/>

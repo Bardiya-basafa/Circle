@@ -59,9 +59,9 @@ public class HomeController : BaseController {
     {
         LoggedInUserId = GetUserId();
         await _postService.LikePost(LoggedInUserId, likePost.PostId);
-        var posts = await _postService.GetAllPosts(LoggedInUserId)!;
+        var post = await _postService.GetPostByIdAsync(likePost.PostId);
 
-        return PartialView("Home/_Post", posts);
+        return PartialView("Post/_Like", post);
     }
 
     [HttpPost]
@@ -79,8 +79,10 @@ public class HomeController : BaseController {
         };
 
         await _postService.AddComment(comment);
+        var post = await _postService.GetPostByIdAsync(commentPostVm.PostId);
+        var comments = post.Comments.ToList();
 
-        return RedirectToAction("Index");
+        return PartialView("Post/_CommentsContent", comments);
     }
 
     [HttpPost]
@@ -97,8 +99,9 @@ public class HomeController : BaseController {
     {
         LoggedInUserId = GetUserId();
         await _postService.BookmarkPost(LoggedInUserId, bookmarkPostVm.PostId);
+        var post = await _postService.GetPostByIdAsync(bookmarkPostVm.PostId);
 
-        return RedirectToAction("Index");
+        return PartialView("Post/_BookmarkIcon", post);
     }
 
     [HttpPost]

@@ -110,22 +110,37 @@ public class PostService : IPostService {
 
     public async Task LikePost(int loggedInUserId, int postId)
     {
-        var liked = await _appDbContext.Likes
-            .FirstOrDefaultAsync(l => l.UserId == loggedInUserId && l.PostId == postId);
+        const int maxRetries = 3;
+        int retryCount = 0;
 
-        if (liked != null){
-            _appDbContext.Likes.Remove(liked);
-            await _appDbContext.SaveChangesAsync();
-        }
-        else{
-            var like = new Like
-            {
-                PostId = postId,
-                UserId = loggedInUserId
-            };
+        while (retryCount < maxRetries){
+            await using var transaction = await _appDbContext.Database.BeginTransactionAsync();
 
-            _appDbContext.Likes.Add(like);
-            await _appDbContext.SaveChangesAsync();
+            try{
+                var liked = await _appDbContext.Likes
+                    .FirstOrDefaultAsync(l => l.UserId == loggedInUserId && l.PostId == postId);
+
+                if (liked != null)
+                    _appDbContext.Likes.Remove(liked);
+                else
+                    _appDbContext.Likes.Add(new Like { UserId = loggedInUserId, PostId = postId });
+
+                await _appDbContext.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return;
+            }
+            catch (DbUpdateConcurrencyException){
+                await transaction.RollbackAsync();
+                retryCount++;
+
+                if (retryCount >= maxRetries)
+                    throw;
+
+                // Reset DbContext state
+                foreach (var entry in _appDbContext.ChangeTracker.Entries())
+                    entry.State = EntityState.Detached;
+            }
         }
     }
 

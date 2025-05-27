@@ -1,0 +1,9 @@
+﻿@model Post
+
+<a asp-controller="Home" asp-action="Details" asp-route-postId="@Model.PostId">
+        <div class="sm:px-4 p-2.5 pt-0 w-full">
+                <p class="font-normal">
+                        @Model.Content
+                </p>
+        </div>
+</a>
