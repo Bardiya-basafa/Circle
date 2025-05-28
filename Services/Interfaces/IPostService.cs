@@ -1,5 +1,6 @@
 ﻿namespace Services.Interfaces;
 
+using Domain.DTO;
 using Domain.Entities;
 using Domain.ViewModels.Home;
 
@@ -10,15 +11,15 @@ public interface IPostService {
 
     Task<Post> GetPostByIdAsync(int postId);
 
-    Task CreatePost(PostVM post,int loggedUserId);
+    Task CreatePost(PostVM post, int loggedUserId);
 
-    Task LikePost(int loggedUserId, int postId);
+    Task<NotificationResponse> LikePost(int loggedUserId, int postId);
 
     Task AddComment(Comment comment);
 
     Task DeleteComment(int loggedUserId, int commentId);
 
-    Task BookmarkPost(int loggedUserId, int postId);
+    Task<bool> BookmarkPost(int loggedUserId, int postId);
 
     Task TogglePostVisibility(int loggedUserId, int postId);
 

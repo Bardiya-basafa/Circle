@@ -12,7 +12,7 @@
 <main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
 
         <div class="max-w-[1065px] mx-auto max-lg:-m-2.5">
-                <div class="bg-white shadow lg:rounded-b-xl lg:-mt-10">
+                <div class="bg-white shadow-xl lg:rounded-b-xl mt-9">
                         <div class="relative overflow-hidden w-full lg:h-8 h-8"></div>
                         <div class="p-3 flex flex-row items-center">
                                 <div class="flex-shrink-0 mr-4">
@@ -31,11 +31,14 @@
                 <div class="flex 2xl:gap-12 gap-10 mt-8 max-lg:flex-col" id="js-oversized">
                         @* User Posts *@
 
-                        <div class="flex-1 xl:space-y-6 space-y-3">
+                        <div class="flex-1 xl:space-y-6 space-y-3 mb-16">
                                 @foreach (var post in Model.Posts){
                                         <partial name="Home/_Post"
                                                  view-data='new ViewDataDictionary(ViewData) { { "ShowDetails", false }, { "AddPostSection", false } }'
                                                  model="post"/>
+                                }
+                                @if (Model.Posts.Count == 0){
+                                        <p class="font-extrabold text-3xl">User has not any posts</p>
                                 }
                         </div>
                         @* User Friends  *@

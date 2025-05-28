@@ -53,6 +53,7 @@ public class FriendsService : IFriendsService {
                     };
 
                     _context.FriendShips.Add(newFriendShip);
+                    _context.FriendRequests.Remove(request);
                     await _context.SaveChangesAsync();
                 }
             }
@@ -69,11 +70,7 @@ public class FriendsService : IFriendsService {
             var senderId = friendship.SenderId;
             var receiverId = friendship.ReceiverId;
 
-            var request = await _context.FriendRequests
-                .Where(friendRequest => friendRequest.SenderId == senderId && friendRequest.ReceiverId == receiverId)
-                .FirstOrDefaultAsync();
-
-            _context.FriendRequests.Remove(request);
+            
             _context.FriendShips.Remove(friendship);
             await _context.SaveChangesAsync();
         }
@@ -87,7 +84,7 @@ public class FriendsService : IFriendsService {
             .ToListAsync();
 
         var pendingRequestIds = await _context.FriendRequests
-            .Where(n => (n.SenderId == userId || n.ReceiverId == userId))   
+            .Where(n => (n.SenderId == userId || n.ReceiverId == userId))
             .Select(n => n.SenderId == userId ? n.ReceiverId : n.SenderId)
             .ToListAsync();
 

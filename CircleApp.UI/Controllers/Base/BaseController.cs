@@ -24,6 +24,13 @@ public abstract class BaseController : Controller {
         return 0;
     }
 
+    protected string GetUserFullName()
+    {
+        var userFullName = User.Claims.FirstOrDefault(c => c.Type == "FullName")?.Value;
+
+        return userFullName ?? "full name";
+    }
+
     protected IActionResult RedirectToLogin()
     {
         return RedirectToAction("Login", "Authentication");

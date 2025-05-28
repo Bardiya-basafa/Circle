@@ -1,17 +1,33 @@
 ﻿@model Post
 @using CircleApp.UI.Views.Shared
 @using Infrastructure.Persistence.Helpers
-<a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId">
-        <img src="@(Model.User.ProfilePictureUrl ?? "/images/avatar/user.png")"
-             class="w-9 h-9 rounded-full"/>
-
+<a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId" class="block">
+        <div class="relative">
+                <img src="@(Model.User.ProfilePictureUrl ?? "/images/avatar/user.png")"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-gray-200"/>
+        </div>
 </a>
-<div class="flex-1">
-        <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId">
-                <h4 class="text-black">@Model.User.FullName</h4>
-                <div
-                                class="text-xs text-gray-500/80"
-                                title="@Model.DateCreated.ToString("yyyy-M-d dddd HH:mm")">@ViewHelper.DisplayTime(Model.DateCreated)
+
+<div class="flex-1 min-w-0">
+        <div class="p-3 -m-3">
+                <div class="flex items-center gap-2 mb-1">
+                        <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId" 
+                           class="relative inline-block">
+                            <h4 class="text-gray-900 font-bold">
+                                @Model.User.FullName
+                            </h4>
+                            <!-- Animated underline that grows from center -->
+                            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-500 transform -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        </a>
                 </div>
-        </a>
+                <div class="flex items-center gap-2">
+                        <div class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded-full"
+                             title="@Model.DateCreated.ToString("yyyy-M-d dddd HH:mm")">
+                                <svg class="w-3 h-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                @ViewHelper.DisplayTime(Model.DateCreated)
+                        </div>
+                </div>
+        </div>
 </div>

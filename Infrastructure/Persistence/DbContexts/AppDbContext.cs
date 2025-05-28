@@ -32,6 +32,8 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int> {
 
     public DbSet<FriendRequest> FriendRequests { get; set; }
 
+    public DbSet<Notification> Notifications { get; set; }
+
 
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {

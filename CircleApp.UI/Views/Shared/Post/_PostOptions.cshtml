@@ -5,43 +5,66 @@
 
     var isReportedByUser = !Model.Reports.Any(r => r.UserId == loggedInUserId);
 }
-
-<div class="-mr-1">
-    <button type="button" class="button-icon w-8 h-8">
-        <ion-icon class="text-xl" name="ellipsis-horizontal"></ion-icon>
+<div class="-mr-1 relative">
+    <button type="button" class="button-icon w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 flex items-center justify-center group">
+        <ion-icon class="text-xl text-gray-600 group-hover:text-gray-800 transition-colors duration-200" name="ellipsis-horizontal"></ion-icon>
     </button>
-    <div class="w-[245px] post-options-dropdown"
+    
+    <div class="w-64 post-options-dropdown bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden p-0"
          uk-dropdown="pos: bottom-right; animation: uk-animation-scale-up uk-transform-origin-top-right; animate-out: true; mode: click">
+        
         @if (Model.UserId == loggedInUserId){
-            <form asp-action="PostVisibility" asp-controller="Home">
+            <!-- Privacy Toggle -->
+            <form asp-action="PostVisibility" asp-controller="Home" class="border-b border-gray-100">
                 <input type="hidden" name="postId" value="@Model.PostId"/>
-                <button type="submit" class="hover:!bg-red-50 icon-link">
-                    <ion-icon
-                            name="@(Model.IsPrivate ? "lock-open-outline" : "lock-closed-outline")"></ion-icon>
-                    @(Model.IsPrivate ? "Set as public" : "Set as private")
+                <button type="submit" class="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-blue-50 transition-colors duration-200 group">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-200">
+                        <ion-icon class="text-blue-600 text-lg" name="@(Model.IsPrivate ? "lock-open-outline" : "lock-closed-outline")"></ion-icon>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-medium text-gray-900">@(Model.IsPrivate ? "Set as public" : "Set as private")</div>
+                        <div class="text-xs text-gray-500">@(Model.IsPrivate ? "Everyone can see this post" : "Only you can see this post")</div>
+                    </div>
                 </button>
             </form>
 
-            <hr>
-
+            <!-- Delete Post -->
             <button type="button" onclick="openPostDeleteConfirmation('@Model.PostId')"
-                    class="text-red-400 hover:!bg-red-50 post-options-dropdown">
-                <ion-icon name="trash-bin-outline"></ion-icon>
-                Delete Post
+                    class="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-red-50 transition-colors duration-200 group">
+                <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center group-hover:bg-red-200 transition-colors duration-200">
+                    <ion-icon class="text-red-600 text-lg" name="trash-bin-outline"></ion-icon>
+                </div>
+                <div class="flex-1">
+                    <div class="font-medium text-red-600">Delete Post</div>
+                    <div class="text-xs text-red-400">This action cannot be undone</div>
+                </div>
             </button>
         }
         else{
-            if (isReportedByUser){
+            @if (isReportedByUser){
+                <!-- Report Post -->
                 <form asp-controller="Home" asp-action="ReportPost">
                     <input type="hidden" name="postId" value="@Model.PostId"/>
-                    <button type="submit" class="hover:!bg-red-50 icon-link">
-                        <ion-icon class="text-xl shrink-0" name="flag-outline"></ion-icon>
-                        Report
+                    <button type="submit" class="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-orange-50 transition-colors duration-200 group">
+                        <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors duration-200">
+                            <ion-icon class="text-orange-600 text-lg" name="flag-outline"></ion-icon>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-medium text-orange-600">Report Post</div>
+                            <div class="text-xs text-orange-400">Report inappropriate content</div>
+                        </div>
                     </button>
                 </form>
             }
             else{
-                <p>there is no action</p>
+                <!-- No Actions Available -->
+                <div class="px-4 py-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3">
+                        <ion-icon class="text-gray-400 text-xl" name="ban-outline"></ion-icon>
+                    </div>
+                    <p class="text-sm text-gray-500 font-medium">No actions available</p>
+                    <p class="text-xs text-gray-400 mt-1">You don't have permission to perform any actions on this post</p>
+                </div>
             }
         }
     </div>

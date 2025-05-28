@@ -1,9 +1,20 @@
 ﻿@model Post
 
-<a asp-controller="Home" asp-action="Details" asp-route-postId="@Model.PostId">
-        <div class="sm:px-4 p-2.5 pt-0 w-full">
-                <p class="font-normal">
+<a asp-controller="Home" asp-action="Details" asp-route-postId="@Model.PostId" 
+   class="block border-bottom rounded-lg hover:border-blue-300 transition-colors duration-200">
+        <div class="sm:px-4 p-3 w-full relative">
+        
+                <!-- Post icon -->
+                <div class="flex items-center mb-2">
+                        <svg class="w-4 h-4 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                </div>
+        
+                <!-- Post content with left padding -->
+                <p class="font-medium text-gray-900 leading-relaxed text-base pl-3 border-l-2 border-gray-200">
                         @Model.Content
                 </p>
         </div>
 </a>
+

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Services.Hubs;
 using Services.Interfaces;
 using Services.Services;
 
@@ -23,6 +24,8 @@ builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IFavoritesService, FavoritesService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IFriendsService, FriendsService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<ISearchService, SearchService>();
 
 // configure the identities 
 builder.Services.AddIdentity<User, IdentityRole<int>>(options => {
@@ -64,6 +67,21 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddAuthorization();
 
+builder.Services.AddSignalR(e => {
+    e.EnableDetailedErrors = true;
+    e.MaximumReceiveMessageSize = 102400000;
+});
+
+// builder.Services.AddCors(options => {
+//     options.AddPolicy("AllowAll",
+//     builder => {
+//         builder.AllowAnyOrigin()
+//             .AllowAnyMethod()
+//             .AllowAnyHeader()
+//             .AllowCredentials();
+//     });
+// });
+
 var app = builder.Build();
 
 
@@ -95,5 +113,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
 "default",
 "{controller=Home}/{action=Index}/{id?}");
+
+app.UseCors("AllowAll");
+ #pragma warning disable ASP0014
+app.UseEndpoints(endpoints => {
+    endpoints.MapHub<NotificationsHub>("/notification-hub");
+});
+ #pragma warning restore ASP0014
 
 app.Run();

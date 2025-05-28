@@ -6,6 +6,7 @@ namespace CircleApp.UI.Controllers;
 using Base;
 using Domain.DTO;
 using Domain.Entities;
+using Infrastructure.Persistence.Constants;
 using Infrastructure.Persistence.Helpers.Constansts;
 using Microsoft.AspNetCore.Authorization;
 using Services.Interfaces;
@@ -15,9 +16,13 @@ public class FriendsController : BaseController {
 
     private readonly IFriendsService _friendsService;
 
-    public FriendsController(IFriendsService friendsService)
+    private readonly INotificationService _notificationService;
+
+
+    public FriendsController(IFriendsService friendsService, INotificationService notificationService)
     {
         _friendsService = friendsService;
+        _notificationService = notificationService;
     }
 
     public async Task<IActionResult> GetFriendships()
@@ -50,6 +55,8 @@ public class FriendsController : BaseController {
     {
         int userId = GetUserId();
         await _friendsService.UpdateFriendshipRequestStatus(userId, senderId, FriendShipStatus.Accepted);
+        await _notificationService.AddNewNotification(senderId, NotificationTypes.FriendRequestAccepted, GetUserFullName());
+
 
         return RedirectToAction("GetReceivedFriendshipRequests");
     }
@@ -67,6 +74,7 @@ public class FriendsController : BaseController {
     {
         int userId = GetUserId();
         await _friendsService.SendFriendshipRequest(userId, receiverId);
+        await _notificationService.AddNewNotification(receiverId, NotificationTypes.FriendRequest, GetUserFullName());
 
         return RedirectToAction("Index", "Home");
     }

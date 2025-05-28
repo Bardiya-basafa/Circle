@@ -51,7 +51,7 @@
                 else{
                     @foreach (var post in Model){
                         <partial name="Home/_Post"
-                                 view-data='new ViewDataDictionary(ViewData) { { "ShowDetails", true } }'
+                                 view-data='new ViewDataDictionary(ViewData) { { "ShowDetails", true }, { "ShowAllComments", false }}'
                                  model="post"/>
                     }
                 }
@@ -79,9 +79,7 @@
 <partial name="Home/_DeletePostConfirmation"/>
 <script>
     function openPostDeleteConfirmation(postId) {
-        console.log("bardiiya")
         UIkit.dropdown('.post-options-dropdown').hide();
-        console.log(postId)
         document.getElementById('deleteConfirmationPostId').value = postId;
         UIkit.modal('#postDeleteDialog').show();
     }
@@ -128,7 +126,6 @@
             const form = bookmarkButton.closest('form')
             const postId = form.querySelector('input[name="PostId"]').value;
             const bookmarkContainer = document.getElementById(`bookmark-container-${postId}`);
-            console.log(bookmarkContainer)
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -153,18 +150,14 @@
     document.addEventListener('DOMContentLoaded', function () {
         document.body.addEventListener('click', async function (event) {
             const addCommentBtn = event.target.closest('.add-comment-button');
-            console.log(addCommentBtn)
             if (!addCommentBtn) {
                 return;
             }
             event.preventDefault()
             addCommentBtn.disabled = true;
             const form = addCommentBtn.closest('form')
-            console.log(form)
             const postId = form.querySelector('input[name="PostId"]').value;
-            console.log(postId)
             const commentContainer = document.getElementById('comment-container-' + postId);
-            console.log(commentContainer)
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -176,7 +169,7 @@
                 })
                 const html = await response.text()
                 commentContainer.innerHTML = html;
-               
+
             } finally {
                 addCommentBtn.disabled = false
             }

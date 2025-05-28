@@ -2,42 +2,115 @@
 @model Post
 @{
     bool isCommentsVisible = ViewData["ShowDetails"] as bool? ?? false;
+    bool showAllComments = ViewData["ShowAllComments"] as bool? ?? true;
 }
 
-
 @if (isCommentsVisible){
-    <div>
-        @* Comments content *@
-        <div id="comment-container-@Model.PostId">
-            <partial name="Post/_CommentsContent" model="Model.Comments.ToList()"/>
-        </div>
+    <!--Enhanced Comments Section with improved styling-->
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
 
-
-        @* Show all comment section *@
-        @if (Model.Comments.Count >= 3){
-            <div class="p-1.5">
-                <a asp-controller="Home" asp-action="Details" asp-route-postId="@Model.PostId">
-                    show all comments
-                </a>
+        <!--Comments Header-->
+        <div class="px-6 py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <h3 class="text-lg font-semibold text-gray-800"> Comments </h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"> @Model.Comments.Count </span>
             </div>
+        </div>
+        @if (showAllComments){
+            @* Comments content *@
+            <div id="comment-container-@Model.PostId" class="divide-y divide-gray-100">
+                <partial name="Post/_CommentsContent" model="Model.Comments.ToList()"/>
+            </div>
+        }
+        else{
+            @* Comments content *@
+            <div id="comment-container-@Model.PostId" class="divide-y divide-gray-100">
+                <partial name="Post/_CommentsContent" model="Model.Comments.Take(3).ToList()"/>
+            </div>
+
+            @* Show all comment section *@
+            @if (Model.Comments.Count >= 3){
+                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                    <a asp-controller="Home" asp-action="Details" asp-route-postId="@Model.PostId"
+                       class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                        View all @Model.Comments.Count comments
+                    </a>
+                </div>
+            }
         }
 
         @* Comment input *@
-        <form asp-controller="Home" asp-action="AddComment">
+        <form asp-controller="Home" asp-action="AddComment" class="comment-form">
+            <div class="p-6 bg-white border-t border-gray-200">
+                <div class="flex items-start gap-4">
 
-            <div class="sm:px-4 sm:py-3 p-2.5 border-t border-gray-100 flex items-center gap-1">
-                <img src="~/images/avatar/user.png" class="w-6 h-6 rounded-full"/>
-                <div class="flex-1 relative overflow-hidden h-10">
-                    <input type="hidden" value="@Model.PostId" name="PostId"/>
-                    <textarea placeholder="Add Comment...." rows="1"
-                              class="w-full  resize-none !bg-transparent px-4 py-2 focus:!border-transparent focus:!ring-transparent"
-                              name="Content"></textarea>
+                    <!-- User Avatar - Removed hover effects -->
+                    <div class="flex-shrink-0">
+                        <img src="~/images/avatar/user.png"
+                             class="w-10 h-10 rounded-full object-cover border-2 border-gray-200"
+                             alt="Your avatar"/>
+                    </div>
+
+                    <!-- Comment Input Area -->
+                    <div class="flex-1 space-y-3">
+                        <input type="hidden" value="@Model.PostId" name="PostId"/>
+
+                        <div class="relative">
+                        <textarea
+                                placeholder="Share your thoughts..."
+                                rows="3"
+                                maxlength="500"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-500 text-sm leading-relaxed"
+                                name="Content"
+                                oninput="updateCharCount(this)"
+                                onfocus="expandCommentBox(this)"
+                                onblur="collapseCommentBox(this)"></textarea>
+
+                            <!-- Character Counter -->
+                            <div class="absolute bottom-2 right-2 text-xs text-gray-400">
+                                <span class="char-count">0</span>/500
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex items-center justify-between">
+                            <div class="text-xs text-gray-500">
+                            <span class="inline-flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                          clip-rule="evenodd"></path>
+                                </svg>
+                                Be respectful and constructive
+                            </span>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <button type="button"
+                                        onclick="clearComment(this)"
+                                        class="px-3 py-1.5 text-sm text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                                    Cancel
+                                </button>
+                                <button type="submit"
+                                        class="add-comment-button px-4 py-1.5 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-md hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+                                        disabled>
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                    </svg>
+                                    Post Comment
+                                </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="text-sm rounded-full py-1.5 px-3.5 bg-secondery add-comment-button">Comment
-                </button>
-
             </div>
         </form>
-
     </div>
 }

@@ -1,5 +1,6 @@
 ﻿namespace Services.Services;
 
+using Domain.DTO;
 using Domain.Entities;
 using Domain.ViewModels.Home;
 using Infrastructure.Persistence.DbContexts;
@@ -108,10 +109,16 @@ public class PostService : IPostService {
             }
     }
 
-    public async Task LikePost(int loggedInUserId, int postId)
+    public async Task<NotificationResponse> LikePost(int loggedInUserId, int postId)
     {
-        const int maxRetries = 3;
+        const int maxRetries = 5;
         int retryCount = 0;
+
+        var notificationResponse = new NotificationResponse()
+        {
+            Success = false,
+            SendNotification = false
+        };
 
         while (retryCount < maxRetries){
             await using var transaction = await _appDbContext.Database.BeginTransactionAsync();
@@ -120,15 +127,20 @@ public class PostService : IPostService {
                 var liked = await _appDbContext.Likes
                     .FirstOrDefaultAsync(l => l.UserId == loggedInUserId && l.PostId == postId);
 
-                if (liked != null)
+                if (liked != null){
                     _appDbContext.Likes.Remove(liked);
-                else
+                    notificationResponse.Success = true;
+                }
+                else{
                     _appDbContext.Likes.Add(new Like { UserId = loggedInUserId, PostId = postId });
+                    notificationResponse.Success = true;
+                    notificationResponse.SendNotification = true;
+                }
 
                 await _appDbContext.SaveChangesAsync();
                 await transaction.CommitAsync();
 
-                return;
+                return notificationResponse;
             }
             catch (DbUpdateConcurrencyException){
                 await transaction.RollbackAsync();
@@ -142,6 +154,8 @@ public class PostService : IPostService {
                     entry.State = EntityState.Detached;
             }
         }
+
+        return notificationResponse;
     }
 
     public async Task AddComment(Comment comment)
@@ -160,7 +174,7 @@ public class PostService : IPostService {
         }
     }
 
-    public async Task BookmarkPost(int loggedInUserId, int postId)
+    public async Task<bool> BookmarkPost(int loggedInUserId, int postId)
     {
         var bookmark = await _appDbContext.Bookmarks
             .FirstOrDefaultAsync(b => b.UserId == loggedInUserId && b.PostId == postId);
@@ -168,6 +182,8 @@ public class PostService : IPostService {
         if (bookmark != null){
             _appDbContext.Bookmarks.Remove(bookmark);
             await _appDbContext.SaveChangesAsync();
+
+            return false;
         }
         else{
             var newBookmark = new Bookmark
@@ -179,7 +195,11 @@ public class PostService : IPostService {
 
             _appDbContext.Bookmarks.Add(newBookmark);
             await _appDbContext.SaveChangesAsync();
+
+            return true;
         }
+
+        return false;
     }
 
     public async Task TogglePostVisibility(int loggedUserId, int postId)

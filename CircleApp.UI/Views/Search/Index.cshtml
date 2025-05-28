@@ -1,0 +1,17 @@
+﻿@model SearchResponse
+
+<main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
+
+        <p>post results</p>
+        @foreach (var post in @Model.Posts){
+                <partial name="Home/_Post" model="@post"
+                         view-data='new ViewDataDictionary(ViewData) { { "ShowDetails", false }, { "AddPostSection", false } }'
+
+                />
+        }
+        <p>Users result</p>
+        @foreach (var user in Model.Users){
+                <partial name="Users/_Details" model="user"/>
+        }
+        
+</main>

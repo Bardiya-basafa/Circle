@@ -1,0 +1,39 @@
+﻿@model List<Notification>
+
+@foreach (var notification in Model){
+        <div class="relative flex items-start gap-3 p-4 border-b border-gray-200 hover:bg-gray-50 transition-all duration-200 cursor-pointer @(notification.IsRead ? "" : "bg-blue-50/50 border-l-4 border-blue-400")">
+                <!-- Notification Icon -->
+                <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                <ion-icon name="@ViewHelper.GetNotificationIcon(notification.Type)"
+                                          class="text-blue-600 text-lg"></ion-icon>
+                        </div>
+                </div>
+
+                <!-- Notification Content -->
+                <a class="flex-1 min-w-0" asp-controller="Notifications" asp-action="RedirectNotification"
+                   asp-route-notificationType="@notification.Type">
+                        <div class="flex items-start justify-between gap-2">
+                                <p class="text-sm leading-relaxed @(notification.IsRead ? "text-gray-700" : "text-gray-900 font-medium")">
+                                        @notification.Content
+                                </p>
+
+                                <!-- Unread Indicator -->
+                                @if (!notification.IsRead){
+                                        <button class="w-3 h-3 bg-blue-500 rounded-full hover:bg-blue-600 transition-colors duration-200 flex-shrink-0 mt-1"
+                                                onclick="setNotificationAsRead(@notification.Id)"
+                                                title="Mark as read"></button>
+                                }
+                        </div>
+
+                        <!-- Timestamp -->
+                        <div class="text-xs text-gray-500 mt-2 flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                @ViewHelper.DisplayTime(notification.DateCreated)
+                        </div>
+                </a>
+        </div>
+}

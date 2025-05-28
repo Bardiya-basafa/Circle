@@ -4,9 +4,11 @@ using System.Security.Claims;
 using Base;
 using Domain.Entities;
 using Domain.ViewModels.Home;
+using Infrastructure.Persistence.Constants;
 using Infrastructure.Persistence.DbContexts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Services.Interfaces;
 
 
@@ -19,13 +21,17 @@ public class HomeController : BaseController {
 
     private readonly IPostService _postService;
 
+
+    private readonly INotificationService _notificationService;
+
     public int LoggedInUserId { get; set; }
 
-    public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext, IPostService postService)
+    public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext, IPostService postService, INotificationService notificationService)
     {
         _postService = postService;
         _logger = logger;
         _appDbContext = appDbContext;
+        _notificationService = notificationService;
     }
 
     public async Task<IActionResult> Index()
@@ -58,8 +64,13 @@ public class HomeController : BaseController {
     public async Task<IActionResult> LikePost(LikePostVm likePost)
     {
         LoggedInUserId = GetUserId();
-        await _postService.LikePost(LoggedInUserId, likePost.PostId);
+        var response = await _postService.LikePost(LoggedInUserId, likePost.PostId);
         var post = await _postService.GetPostByIdAsync(likePost.PostId);
+
+        if (response.Success && response.SendNotification){
+            await _notificationService.AddNewNotification(post.UserId, NotificationTypes.Like, GetUserFullName());
+        }
+
 
         return PartialView("Post/_Like", post);
     }
@@ -81,6 +92,7 @@ public class HomeController : BaseController {
         await _postService.AddComment(comment);
         var post = await _postService.GetPostByIdAsync(commentPostVm.PostId);
         var comments = post.Comments.ToList();
+        await _notificationService.AddNewNotification(post.UserId, NotificationTypes.Comment, GetUserFullName());
 
         return PartialView("Post/_CommentsContent", comments);
     }
@@ -98,8 +110,12 @@ public class HomeController : BaseController {
     public async Task<IActionResult> BookmarkPost(BookmarkPostVm bookmarkPostVm)
     {
         LoggedInUserId = GetUserId();
-        await _postService.BookmarkPost(LoggedInUserId, bookmarkPostVm.PostId);
+        var response = await _postService.BookmarkPost(LoggedInUserId, bookmarkPostVm.PostId);
         var post = await _postService.GetPostByIdAsync(bookmarkPostVm.PostId);
+
+        if (response){
+            await _notificationService.AddNewNotification(post.UserId, NotificationTypes.Bookmark, GetUserFullName());
+        }
 
         return PartialView("Post/_BookmarkIcon", post);
     }
