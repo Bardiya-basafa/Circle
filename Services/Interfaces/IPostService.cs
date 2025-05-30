@@ -9,6 +9,8 @@ public interface IPostService {
 
     Task<List<Post>>? GetAllPosts(int loggedUserId);
 
+    Task<List<Post>> GetReportedPosts();
+
     Task<Post> GetPostByIdAsync(int postId);
 
     Task CreatePost(PostVM post, int loggedUserId);
@@ -26,5 +28,9 @@ public interface IPostService {
     Task ReportPost(int loggedUserId, int postId);
 
     Task DeletePost(int loggedUserId, int postId);
+
+    Task DismissPostReports(int postId);
+
+    Task RemoveReportedPost(int postId);
 
 }

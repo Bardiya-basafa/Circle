@@ -101,6 +101,12 @@ public class NotificationService : INotificationService {
 
                 break;
 
+            case NotificationTypes.Post:
+
+                message = "One of you post has been removed because of reports";
+
+                break;
+
             default:
 
                 break;

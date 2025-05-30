@@ -1,5 +1,5 @@
-﻿@model Post
-
+﻿@using Infrastructure.Persistence.Constants
+@model Post
 
 @* posts section *@
 <div class="md:max-w-[580px] mx-auto flex-1 xl:space-y-6 space-y-3 mb-8">
@@ -15,13 +15,27 @@
         @* Post heading *@
         <div class="flex gap-3 sm:p-4 p-2.5 text-sm font-medium">
 
-            @* About Author *@
-            <partial name="Post/_AboutAuthor" model="Model"/>
+
+            @if (!User.IsInRole(AppRoles.Admin)){
+                @* About Author *@
+                <partial name="Post/_AboutAuthor" model="Model"/>
 
 
-
-            @* Post options  *@
-            <partial name="Post/_PostOptions" model="Model"/>
+                @* Post options  *@
+                <partial name="Post/_PostOptions" model="Model"/>
+            }
+            else if (User.IsInRole(AppRoles.Admin)){
+                <div class="flex justify-between w-full gap-3 sm:flex-row flex-col">
+                    <a asp-controller="Admin" asp-action="DismissPostReports" asp-route-postId="@Model.PostId"
+                       class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg font-medium text-sm hover:bg-gray-200 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:translate-y-px transition-all duration-200">
+                        Dismiss Report
+                    </a>
+                    <a asp-controller="Admin" asp-action="RemoveReportedPost" asp-route-postId="@Model.PostId"
+                       class="flex-1 px-4 py-3 bg-red-600 text-white border border-red-600 rounded-lg font-medium text-sm hover:bg-red-700 hover:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 active:translate-y-px transition-all duration-200">
+                        Remove Post
+                    </a>
+                </div>
+            }
 
         </div>
 
@@ -32,24 +46,26 @@
         <partial name="Post/_PostImage" model="Model"/>
 
 
-        @* Icons *@
-        <div class="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-semibold">
+        @if (!User.IsInRole(AppRoles.Admin)){
+            @* Icons *@
+            <div class="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-semibold">
 
-            @* Like icon *@
-            <div id="like-container-@Model.PostId">
-                <partial name="Post/_Like" model="Model"/>
+                @* Like icon *@
+                <div id="like-container-@Model.PostId">
+                    <partial name="Post/_Like" model="Model"/>
+                </div>
+
+
+
+                @* Bookmark icon  *@
+                <div id="bookmark-container-@Model.PostId">
+                    <partial name="Post/_BookmarkIcon" model="Model"/>
+                </div>
             </div>
-            
-           
 
-            @* Bookmark icon  *@
-            <div id="bookmark-container-@Model.PostId">
-                <partial name="Post/_BookmarkIcon" model="Model"/>
-            </div>
-        </div>
-
-        @* Add comment section *@
-        <partial name="Post/_AddComment" model="Model"/>
+            @* Add comment section *@
+            <partial name="Post/_AddComment" model="Model"/>
+        }
 
 
     </div>
@@ -57,4 +73,4 @@
 </div>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+@* <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> *@

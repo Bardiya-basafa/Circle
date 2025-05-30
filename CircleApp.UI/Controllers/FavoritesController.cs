@@ -4,12 +4,13 @@ using System.Security.Claims;
 using Base;
 using Domain.Entities;
 using Domain.ViewModels.Home;
+using Infrastructure.Persistence.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
 
 
-[Authorize]
+[Authorize(Roles = AppRoles.Admin)]
 public class FavoritesController : BaseController {
 
     private readonly IFavoritesService _favoritesService;

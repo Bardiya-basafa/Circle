@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Infrastructure.Persistence.Constants
+<!DOCTYPE html>
 <html lang="en">
 <head>
         <meta charset="utf-8"/>
@@ -18,11 +19,17 @@
 <div id="wrapper">
 
         @if (User.Identity.IsAuthenticated){
-                @* Topbar *@
-                <partial name="Navigation/_TopBar"/>
+                @if (User.IsInRole(AppRoles.Admin)){
+                        <partial name="Navigation/_TopBar"/>
+                }
 
-                @* Side bar (left) *@
-                <partial name="Navigation/_SideBar"/>
+                else if (User.IsInRole(AppRoles.User)){
+                        @* Topbar *@
+                        <partial name="Navigation/_TopBar"/>
+
+                        @* Side bar (left) *@
+                        <partial name="Navigation/_SideBar"/>
+                }
         }
 
 

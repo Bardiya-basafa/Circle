@@ -6,12 +6,13 @@ namespace CircleApp.UI.Controllers;
 using Base;
 using Domain.Entities;
 using Domain.ViewModels.Users;
+using Infrastructure.Persistence.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Services.Interfaces;
 
 
-[Authorize]
+[Authorize(Roles = AppRoles.User)]
 public class UsersController : BaseController {
 
     private readonly IUserService _userService;

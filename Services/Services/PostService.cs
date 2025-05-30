@@ -3,6 +3,7 @@
 using Domain.DTO;
 using Domain.Entities;
 using Domain.ViewModels.Home;
+using Infrastructure.Persistence.Constants;
 using Infrastructure.Persistence.DbContexts;
 using Infrastructure.Persistence.Helpers;
 using Interfaces;
@@ -12,16 +13,19 @@ using Microsoft.AspNetCore.Http;
 
 public class PostService : IPostService {
 
-    private readonly AppDbContext _appDbContext;
+    private readonly AppDbContext _context;
 
-    public PostService(AppDbContext appDbContext)
+    private readonly INotificationService _notificationService;
+
+    public PostService(AppDbContext context, INotificationService notificationService)
     {
-        _appDbContext = appDbContext;
+        _context = context;
+        _notificationService = notificationService;
     }
 
     public async Task<List<Post>>? GetAllPosts(int loggedUserId)
     {
-        List<Post> allPosts = await _appDbContext.Posts
+        List<Post> allPosts = await _context.Posts
             .Where(n => (!n.IsPrivate || n.UserId == loggedUserId) && n.Reports.Count < 5 && !n.IsDeleted)
             .Include(n => n.User)
             .Include(n => n.Likes)
@@ -34,9 +38,19 @@ public class PostService : IPostService {
         return allPosts;
     }
 
+    public async Task<List<Post>> GetReportedPosts()
+    {
+        var posts = await _context.Posts
+            .Where(post => !post.IsDeleted && post.NrOfReports > 3)
+            .ToListAsync();
+
+        return posts;
+    }
+
+
     public async Task<Post> GetPostByIdAsync(int postId)
     {
-        var postDb = await _appDbContext.Posts
+        var postDb = await _context.Posts
             .Include(p => p.User)
             .Include(p => p.Likes)
             .Include(p => p.Bookmarks)
@@ -75,8 +89,8 @@ public class PostService : IPostService {
             }
         }
 
-        await _appDbContext.Posts.AddAsync(newPost);
-        await _appDbContext.SaveChangesAsync();
+        await _context.Posts.AddAsync(newPost);
+        await _context.SaveChangesAsync();
 
         // find the hashtags of the post content 
         List<string> hashtags = HashtagHelper.ExtractHashtags(post.Content);
@@ -84,14 +98,14 @@ public class PostService : IPostService {
 
         if (hashtags != new List<string>())
             foreach (var hashtag in hashtags){
-                var hashtagDb = await _appDbContext.Hashtags.FirstOrDefaultAsync(n => n.Name == hashtag);
+                var hashtagDb = await _context.Hashtags.FirstOrDefaultAsync(n => n.Name == hashtag);
 
                 if (hashtagDb != null){
                     hashtagDb.Posts.Add(newPost);
                     hashtagDb.Count += 1;
                     hashtagDb.DateUpdated = DateTime.UtcNow;
-                    _appDbContext.Update(hashtagDb);
-                    await _appDbContext.SaveChangesAsync();
+                    _context.Update(hashtagDb);
+                    await _context.SaveChangesAsync();
                 }
                 else{
                     var newHashtag = new Hashtag
@@ -103,8 +117,8 @@ public class PostService : IPostService {
                     };
 
                     newHashtag.Posts.Add(newPost);
-                    await _appDbContext.Hashtags.AddAsync(newHashtag);
-                    await _appDbContext.SaveChangesAsync();
+                    await _context.Hashtags.AddAsync(newHashtag);
+                    await _context.SaveChangesAsync();
                 }
             }
     }
@@ -121,23 +135,23 @@ public class PostService : IPostService {
         };
 
         while (retryCount < maxRetries){
-            await using var transaction = await _appDbContext.Database.BeginTransactionAsync();
+            await using var transaction = await _context.Database.BeginTransactionAsync();
 
             try{
-                var liked = await _appDbContext.Likes
+                var liked = await _context.Likes
                     .FirstOrDefaultAsync(l => l.UserId == loggedInUserId && l.PostId == postId);
 
                 if (liked != null){
-                    _appDbContext.Likes.Remove(liked);
+                    _context.Likes.Remove(liked);
                     notificationResponse.Success = true;
                 }
                 else{
-                    _appDbContext.Likes.Add(new Like { UserId = loggedInUserId, PostId = postId });
+                    _context.Likes.Add(new Like { UserId = loggedInUserId, PostId = postId });
                     notificationResponse.Success = true;
                     notificationResponse.SendNotification = true;
                 }
 
-                await _appDbContext.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
 
                 return notificationResponse;
@@ -150,7 +164,7 @@ public class PostService : IPostService {
                     throw;
 
                 // Reset DbContext state
-                foreach (var entry in _appDbContext.ChangeTracker.Entries())
+                foreach (var entry in _context.ChangeTracker.Entries())
                     entry.State = EntityState.Detached;
             }
         }
@@ -160,28 +174,28 @@ public class PostService : IPostService {
 
     public async Task AddComment(Comment comment)
     {
-        _appDbContext.Comments.Add(comment);
-        await _appDbContext.SaveChangesAsync();
+        _context.Comments.Add(comment);
+        await _context.SaveChangesAsync();
     }
 
     public async Task DeleteComment(int loggedUserId, int commentId)
     {
-        var comment = _appDbContext.Comments.FirstOrDefault(c => c.Id == commentId);
+        var comment = _context.Comments.FirstOrDefault(c => c.Id == commentId);
 
         if (comment != null){
-            _appDbContext.Comments.Remove(comment);
-            await _appDbContext.SaveChangesAsync();
+            _context.Comments.Remove(comment);
+            await _context.SaveChangesAsync();
         }
     }
 
     public async Task<bool> BookmarkPost(int loggedInUserId, int postId)
     {
-        var bookmark = await _appDbContext.Bookmarks
+        var bookmark = await _context.Bookmarks
             .FirstOrDefaultAsync(b => b.UserId == loggedInUserId && b.PostId == postId);
 
         if (bookmark != null){
-            _appDbContext.Bookmarks.Remove(bookmark);
-            await _appDbContext.SaveChangesAsync();
+            _context.Bookmarks.Remove(bookmark);
+            await _context.SaveChangesAsync();
 
             return false;
         }
@@ -193,8 +207,8 @@ public class PostService : IPostService {
                 DateCreated = DateTime.UtcNow
             };
 
-            _appDbContext.Bookmarks.Add(newBookmark);
-            await _appDbContext.SaveChangesAsync();
+            _context.Bookmarks.Add(newBookmark);
+            await _context.SaveChangesAsync();
 
             return true;
         }
@@ -204,26 +218,26 @@ public class PostService : IPostService {
 
     public async Task TogglePostVisibility(int loggedUserId, int postId)
     {
-        var post = await _appDbContext.Posts
+        var post = await _context.Posts
             .FirstOrDefaultAsync(p => p.UserId == loggedUserId && p.PostId == postId);
 
         if (post != null){
             post.IsPrivate = !post.IsPrivate;
-            _appDbContext.Posts.Update(post);
-            await _appDbContext.SaveChangesAsync();
+            _context.Posts.Update(post);
+            await _context.SaveChangesAsync();
         }
     }
 
     public async Task ReportPost(int loggedInUserId, int postId)
     {
-        var post = await _appDbContext.Posts.FirstOrDefaultAsync(p => p.UserId == loggedInUserId && p.PostId == postId);
+        var post = await _context.Posts.FirstOrDefaultAsync(p => p.UserId == loggedInUserId && p.PostId == postId);
 
-        if (post != null){
+        if (post == null){
             return;
         }
 
 
-        var reported = await _appDbContext.Reports
+        var reported = await _context.Reports
             .FirstOrDefaultAsync(r => r.UserId == loggedInUserId && r.PostId == postId);
 
 
@@ -235,34 +249,58 @@ public class PostService : IPostService {
                 DateCreated = DateTime.UtcNow
             };
 
-            await _appDbContext.Reports.AddAsync(report);
-            await _appDbContext.SaveChangesAsync();
+            post.NrOfReports += 1;
+            _context.Posts.Update(post);
+            await _context.Reports.AddAsync(report);
+            await _context.SaveChangesAsync();
         }
     }
 
     public async Task DeletePost(int loggedInUesrId, int postId)
     {
-        var post = _appDbContext.Posts.FirstOrDefault(p => p.PostId == postId && loggedInUesrId == p.UserId);
+        var post = _context.Posts.FirstOrDefault(p => p.PostId == postId && loggedInUesrId == p.UserId);
 
         if (post != null){
             post.IsDeleted = true;
-            _appDbContext.Posts.Update(post);
-            await _appDbContext.SaveChangesAsync();
+            _context.Posts.Update(post);
+            await _context.SaveChangesAsync();
 
             // fix the hashtag implication 
             List<string> hashtagsOfPost = HashtagHelper.ExtractHashtags(post.Content);
 
             if (hashtagsOfPost != new List<string>())
                 foreach (var hash in hashtagsOfPost){
-                    var hashtagFromDb = await _appDbContext.Hashtags.FirstOrDefaultAsync(h => h.Name == hash);
+                    var hashtagFromDb = await _context.Hashtags.FirstOrDefaultAsync(h => h.Name == hash);
 
                     if (hashtagFromDb != null){
                         hashtagFromDb.Count -= 1;
                         hashtagFromDb.Posts.Remove(post);
-                        _appDbContext.Hashtags.Update(hashtagFromDb);
-                        await _appDbContext.SaveChangesAsync();
+                        _context.Hashtags.Update(hashtagFromDb);
+                        await _context.SaveChangesAsync();
                     }
                 }
+        }
+    }
+
+    public async Task DismissPostReports(int postId)
+    {
+        var post = await GetPostByIdAsync(postId);
+        post.NrOfReports = 0;
+        var reports = await _context.Reports.Where(report => report.PostId == postId).ToListAsync();
+        _context.Reports.RemoveRange(reports);
+        _context.Posts.Update(post);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task RemoveReportedPost(int postId)
+    {
+        var post = await _context.Posts.FirstOrDefaultAsync(r => r.PostId == postId);
+
+        if (post != null){
+            post.IsDeleted = true;
+            _context.Posts.Update(post);
+            await _notificationService.AddNewNotification(post.UserId, NotificationTypes.Post, post.User.FullName);
+            await _context.SaveChangesAsync();
         }
     }
 

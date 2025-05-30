@@ -4,9 +4,12 @@
 namespace CircleApp.UI.Controllers;
 
 using Base;
+using Infrastructure.Persistence.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Services.Interfaces;
 
 
+[Authorize(Roles = AppRoles.User)]
 public class SearchController : BaseController {
 
     private readonly ISearchService _searchService;

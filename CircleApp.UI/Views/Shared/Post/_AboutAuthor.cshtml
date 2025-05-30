@@ -1,4 +1,7 @@
 ﻿@model Post
+@{
+        var test = Model;
+}
 @using CircleApp.UI.Views.Shared
 @using Infrastructure.Persistence.Helpers
 <a asp-controller="Users" asp-action="Details" asp-route-userId="@Model.UserId" class="block">

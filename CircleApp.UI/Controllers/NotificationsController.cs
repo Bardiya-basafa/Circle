@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Services.Interfaces;
 
 
-[Authorize]
+[Authorize(Roles = AppRoles.User)]
 public class NotificationsController : BaseController {
 
     private readonly INotificationService _notificationService;

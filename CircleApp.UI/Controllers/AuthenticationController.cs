@@ -46,17 +46,22 @@ public class AuthenticationController : Controller {
 
         var userClaims = await _userManager.GetClaimsAsync(user);
 
-        if (userClaims.Any(c => c.Type == "FullName")){
+        if (!userClaims.Any(c => c.Type == "FullName")){
             await _userManager.AddClaimAsync(user, new Claim("FullName", user.FullName));
         }
 
         var result = await _signInManager.PasswordSignInAsync(loginVm.Email, loginVm.Password, false, false);
 
         if (result.Succeeded){
-            return RedirectToAction("Index", "Home");
+            if (User.IsInRole(AppRoles.User)){
+                return RedirectToAction("Index", "Home");
+            }
+            else if (User.IsInRole(AppRoles.Admin)){
+                return RedirectToAction("Index", "Admin");
+            }
         }
 
-        ModelState.AddModelError(string.Empty, "Invalid login attempt");
+        ModelState.AddModelError(string.Empty, "Invalid password.");
 
         return View(loginVm);
     }

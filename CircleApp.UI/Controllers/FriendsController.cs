@@ -11,7 +11,7 @@ using Infrastructure.Persistence.Helpers.Constansts;
 using Microsoft.AspNetCore.Authorization;
 using Services.Interfaces;
 
-
+[Authorize(Roles = AppRoles.Admin)]
 public class FriendsController : BaseController {
 
     private readonly IFriendsService _friendsService;

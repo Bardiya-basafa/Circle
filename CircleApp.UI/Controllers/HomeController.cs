@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.SignalR;
 using Services.Interfaces;
 
 
-[Authorize]
+[Authorize()]
 public class HomeController : BaseController {
 
     private readonly AppDbContext _appDbContext;
@@ -34,8 +34,14 @@ public class HomeController : BaseController {
         _notificationService = notificationService;
     }
 
+    // [Authorize(Roles = AppRoles.Admin)]
+    // [Authorize(Roles = AppRoles.User)]
     public async Task<IActionResult> Index()
     {
+        if (User.IsInRole(AppRoles.Admin)){
+            return RedirectToAction("Index", "Admin");
+        }
+
         LoggedInUserId = GetUserId();
         List<Post>? posts = await _postService.GetAllPosts(LoggedInUserId)!;
 
